@@ -1,0 +1,5 @@
+.DS_Store
+.idea/
+server.sh
+.vscode/
+.byebug_history

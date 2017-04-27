@@ -1,0 +1,73 @@
+# 'brew tap'
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+
+# 'brew install'
+brew 'asdf'
+brew "aws-iam-authenticator"
+brew "awscli"
+brew "chroma"
+brew "cfssl"
+brew "coreutils"
+brew "diff-so-fancy"
+brew "direnv"
+brew "exa"
+brew "figlet"
+brew "git"
+brew "go"
+brew "golangci-lint"
+brew "helm"
+brew "helmfile"
+brew "htop"
+brew "imagemagick"
+brew "jq"
+brew "kubectl"
+brew "kubergrunt"
+brew "libsodium"
+brew "lolcat"
+brew "mas"
+brew "minikube"
+brew "peco"
+brew "starship"
+brew "telnet"
+brew "terraform"
+brew "terragrunt"
+brew "tree"
+brew "yamllint"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh"
+
+# 'brew install --cask'
+cask "1password"
+cask "adobe-acrobat-reader"
+cask "alfred"
+cask "backblaze"
+cask "caffeine"
+cask "dash"
+cask "dbeaver-community"
+cask "docker"
+cask "font-input"
+cask "google-chrome"
+cask "iterm2"
+cask "lens"
+cask "libreoffice"
+cask "postman"
+cask "rectangle"
+cask "signal"
+cask "slack"
+cask "torguard"
+cask "visual-studio-code"
+cask "vlc"
+cask "whatsapp"
+cask "zoom"
+
+# 'mas install'
+mas "Bear", id: 1091189122
+mas "Fax", id: 1253523818
+mas "Shazam", id: 897118787
+mas "StuffIt Expander", id: 919269455
+mas "Telephone", id: 406825478

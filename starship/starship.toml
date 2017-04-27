@@ -1,0 +1,69 @@
+add_newline = false
+command_timeout = 1000
+
+format = """
+$directory\
+$time\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$character
+"""
+
+right_format = """
+$aws\
+$kubernetes\
+$terraform
+"""
+
+[aws]
+format = '([$symbol($profile)(\($region\))]($style))'
+style = "bold #8A2BE2"
+
+[aws.region_aliases]
+eu-central-1 = ""
+
+[directory]
+style = "#1E90FF"
+repo_root_style = "bold #0000FF"
+truncation_length = 6
+
+[gcloud]
+disabled = true
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+style = "bold #FF00FF"
+truncation_length = 30
+
+[git_status]
+format = "([$all_status$ahead_behind]($style))"
+conflicted = "[!](#DC143C) "
+ahead = "⇡ "
+behind = "⇣ "
+diverged = "⇕ "
+untracked = '[?\($count\)](#DC143C) '
+stashed = '[\$](#0000FF) '
+modified = '[*\($count\)](#DC143C) '
+staged = '[+\($count\)](bright-green) '
+renamed = '[»\($count\)](bright-green) '
+deleted = '[✘\($count\)](#DC143C) '
+
+[kubernetes]
+disabled = false
+format = '[ $symbol$context( \($namespace\))]($style)'
+style = "bold #0000FF"
+
+[kubernetes.context_aliases]
+'arn:.*:cluster/(?P<cluster>[\w-]+)' = "$cluster"
+
+[terraform]
+format = " [$symbol$workspace]($style)"
+detect_extensions = ["tf", "tfplan", "tfstate", "hcl"]
+
+[time]
+disabled = false
+format = "[$time]($style)"
+time_format = "%H:%M "
+style ="#CFD8DC dimmed"

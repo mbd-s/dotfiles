@@ -1,0 +1,40 @@
+[user]
+        name = Michael Silverberg
+        email = 13588399+mbd-s@users.noreply.github.com
+[includeIf "gitdir:~/work/"]
+        path = ~/dotfiles/git/work/.gitconfig
+[core]
+        excludesfile = ~/.gitignore_global
+        autocrlf = input
+        attributesfile = ~/.gitattributes
+        pager = diff-so-fancy | less --tabs=4 -R
+[alias]
+        st = status
+        co = checkout
+        ck = checkout
+        lp = log -p
+        pf = push --force-with-lease
+[pager]
+        branch = false
+        diff = false
+[pull]
+        rebase = false
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[init]
+        defaultBranch = main
