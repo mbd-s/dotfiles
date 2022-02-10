@@ -2,12 +2,12 @@ SHELL=/bin/zsh
 
 .PHONY: homebrew link bundle omz unlink uninstall_homebrew
 
-all: homebrew link bundle omz
+install: homebrew link bundle omz
 
 homebrew:
 	@echo "Looking for Homebrew..."
 ifneq (, $(shell which brew))
-	@echo "Homebrew already installed"
+	@echo "Homebrew is already installed"
 else
 	@echo "Installing Homebrew..."
 	@/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install)"
@@ -15,21 +15,21 @@ endif
 
 link:
 	@echo "Linking config files..."
-	@[ -f ~/.asdfrc ] || ln -s $(PWD)/asdf/.asdfrc ~/.asdfrc
-	@[ -f ~/.gitconfig ] || ln -s $(PWD)/git/.gitconfig ~/.gitconfig
-	@[ -f ~/.gitignore_global ] || ln -s $(PWD)/git/.gitignore_global ~/.gitignore_global
-	@[ -f ~/.vimrc ] || ln -s $(PWD)/vim/.vimrc ~/.vimrc
-	@[ -f ~/.zshrc ] || ln -s $(PWD)/zsh/.zshrc ~/.zshrc
+	@[ -f ~/.asdfrc ] || ln -s -v $(PWD)/asdf/.asdfrc ~/.asdfrc
+	@[ -f ~/.gitconfig ] || ln -s -v $(PWD)/git/.gitconfig ~/.gitconfig
+	@[ -f ~/.gitignore_global ] || ln -s -v $(PWD)/git/.gitignore_global ~/.gitignore_global
+	@[ -f ~/.vimrc ] || ln -s -v $(PWD)/vim/.vimrc ~/.vimrc
+	@[ -f ~/.zshrc ] || ln -s -v $(PWD)/zsh/.zshrc ~/.zshrc
 
 	@mkdir -p ~/.config
-	@[ -f ~/.config/starship.toml ] || ln -s $(PWD)/starship/starship.toml ~/.config/starship.toml
+	@[ -f ~/.config/starship.toml ] || ln -s -v $(PWD)/starship/starship.toml ~/.config/starship.toml
 
 bundle:
 	@echo "Installing Homebrew packages..."
-	brew bundle
+	@brew bundle
 
 omz:
-	@echo "Looking for Oh My Zsh installation..."
+	@echo "Looking for Oh My Zsh..."
 	@if [ -d ~/.oh-my-zsh ]; then \
 		echo "Oh My Zsh is already installed"; \
 	else \
@@ -38,8 +38,8 @@ omz:
 		sh ohmyzsh-install.sh KEEP_ZSHRC=yes; \
 	fi
 
-unlink:
-	@echo "Unlinking config files..."
+clean:
+	@echo "Unlinking symlinked config files..."
 	@[ ! -L ~/.asdfrc ] || rm -v ~/.asdfrc
 	@[ ! -L ~/.gitconfig ] || rm -v ~/.gitconfig
 	@[ ! -L ~/.gitignore_global ] || rm -v ~/.gitignore_global

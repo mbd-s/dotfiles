@@ -3,17 +3,45 @@
 My personal config.
 
 ## Installation
+
 Clone the project:
-```
-# Make sure you're in the root directory
-$ git clone https://github.com/mbd-s/dotfiles.git
-$ cd dotfiles
+
+```shell
+git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ```
 
-Run `make` to install Homebrew and its packages; install Oh My Zsh; and symlink the config files.
+Install [Homebrew](https://brew.sh/) and its dependencies (listed in the [Brewfile](Brewfile)); install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink the config files (without overwriting existing files):
 
-Run `make unlink` to remove the config files.
+```shell
+make install
+```
 
 ## Configuration
 
-To split home and work concerns in `git`, nest work-related repositories inside a `work` directory and configure a work git user at `git/work/.gitconfig`.
+To split home and work concerns in `git`, nest work-related repositories inside a `work` directory and configure a different `git` user at `git/work/.gitconfig`. Example:
+
+```
+[user]
+	email = your.name@example.com
+```
+
+## Uninstalling
+
+Remove the symlinks:
+
+```shell
+make clean
+```
+
+Uninstall Oh My Zsh:
+
+```shell
+uninstall_oh_my_zsh
+```
+
+Uninstall Homebrew (this can have unintended consequences if you're managing applications with Cask):
+
+```shell
+make uninstall_homebrew
+```
