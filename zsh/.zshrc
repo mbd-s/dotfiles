@@ -34,7 +34,9 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 ZSH_THEME=""
 
 # zsh history
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="%d %B %Y %H:%M"
+HISTSIZE=100000000
+HISTFILESIZE=100000000
 
 plugins=(
   asdf
@@ -42,6 +44,7 @@ plugins=(
   brew
   bundler
   colored-man-pages
+  colorize
   command-not-found
   git
   golang
@@ -57,27 +60,31 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+export ZSH_COLORIZE_TOOL=chroma # Pygments is the default
+export ZSH_COLORIZE_STYLE=igor # Also nice: arduino, borland
+
 export PATH=/usr/local/sbin:$PATH
 
 export HOMEBREW_NO_ENV_HINTS=1
 
-alias brewski="brew update && brew upgrade --ignore-pinned && brew cleanup"
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-alias ls="exa -a" # Format with color and show hidden files by default
-alias lsh="exa -ld .?*" # Format with color and show only hidden files
-alias zource="source $HOME/.zshrc"
-alias zopen="vi $HOME/.zshrc"
-alias be="bundle exec"
 alias audit="bundle exec bundle-audit check --update" # Update bundle-audit when checking
-alias serve="./server.sh"
-alias ngrok="$HOME/./ngrok"
+alias be="bundle exec"
+alias brewski="brew update && brew upgrade --ignore-pinned && brew cleanup"
+alias cat="ccat"
+alias dc="docker-compose"
+alias drc="docker-compose run --rm development bundle exec rails c"
+alias drubocop="docker-compose run --rm development bundle exec rubocop"
+alias dtest="docker-compose run --rm test"
 alias gti="git"
 alias k="kubectl"
-alias dc="docker-compose"
-alias dtest="docker-compose run --rm test"
-alias drubocop="docker-compose run --rm development bundle exec rubocop"
-alias drc="docker-compose run --rm development bundle exec rails c"
+alias ls="exa -a" # Format with color and show hidden files by default
+alias lsh="exa -ld .?*" # Format with color and show only hidden files
 alias rd="docker-compose run --rm development"
+alias serve="./server.sh"
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+alias song="music playing" # Apple Music control via macos plugin
+alias zopen="vi $HOME/.zshrc"
+alias zource="source $HOME/.zshrc"
 
 function aws_switch () {
   envname=$1
@@ -133,4 +140,5 @@ function pysetup () {
   fi
 }
 
-eval "$(starship init zsh)"
+eval "$(direnv hook zsh)" # Set up direnv
+eval "$(starship init zsh)" # Set up starship
