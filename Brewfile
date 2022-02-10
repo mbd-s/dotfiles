@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
+cask_args require_sha: true
 
 # 'brew install'
 brew 'asdf'
