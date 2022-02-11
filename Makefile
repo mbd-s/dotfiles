@@ -27,6 +27,7 @@ link:
 bundle:
 	@echo "Installing Homebrew packages..."
 	@brew bundle
+	@brew cleanup
 
 omz:
 	@echo "Looking for Oh My Zsh..."
