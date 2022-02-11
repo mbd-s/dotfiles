@@ -42,7 +42,6 @@ brew "tree"
 brew "yamllint"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
-brew "zsh"
 
 # 'brew install --cask'
 cask "1password"
