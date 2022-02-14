@@ -10,6 +10,7 @@ cask_args require_sha: true
 brew 'asdf'
 brew "aws-iam-authenticator"
 brew "awscli"
+brew "bat"
 brew "cfssl"
 brew "chroma"
 brew "coreutils"

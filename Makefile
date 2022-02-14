@@ -22,6 +22,8 @@ link:
 	@[ -f ~/.zshrc ] || ln -s -v $(PWD)/zsh/.zshrc ~/.zshrc
 
 	@mkdir -p ~/.config
+	@mkdir -p ~/.config/bat
+	@[ -f ~/.config/bat/config ] || ln -s -v $(PWD)/bat/config ~/.config/bat/config
 	@[ -f ~/.config/starship.toml ] || ln -s -v $(PWD)/starship/starship.toml ~/.config/starship.toml
 
 bundle:
@@ -42,6 +44,7 @@ omz:
 clean:
 	@echo "Unlinking symlinked config files..."
 	@[ ! -L ~/.asdfrc ] || rm -v ~/.asdfrc
+	@[ ! -L ~/.config/bat/config ] || rm -v ~/.config/bat/config
 	@[ ! -L ~/.gitconfig ] || rm -v ~/.gitconfig
 	@[ ! -L ~/.gitignore_global ] || rm -v ~/.gitignore_global
 	@[ ! -L ~/.config/starship.toml ] || rm -v ~/.config/starship.toml
