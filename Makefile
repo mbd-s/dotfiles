@@ -1,8 +1,8 @@
 SHELL=/bin/zsh
 
-.PHONY: homebrew link bundle omz unlink uninstall_homebrew
+.PHONY: homebrew link bundle omz clean uninstall_homebrew
 
-install: homebrew link bundle omz
+setup: homebrew link bundle omz
 
 homebrew:
 	@echo "Looking for Homebrew..."

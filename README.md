@@ -2,6 +2,10 @@
 
 My personal dotfiles for software development on macOS. You probably don't want to adopt these wholesale, but feel free to use what you like.
 
+## Prerequisites
+
+You should be running macOS.
+
 ## Installation
 
 First, clone the project:
@@ -11,10 +15,10 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The following command will install [Homebrew](https://brew.sh/) and its dependencies (listed in the [Brewfile](Brewfile)); install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink the config files (without overwriting existing files):
+The setup script will install [Homebrew](https://brew.sh/) and its packages (as defined in the [Brewfile](Brewfile)); install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink a bunch of config files (without overwriting existing files):
 
 ```shell
-make install
+make setup
 ```
 
 ## Configuration
