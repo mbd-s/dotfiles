@@ -80,6 +80,7 @@ alias rd="docker-compose run --rm development"
 alias serve="./server.sh"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias song="music playing" # Apple Music control via macos plugin
+alias speedtest="networkQuality -v" # Test quality of network connection
 alias zopen="vi $HOME/.zshrc"
 alias zource="source $HOME/.zshrc"
 
