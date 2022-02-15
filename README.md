@@ -1,17 +1,17 @@
 # Dotfiles
 
-My personal config.
+My personal dotfiles for software development on macOS. You probably don't want to adopt these wholesale, but feel free to use what you like.
 
 ## Installation
 
-Clone the project:
+First, clone the project:
 
 ```shell
 git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-Install [Homebrew](https://brew.sh/) and its dependencies (listed in the [Brewfile](Brewfile)); install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink the config files (without overwriting existing files):
+The following command will install [Homebrew](https://brew.sh/) and its dependencies (listed in the [Brewfile](Brewfile)); install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink the config files (without overwriting existing files):
 
 ```shell
 make install
@@ -19,7 +19,16 @@ make install
 
 ## Configuration
 
-To split home and work concerns in `git`, nest work-related repositories inside a `work` directory and configure a different `git` user at `git/work/.gitconfig`. Example:
+### iTerm2
+
+1. Open iTerm2.
+2. Select `iTerm2 > Preferences`.
+3. Under the heading `Profiles`, select `...Other Actions`.
+4. Select `Import JSON profiles...` and choose the one in `~/dotfiles/iterm/`.
+
+### Git
+
+To split home and work concerns in `git`, nest work-related repositories inside a `work/` directory and configure a different `git` user at `~/dotfiles/git/work/.gitconfig`. Example:
 
 ```
 [user]
