@@ -1,0 +1,24 @@
+{
+    "files.autoSave": "afterDelay",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.fontSize": 15,
+    "editor.fontFamily": "Input Mono",
+    "python.terminal.executeInFileDir": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "Input Mono",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontSize": 16,
+    "editor.tabSize": 2,
+    "editor.inlineSuggest.enabled": true,
+    "redhat.telemetry.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 120,
+    "go.lintTool": "golangci-lint",
+    "gopls": {
+        "experimentalWorkspaceModule": true,
+    },
+    "files.trimTrailingWhitespace": true,
+    "workbench.colorTheme": "Dracula"
+}

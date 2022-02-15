@@ -19,6 +19,8 @@ link:
 	@[ -f ~/.gitconfig ] || ln -s -v $(PWD)/git/.gitconfig ~/.gitconfig
 	@[ -f ~/.gitignore_global ] || ln -s -v $(PWD)/git/.gitignore_global ~/.gitignore_global
 	@[ -f ~/.vimrc ] || ln -s -v $(PWD)/vim/.vimrc ~/.vimrc
+	@[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s -v $(PWD)/vs-code/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	@[ -f ~/Library/Application\ Support/Code/User/snippets/go.json ] || ln -s -v $(PWD)/vs-code/snippets/go.json ~/Library/Application\ Support/Code/User/snippets/go.json
 	@[ -f ~/.zshrc ] || ln -s -v $(PWD)/zsh/.zshrc ~/.zshrc
 
 	@mkdir -p ~/.config
@@ -49,6 +51,8 @@ clean:
 	@[ ! -L ~/.gitignore_global ] || rm -v ~/.gitignore_global
 	@[ ! -L ~/.config/starship.toml ] || rm -v ~/.config/starship.toml
 	@[ ! -L ~/.vimrc ] || rm -v ~/.vimrc
+	@[ ! -L ~/Library/Application\ Support/Code/User/settings.json ] || rm -v ~/Library/Application\ Support/Code/User/settings.json
+	@[ ! -L ~/Library/Application\ Support/Code/User/snippets/go.json ] || rm -v ~/Library/Application\ Support/Code/User/snippets/go.json
 	@[ ! -L ~/.zshrc ] || rm -v ~/.zshrc
 
 uninstall_homebrew:

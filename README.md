@@ -26,6 +26,10 @@ make install
 3. Under the heading `Profiles`, select `...Other Actions`.
 4. Select `Import JSON profiles...` and choose the one in `~/dotfiles/iterm/`.
 
+### Visual Studio Code
+
+You can also synchronize your editor configuration across machines with [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync).
+
 ### Git
 
 To split home and work concerns in `git`, nest work-related repositories inside a `work/` directory and configure a different `git` user at `~/dotfiles/git/work/.gitconfig`. Example:
