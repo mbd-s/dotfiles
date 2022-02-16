@@ -28,7 +28,7 @@ make setup
 1. Open iTerm2.
 2. Select `iTerm2 > Preferences`.
 3. Under the heading `Profiles`, select `...Other Actions`.
-4. Select `Import JSON profiles...` and choose the one in `~/dotfiles/iterm/`.
+4. Select `Import JSON profiles...` and choose the one you want in `~/dotfiles/iterm/`.
 
 ### Visual Studio Code
 
