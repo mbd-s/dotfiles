@@ -15,7 +15,7 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script will install [Homebrew](https://brew.sh/) and its packages (as defined in the [Brewfile](Brewfile)); install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink a bunch of config files (without overwriting existing files):
+The setup script will install [Homebrew](https://brew.sh/) and its packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink a bunch of config files (without overwriting existing files):
 
 ```shell
 make setup

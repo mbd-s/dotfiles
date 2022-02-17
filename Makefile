@@ -1,8 +1,8 @@
 SHELL=/bin/zsh
 
-.PHONY: homebrew link bundle omz clean uninstall_homebrew
+.PHONY: homebrew link bundle plugins omz clean uninstall_homebrew
 
-setup: homebrew link bundle omz
+setup: homebrew link bundle plugins omz
 
 homebrew:
 	@echo "Looking for Homebrew..."
@@ -32,6 +32,24 @@ bundle:
 	@echo "Installing Homebrew packages..."
 	@brew bundle
 	@brew cleanup
+
+plugins:
+	@echo "Installing asdf plugins..."
+	@asdf plugin-add golang
+	@asdf install golang latest
+	@asdf global golang latest
+	@asdf plugin-add python
+	@asdf install python latest
+	@asdf global python latest
+	@asdf plugin-add richgo
+	@asdf install richgo latest
+	@asdf global richgo latest
+	@asdf plugin-add ruby
+	@asdf install ruby latest
+	@asdf global ruby latest
+	@asdf plugin-add terraform
+	@asdf install terraform 0.14.7
+	@asdf global terraform 0.14.7
 
 omz:
 	@echo "Looking for Oh My Zsh..."
