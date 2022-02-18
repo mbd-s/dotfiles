@@ -171,5 +171,9 @@ functiun weather () {
   curl wttr.in/$1
 }
 
+function random_cowsay () {
+  cowsay -f "$(cowsay -l | sed '1 d' | tr ' ' '\n' | shuf -n 1)"
+}
+
 eval "$(direnv hook zsh)" # Set up direnv
 eval "$(starship init zsh)" # Set up starship
