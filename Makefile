@@ -1,17 +1,8 @@
 SHELL=/bin/zsh
 
-.PHONY: homebrew link bundle plugins omz clean uninstall_homebrew
+.PHONY: link bundle plugins omz clean
 
-setup: homebrew link bundle plugins omz
-
-homebrew:
-	@echo "Looking for Homebrew..."
-ifneq (, $(shell which brew))
-	@echo "Homebrew is already installed"
-else
-	@echo "Installing Homebrew..."
-	@/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install)"
-endif
+setup: link bundle plugins omz
 
 link:
 	@echo "Linking config files..."
@@ -72,7 +63,3 @@ clean:
 	@[ ! -L ~/Library/Application\ Support/Code/User/settings.json ] || rm -v ~/Library/Application\ Support/Code/User/settings.json
 	@[ ! -L ~/Library/Application\ Support/Code/User/snippets/go.json ] || rm -v ~/Library/Application\ Support/Code/User/snippets/go.json
 	@[ ! -L ~/.zshrc ] || rm -v ~/.zshrc
-
-uninstall_homebrew:
-	@echo "Uninstalling Homebrew..."
-	@ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall)"

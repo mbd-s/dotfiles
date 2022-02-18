@@ -4,8 +4,8 @@ My personal dotfiles for software development on macOS. You probably don't want 
 
 ## Prerequisites
 
-You should be running macOS.
-
+- Install [Homebrew](https://brew.sh/)
+- You should be using `zsh` as your shell
 ## Installation
 
 First, clone the project:
@@ -15,7 +15,7 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script will install [Homebrew](https://brew.sh/) and its packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink a bunch of config files (without overwriting existing files):
+The setup script will install [Homebrew](https://brew.sh/) packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink a bunch of config files (without overwriting existing files):
 
 ```shell
 make setup
@@ -55,10 +55,4 @@ Uninstall Oh My Zsh:
 
 ```shell
 uninstall_oh_my_zsh
-```
-
-Uninstall Homebrew (this can have unintended consequences if you're managing applications with Cask):
-
-```shell
-make uninstall_homebrew
 ```
