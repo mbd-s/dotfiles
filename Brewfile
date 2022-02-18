@@ -50,16 +50,16 @@ brew "zsh-completions"
 cask "1password"
 cask "adobe-acrobat-reader"
 cask "alfred"
-cask "backblaze"
+cask "backblaze", args: { require_sha: false }
 cask "caffeine"
 cask "dash"
 cask "dbeaver-community"
 cask "docker"
-cask "dropbox"
+cask "dropbox", args: { require_sha: false }
 cask "font-hack-nerd-font"
 cask "firefox"
-cask "font-input"
-cask "google-chrome"
+cask "font-input", args: { require_sha: false }
+cask "google-chrome", args: { require_sha: false }
 cask "iterm2"
 cask "lens"
 cask "libreoffice"
