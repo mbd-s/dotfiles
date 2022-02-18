@@ -167,5 +167,9 @@ rmqq() {
     qq
 }
 
+functiun weather () {
+  curl wttr.in/$1
+}
+
 eval "$(direnv hook zsh)" # Set up direnv
 eval "$(starship init zsh)" # Set up starship
