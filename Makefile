@@ -24,21 +24,23 @@ bundle:
 	@brew bundle
 	@brew cleanup
 
+# Adds various asdf plugins, installs needed versions of them, and sets global versions. Usage: `make plugins`.
 plugins:
 	@echo "Installing asdf plugins..."
-	@asdf plugin-add golang
+	@asdf plugin-add golang || true
 	@asdf install golang latest
 	@asdf global golang latest
-	@asdf plugin-add python
+	@asdf plugin-add python || true
 	@asdf install python latest
 	@asdf global python latest
-	@asdf plugin-add richgo
+	@asdf plugin-add richgo || true
 	@asdf install richgo latest
 	@asdf global richgo latest
-	@asdf plugin-add ruby
+	@asdf plugin-add ruby || true
 	@asdf install ruby latest
 	@asdf global ruby latest
-	@asdf plugin-add terraform
+	@asdf plugin-add terraform || true
+	@asdf install terraform latest
 	@asdf install terraform 0.14.7
 	@asdf global terraform 0.14.7
 
