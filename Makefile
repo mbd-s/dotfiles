@@ -2,8 +2,11 @@ SHELL=/bin/zsh
 
 .PHONY: link bundle plugins omz clean
 
+# Runs installation script. Usage: `make setup`.
 setup: link bundle plugins omz
+	@echo "Installing config..."
 
+# Links config files to the home directory. Usage: `make link`.
 link:
 	@echo "Linking config files..."
 	@[ -f ~/.asdfrc ] || ln -s -v $(PWD)/asdf/.asdfrc ~/.asdfrc
@@ -19,8 +22,9 @@ link:
 	@[ -f ~/.config/bat/config ] || ln -s -v $(PWD)/bat/config ~/.config/bat/config
 	@[ -f ~/.config/starship.toml ] || ln -s -v $(PWD)/starship/starship.toml ~/.config/starship.toml
 
+# Installs Homebrew packages and cask apps listed in Brewfile. Usage: `make bundle`.
 bundle:
-	@echo "Installing Homebrew packages..."
+	@echo "Installing Homebrew packages and cask apps..."
 	@brew bundle
 	@brew cleanup
 
@@ -44,6 +48,7 @@ plugins:
 	@asdf install terraform 0.14.7
 	@asdf global terraform 0.14.7
 
+# Installs Oh My Zsh if no installation is found. Usage: `make omz`.
 omz:
 	@echo "Looking for Oh My Zsh..."
 	@if [ -d ~/.oh-my-zsh ]; then \
@@ -54,6 +59,7 @@ omz:
 		sh ohmyzsh-install.sh KEEP_ZSHRC=yes; \
 	fi
 
+# Removes all symlinked config files. Usage: `make clean`.
 clean:
 	@echo "Unlinking symlinked config files..."
 	@[ ! -L ~/.asdfrc ] || rm -v ~/.asdfrc
