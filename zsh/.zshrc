@@ -69,7 +69,7 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 alias audit="bundle exec bundle-audit check --update" # Update bundle-audit when checking
 alias be="bundle exec"
-alias brewski="brew update && brew upgrade --ignore-pinned && brew cleanup"
+alias brewski="brew update && brew upgrade --greedy --ignore-pinned && brew cleanup"
 alias dc="docker-compose"
 alias drc="docker-compose run --rm development bundle exec rails c"
 alias drubocop="docker-compose run --rm development bundle exec rubocop"
