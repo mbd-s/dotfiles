@@ -87,50 +87,47 @@ alias speedtest="networkQuality -v" # Test quality of network connection
 alias zopen="vi $HOME/.zshrc"
 alias zource="source $HOME/.zshrc"
 
+# Relies on a function `creds` to refresh AWS credentials
 function aws_switch () {
-  envname=$1
+    env_name=$1
 
-  export AWS_PROFILE=$envname
-  export AWS_DEFAULT_REGION=eu-central-1
+    export AWS_PROFILE=$env_name
+    export AWS_DEFAULT_REGION=eu-central-1
 
-  kubectl config unset current-context > /dev/null
+    kubectl config unset current-context > /dev/null
 
-  aws sts get-caller-identity --no-cli-pager
+    echo "$(tput setaf 2)### AWS Identity ###$(tput sgr0)"
+    aws sts get-caller-identity --no-cli-pager
 
-  echo
-  echo "Type the name of the cluster you want to connect to or:"
-  echo " - Type 'list' (or 'l') to list available clusters"
-  echo " - Type 'active' (or 'a') or hit the 'enter' key to connect to the active cluster"
-  echo " - Type 'none' or 'n' to skip connecting to a cluster"
-  read cluster_name
-  echo
+    local exit_code=$?
+    if [[ $exit_code == "253" ]]; then
+        return
+    elif [[ $exit_code == "254" ]]; then
+        echo "Refreshing credentials..." && creds && sleep 10 && aws sts get-caller-identity --no-cli-pager || return
+    fi
 
-  if [[ "$cluster_name" == "active" || "$cluster_name" == "a" || "$cluster_name" == "" ]]; then
-    cluster_name=""
-    for cluster in $(aws eks list-clusters --query clusters --output text); do
-      if [ $(aws eks describe-cluster --name $cluster --query cluster.tags.active --output text) = true ]; then
-        cluster_name=$cluster
+    clusters=($(aws eks list-clusters --query clusters --output text))
+    clusters+=("The active cluster")
+    PS3="$(tput setaf 2)Select a cluster by number: $(tput sgr0)"
+    select cluster_name in ${clusters}; do
         break
-      fi
     done
-  fi
 
-  if [[ "$cluster_name" == "none" || "$cluster_name" == "n" ]]; then
-    cluster_name=""
-  fi
+    if [[ "$cluster_name" == "The active cluster" ]]; then
+        for cluster in ${clusters}; do
+            if [ $(aws eks describe-cluster --name $cluster --query cluster.tags.active --output text) = true ]; then
+                cluster_name=$cluster
+                break
+            fi
+        done
+    fi
 
-  if [[ "$cluster_name" == "list" || "$cluster_name" == "l" ]]; then
-    echo "Choose a cluster by number:"
-    echo "0) None (skip this step)"
-    cluster_name=""
-    select cluster_name in $(aws eks list-clusters --query clusters --output text); do
-      break
-    done
-  fi
-
-  if [[ "$cluster_name" != "" ]]; then
-    aws eks update-kubeconfig --name $cluster_name --region $AWS_DEFAULT_REGION
-  fi
+    if [[ "$cluster_name" != "" ]]; then
+        aws eks update-kubeconfig --name $cluster_name --region $AWS_DEFAULT_REGION
+        echo "$(tput setaf 2)Connected to $cluster_name in the $env_name environment.$(tput sgr0)"
+    else;
+        echo "$(tput setaf 1)No valid cluster was selected, so kubeconfig was not updated.$(tput sgr0)"
+    fi
 }
 
 function pysetup () {
