@@ -47,14 +47,14 @@ To split home and work concerns in `git`, nest work-related repositories inside 
 
 ## Uninstalling
 
-Remove the symlinks:
+To remove the symlinks and uninstall Oh My Zsh:
 
 ```shell
 make clean
 ```
 
-Uninstall Oh My Zsh:
+To just remove the symlinks:
 
 ```shell
-uninstall_oh_my_zsh
+make unlink
 ```

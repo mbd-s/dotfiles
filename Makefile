@@ -1,6 +1,6 @@
 SHELL=/bin/zsh
 
-.PHONY: link bundle plugins omz clean
+.PHONY: link bundle plugins omz unlink clean
 
 # Runs installation script. Usage: `make setup`.
 setup: link bundle plugins omz
@@ -58,8 +58,8 @@ omz:
 		sh ohmyzsh-install.sh KEEP_ZSHRC=yes; \
 	fi
 
-# Removes all symlinked config files. Usage: `make clean`.
-clean:
+# Removes all symlinked config files. Usage: `make unlink`.
+unlink:
 	@echo "Unlinking symlinked config files..."
 	@[ ! -L ~/.asdfrc ] || rm -v ~/.asdfrc
 	@[ ! -L ~/.config/bat/config ] || rm -v ~/.config/bat/config
@@ -70,3 +70,8 @@ clean:
 	@[ ! -L ~/Library/Application\ Support/Code/User/settings.json ] || rm -v ~/Library/Application\ Support/Code/User/settings.json
 	@[ ! -L ~/Library/Application\ Support/Code/User/snippets/go.json ] || rm -v ~/Library/Application\ Support/Code/User/snippets/go.json
 	@[ ! -L ~/.zshrc ] || rm -v ~/.zshrc
+
+# Removes all symlinked config files and uninstalls Oh My Zsh. Usage: `make clean`.
+clean: unlink
+	@echo "Removing symlinked config files and uninstalling Oh My Zsh..."
+	@uninstall_oh_my_zsh
