@@ -46,7 +46,6 @@ plugins:
 	@asdf plugin-add terraform || true
 	@asdf install terraform latest
 	@asdf install terraform 0.14.7
-	@asdf global terraform 0.14.7
 
 # Installs Oh My Zsh if no installation is found. Usage: `make omz`.
 omz:
