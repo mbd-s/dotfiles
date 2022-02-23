@@ -15,23 +15,57 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script will install [Homebrew](https://brew.sh/) packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink a bunch of config files:
+The setup script works best on a clean install of macOS 12. It will install a bunch of Homebrew packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink the config files:
 
 ```shell
 make setup
 ```
 
-The command is nondestructive, so it won't overwrite existing files. To replace your files with these, first delete the existing files, then run `make link` to create the symlinks.
+The command is nondestructive, so it won't overwrite existing files. To replace your files, first delete the existing files, then run `make setup`.
+
+To just create the symlinks:
+
+```shell
+make link
+```
+
+To just install the Homebrew packages:
+
+```shell
+make bundle
+```
+
+To just install the asdf plugins:
+
+```shell
+make plugins
+```
+
+To just install Oh My Zsh:
+
+```shell
+make omz
+```
 
 ## Configuration
 
 ### iTerm2
 
+#### Profile
+
 1. Open iTerm2.
 2. Select `iTerm2 > Preferences`.
-3. Under the heading `Profiles`, select `...Other Actions`.
-4. Select `Import JSON profiles...` and choose the one you want in `~/dotfiles/iterm/`.
+3. Select `Profiles`
+4. Select the `...Other Actions` dropdown menu and click `Import JSON profiles...`
+5. Choose the profile you want to use from the ones in `~/dotfiles/iterm/`.
 
+#### Key mappings
+
+1. Open iTerm2.
+2. Select `iTerm2 > Preferences`.
+3. Select `Profiles`, then `Keys`.
+4. Select the `Presets...` dropdown menu and click `Import...`.
+5. Choose `~/dotfiles/iterm/custom.itermkeymap`.
 ### Visual Studio Code
 
 You can also synchronize your editor configuration across machines with [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync).

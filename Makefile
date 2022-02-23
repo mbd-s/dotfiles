@@ -22,13 +22,13 @@ link:
 	@[ -f ~/.config/bat/config ] || ln -s -v $(PWD)/bat/config ~/.config/bat/config
 	@[ -f ~/.config/starship.toml ] || ln -s -v $(PWD)/starship/starship.toml ~/.config/starship.toml
 
-# Installs Homebrew packages and cask apps listed in Brewfile. Usage: `make bundle`.
+# Installs Homebrew packages listed in Brewfile, then runs `brew cleanup`. Usage: `make bundle`.
 bundle:
-	@echo "Installing Homebrew packages and cask apps..."
+	@echo "Installing Homebrew packages..."
 	@brew bundle
 	@brew cleanup
 
-# Adds various asdf plugins, installs needed versions of them, and sets global versions. Usage: `make plugins`.
+# Adds various asdf plugins, installs specified versions of them, and sets global versions. Usage: `make plugins`.
 plugins:
 	@echo "Installing asdf plugins..."
 	@asdf plugin-add golang || true
