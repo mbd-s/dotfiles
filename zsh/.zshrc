@@ -134,11 +134,11 @@ function aws_switch () {
 }
 
 function pysetup () {
-  if [ -d "$(pwd)/venv" ]; then
-    source venv/bin/activate
-  else
-    python -m venv venv && source venv/bin/activate && pip install --upgrade pip
-  fi
+    if [ -d "$(pwd)/venv" ]; then
+        source venv/bin/activate
+    else
+        python -m venv venv && source venv/bin/activate && pip install --upgrade pip
+    fi
 }
 
 qq() {
@@ -168,11 +168,11 @@ rmqq() {
 }
 
 functiun weather () {
-  curl wttr.in/$1
+    curl wttr.in/$1
 }
 
 function random_cowsay () {
-  cowsay -f "$(cowsay -l | sed '1 d' | tr ' ' '\n' | shuf -n 1)"
+    cowsay -f "$(cowsay -l | sed '1 d' | tr ' ' '\n' | shuf -n 1)"
 }
 
 eval "$(direnv hook zsh)" # Set up direnv
