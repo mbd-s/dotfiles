@@ -88,7 +88,7 @@ alias zopen="vi $HOME/.zshrc"
 alias zource="source $HOME/.zshrc"
 
 # Relies on a function `creds` to refresh AWS credentials
-function aws_switch () {
+aws_switch () {
     env_name=$1
 
     export AWS_PROFILE=$env_name
@@ -130,7 +130,7 @@ function aws_switch () {
     fi
 }
 
-function pysetup () {
+pysetup () {
     if [ -d "$(pwd)/venv" ]; then
         source venv/bin/activate
     else
@@ -138,7 +138,7 @@ function pysetup () {
     fi
 }
 
-qq() {
+qq () {
     clear
 
     logpath="$TMPDIR/q"
@@ -153,7 +153,7 @@ qq() {
     tail -100f -- "$logpath"
 }
 
-rmqq() {
+rmqq () {
     logpath="$TMPDIR/q"
     if [[ -z "$TMPDIR" ]]; then
         logpath="/tmp/q"
@@ -164,12 +164,12 @@ rmqq() {
     qq
 }
 
-functiun weather () {
+weather () {
     curl wttr.in/$1
 }
 
-function random_cowsay () {
-    cowsay -f "$(cowsay -l | sed '1 d' | tr ' ' '\n' | shuf -n 1)"
+moo () {
+    fortune | cowsay -f "$(cowsay -l | sed '1 d' | tr ' ' '\n' | shuf -n 1)"
 }
 
 eval "$(direnv hook zsh)" # Set up direnv
