@@ -6,6 +6,7 @@ My personal dotfiles for software development on macOS. You probably don't want 
 
 - Install [Homebrew](https://brew.sh/)
 - You should be using `zsh` as your shell
+
 ## Installation
 
 First, clone the project:
@@ -21,31 +22,9 @@ The setup script works best on a clean install of macOS 12. It will install a bu
 make setup
 ```
 
-The command is nondestructive, so it won't overwrite existing files. To replace your files, first delete the existing files, then run `make setup`.
+The command is nondestructive, so it won't overwrite existing files. To delete any existing files, replacing them with the config files in this project, run `make setup-force`.
 
-To just create the symlinks:
-
-```shell
-make link
-```
-
-To just install the Homebrew packages:
-
-```shell
-make bundle
-```
-
-To just install the asdf plugins:
-
-```shell
-make plugins
-```
-
-To just install Oh My Zsh:
-
-```shell
-make omz
-```
+For other options, run `make help`.
 
 ## Configuration
 
