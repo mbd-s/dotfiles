@@ -46,6 +46,9 @@ plugins:
 	@asdf plugin-add terraform || true
 	@asdf install terraform latest
 	@asdf install terraform 0.14.7
+	@asdf plugin-add istioctl || true
+	@asdf install istioctl latest
+	@asdf install istioctl 1.11.4
 
 # Installs Oh My Zsh if no installation is found. Usage: `make omz`.
 omz:
