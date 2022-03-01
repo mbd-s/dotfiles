@@ -16,7 +16,6 @@
         pf = push --force-with-lease
 [pager]
         branch = false
-        diff = false
 [pull]
         rebase = false
 [interactive]
@@ -38,3 +37,5 @@
 	whitespace = red reverse
 [init]
         defaultBranch = main
+[diff-so-fancy]
+	stripLeadingSymbols = true
