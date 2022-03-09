@@ -66,4 +66,4 @@ detect_extensions = ["tf", "tfplan", "tfstate", "hcl"]
 disabled = false
 format = "[$time]($style)"
 time_format = "%H:%M "
-style ="#CFD8DC dimmed"
+style ="#95A5A6 dimmed"
