@@ -172,5 +172,23 @@ moo () {
     fortune | cowsay -f "$(cowsay -l | sed '1 d' | tr ' ' '\n' | shuf -n 1)"
 }
 
+countdown () {
+    if [[ $# -eq 0 ]] || ! [[ $1 =~ '^[0-9]+$' ]]; then
+        echo "Usage: countdown <seconds>"
+        return
+    fi
+
+    local now=$(date +%s)
+    local end=$((now + $1))
+    while (( now < end )); do
+        printf "$(tput setaf 2)%s\r" "$(date -u -j -f %s $((end - now)) +%T)"
+        sleep 0.25
+        now=$(date +%s)
+    done
+    printf "Time's up!$(tput sgr0)"
+    osascript -e 'display alert "Time'\''s up!"' > /dev/null
+    echo
+}
+
 eval "$(direnv hook zsh)" # Set up direnv
 eval "$(starship init zsh)" # Set up starship
