@@ -19,7 +19,7 @@ $terraform
 
 [aws]
 format = '([$symbol($profile)(\($region\))]($style))'
-style = "bold #8A2BE2"
+style = "bold cyan"
 
 [aws.region_aliases]
 eu-central-1 = ""
@@ -34,7 +34,7 @@ disabled = true
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-style = "bold #FF00FF"
+style = "bold #8A2BE2"
 truncation_length = 30
 
 [git_status]
@@ -46,14 +46,14 @@ diverged = "⇕ "
 untracked = '[?\($count\)](#DC143C) '
 stashed = '[\$](#0000FF) '
 modified = '[*\($count\)](#DC143C) '
-staged = '[+\($count\)](bright-green) '
-renamed = '[»\($count\)](bright-green) '
+staged = '[+\($count\)](green) '
+renamed = '[»\($count\)](green) '
 deleted = '[✘\($count\)](#DC143C) '
 
 [kubernetes]
 disabled = false
 format = '[ $symbol$context( \($namespace\))]($style)'
-style = "bold #0000FF"
+style = "bold #FFCC99"
 
 [kubernetes.context_aliases]
 'arn:.*:cluster/(?P<cluster>[\w-]+)' = "$cluster"

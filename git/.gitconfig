@@ -35,6 +35,10 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[color "status"]
+        added = green
+        changed = "#DC143C"
+        untracked = "#DC143C"
 [init]
         defaultBranch = main
 [diff-so-fancy]
