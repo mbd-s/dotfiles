@@ -12,6 +12,9 @@ $character
 """
 
 right_format = """
+$golang\
+$python\
+$ruby\
 $aws\
 $kubernetes\
 $terraform
@@ -53,6 +56,10 @@ staged = '[+\($count\)](green) '
 renamed = '[»\($count\)](green) '
 deleted = '[✘\($count\)](#DC143C) '
 
+[golang]
+format = "[$symbol($version )]($style)"
+version_format = "${raw}"
+
 [kubernetes]
 disabled = false
 format = '[ $symbol$context( \($namespace\))]($style)'
@@ -60,6 +67,15 @@ style = "bold #FFCC99"
 
 [kubernetes.context_aliases]
 'arn:.*:cluster/(?P<cluster>[\w-]+)' = "$cluster"
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+version_format = "${raw}"
+
+[ruby]
+format = "[$symbol($version )]($style)"
+symbol = "🔺 "
+version_format = "${raw}"
 
 [terraform]
 format = " [$symbol$workspace]($style)"
