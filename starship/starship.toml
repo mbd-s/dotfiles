@@ -29,6 +29,9 @@ style = "#1E90FF"
 repo_root_style = "bold #0000FF"
 truncation_length = 6
 
+[character]
+success_symbol = "[❯](green)"
+
 [gcloud]
 disabled = true
 
