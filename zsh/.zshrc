@@ -190,5 +190,27 @@ countdown () {
     echo
 }
 
+stopwatch () {
+    case $1 in
+        start)
+            echo "Stopwatch running..."
+            start=$SECONDS
+            ;;
+        stop)
+            if [ -n "$start" ]; then
+                stop=$SECONDS
+                elapsed_time=$((stop - start))
+                echo "Time elapsed: $(gdate -d@$elapsed_time -u +%H:%M:%S)"
+            else
+                echo "Stopwatch not started"
+                return
+            fi
+            ;;
+        *)
+            echo "Usage: stopwatch start|stop"
+            ;;
+    esac
+}
+
 eval "$(direnv hook zsh)" # Set up direnv
 eval "$(starship init zsh)" # Set up starship
