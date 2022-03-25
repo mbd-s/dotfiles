@@ -20,5 +20,8 @@
     },
     "files.trimTrailingWhitespace": true,
     "workbench.colorTheme": "Dracula",
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "files.associations": {
+        "*.gotmpl": "go-template"
+    }
 }
