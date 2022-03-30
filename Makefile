@@ -1,5 +1,3 @@
-SHELL=/bin/zsh
-
 .PHONY: bundle clean help link omz overwrite plugins setup setup-force unlink
 
 bundle: ## Installs Homebrew packages listed in the Brewfile. Usage: `make bundle`.
@@ -27,6 +25,7 @@ link: ## Links config files to the home directory. Usage: `make link`.
 	@mkdir -p ~/.config/bat
 	@[ -f ~/.config/bat/config ] || ln -s -v $(PWD)/bat/config ~/.config/bat/config
 	@[ -f ~/.config/starship.toml ] || ln -s -v $(PWD)/starship/starship.toml ~/.config/starship.toml
+	@[ ! -d "~/.config/fish" ] && ln -s -v $(PWD)/fish ~/.config
 
 omz: ## Installs Oh My Zsh if it's not already installed. Usage: `make omz`.
 	$(info Looking for Oh My Zsh...)
@@ -52,6 +51,7 @@ overwrite: ## Links config files to the home directory, overwriting any existing
 	@mkdir -p ~/.config/bat
 	@ln -sfn $(PWD)/bat/config ~/.config/bat/config
 	@ln -sfn $(PWD)/starship/starship.toml ~/.config/starship.toml
+	@ln -sfn $(PWD)/fish ~/.config
 
 plugins: ## Adds various asdf plugins, installs specified versions of them, and sets global versions. Usage: `make plugins`.
 	$(info Installing asdf plugins...)
@@ -89,5 +89,6 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/Library/Application\ Support/Code/User/settings.json ] || rm -v ~/Library/Application\ Support/Code/User/settings.json
 	@[ ! -L ~/Library/Application\ Support/Code/User/snippets/go.json ] || rm -v ~/Library/Application\ Support/Code/User/snippets/go.json
 	@[ ! -L ~/.zshrc ] || rm -v ~/.zshrc
+	@[ ! -L ~/.config/fish ] || rm -rfv ~/.config/fish
 
 .DEFAULT_GOAL := help

@@ -7,7 +7,7 @@
     "python.terminal.executeInFileDir": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Input Mono",
-    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
     "terminal.integrated.fontSize": 16,
     "editor.tabSize": 2,
     "editor.inlineSuggest.enabled": true,
@@ -23,5 +23,9 @@
     "files.autoSave": "afterDelay",
     "files.associations": {
         "*.gotmpl": "go-template"
-    }
+    },
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "editor.accessibilitySupport": "off"
 }
