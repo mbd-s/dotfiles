@@ -56,10 +56,8 @@ plugins: ## Adds asdf plugins, installs specified versions of them, and sets glo
 	@asdf global ruby latest
 	@asdf plugin-add terraform || true
 	@asdf install terraform latest
-	@asdf install terraform 0.14.7
 	@asdf plugin-add istioctl || true
 	@asdf install istioctl latest
-	@asdf install istioctl 1.11.4
 
 setup: | link bundle plugins ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
