@@ -1,11 +1,18 @@
 # Dotfiles
 
-My personal dotfiles for software development on macOS. You probably don't want to adopt these wholesale, but feel free to use what you like.
+My personal dotfiles for software development on macOS using a `fish` shell. You probably don't want to adopt these wholesale, but feel free to use what you like.
 
 ## Prerequisites
 
 - Install [Homebrew](https://brew.sh/)
-- You should be using `zsh` as your shell
+- Set [`fish`](https://fishshell.com/) as your default shell:
+
+```shell
+$ brew install fish
+$ chsh -s $(which fish)
+```
+
+You can also use these dotfiles with `zsh`. See the [installation instructions](#zsh-shell).
 
 ## Installation
 
@@ -16,17 +23,48 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script works best on a clean install of macOS 12. It will install a bunch of Homebrew packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh); and symlink the config files:
+The setup script works best on a clean install of macOS 12. It will install a bunch of Homebrew packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; and symlink the config files:
 
 ```shell
 make setup
 ```
 
-The command is nondestructive, so it won't overwrite existing files. To delete any existing files, replacing them with the config files in this project, run `make setup-force`.
+The command is nondestructive, so it won't overwrite existing files. To delete any existing files, replacing them with the config in this project, run `make setup-force`.
 
-For other options, run `make help`.
+### zsh shell
+
+First, follow the above installation instructions. To switch to `zsh`, just run `$ zsh`. To set `zsh` as the default shell:
+
+```shell
+$ chsh -s $(which zsh)
+```
+
+Next, symlink the `.zshrc` file in this project to your home directory:
+
+```shell
+make zsh-link
+```
+
+Finally, install Oh My Zsh, passing the `--keep-zshrc` flag so it won't overwrite the existing `.zshrc` with a boilerplate one:
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o ohmyzsh-install.sh; \
+sh ohmyzsh-install.sh --keep-zshrc;
+```
+
+To switch back to `fish`, run `$ fish`.
 
 ## Configuration
+
+### fish
+
+Private configuration can be stored in `$HOME/.config/fish/private.fish`. It will be ignored by `git`. Example `private.fish`:
+
+```shell
+set -x CDPATH . ~ /path/to/directory/that/you/want/in/CDPATH
+
+alias secret echo Something secret!
+```
 
 ### iTerm2
 
