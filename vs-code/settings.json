@@ -19,8 +19,9 @@
         "experimentalWorkspaceModule": true,
     },
     "files.trimTrailingWhitespace": true,
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Dark-Dracula",
     "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 100,
     "files.associations": {
         "*.gotmpl": "go-template"
     },
