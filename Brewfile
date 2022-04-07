@@ -62,6 +62,7 @@ cask "dbeaver-community"
 cask "discord"
 cask "docker"
 cask "dropbox", args: { require_sha: false }
+cask "fig"
 cask "font-hack-nerd-font"
 cask "firefox"
 cask "font-input", args: { require_sha: false }

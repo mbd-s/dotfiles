@@ -1,3 +1,7 @@
+# Fig pre block. Keep at the top of this file.
+export PATH="${PATH}:${HOME}/.local/bin"
+eval "$(fig init zsh pre)"
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # cd autocompletion
@@ -214,3 +218,7 @@ stopwatch () {
 
 eval "$(direnv hook zsh)" # Set up direnv
 eval "$(starship init zsh)" # Set up starship
+
+# Fig post block. Keep at the bottom of this file.
+eval "$(fig init zsh post)"
+
