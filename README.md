@@ -1,6 +1,6 @@
 # Dotfiles
 
-My personal dotfiles for software development on macOS using a `fish` shell. You probably don't want to adopt these wholesale, but feel free to use what you like.
+My personal dotfiles for an Intel-based Mac running macOS 12 and using a `fish` shell. You probably don't want to adopt these wholesale, but feel free to use what you like.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script works best on a clean install of macOS 12. It will install a bunch of Homebrew packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; and symlink the config files:
+The setup script bootstraps a new Mac. It will install a bunch of Homebrew packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; and symlink the config files:
 
 ```shell
 make setup
