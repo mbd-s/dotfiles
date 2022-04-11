@@ -46,6 +46,7 @@ brew "postgresql" # Object-relational database system
 brew "starship" # Cross-shell prompt for astronauts
 brew "telnet" # User interface to the TELNET protocol
 brew "terragrunt" # Thin wrapper for Terraform e.g. for locking state
+brew "tldr" # Simplified and community-driven man pages
 brew "tree" # Display directories as trees (with optional color/HTML output)
 brew "wget" # Internet file retriever
 brew "yamllint" # Linter for YAML files
