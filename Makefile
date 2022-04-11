@@ -21,6 +21,8 @@ link: ## Links config files. Usage: `make link`.
 	@[ -f ~/.config/bat/config ] || ln -s -v $(PWD)/bat/config ~/.config/bat/config
 	@[ -f ~/.config/starship.toml ] || ln -s -v $(PWD)/starship/starship.toml ~/.config/starship.toml
 	@[ -d ~/.config/fish ] || ln -s -v $(PWD)/fish ~/.config/fish
+	@mkdir -p ~/.config/peco
+	@[ -f ~/.config/peco/config.json ] || ln -s -v $(PWD)/peco/config.json ~/.config/peco/config.json
 
 link-zshrc: ## Links .zshrc. Usage: `make link-zshrc`.
 	$(info Linking .zshrc...)
@@ -39,6 +41,8 @@ overwrite: ## Links config files, overwriting any existing files. Usage: `make o
 	@ln -sfn $(PWD)/bat/config ~/.config/bat/config
 	@ln -sfn $(PWD)/starship/starship.toml ~/.config/starship.toml
 	@ln -sfn $(PWD)/fish ~/.config
+	@mkdir -p ~/.config/peco
+	@ln -sfn $(PWD)/peco/config.json ~/.config/peco/config.json
 
 plugins: ## Adds asdf plugins, installs specified versions of them, and sets global versions. Usage: `make plugins`.
 	$(info Installing asdf plugins...)
@@ -75,5 +79,6 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/Library/Application\ Support/Code/User/snippets/go.json ] || rm -v ~/Library/Application\ Support/Code/User/snippets/go.json
 	@[ ! -L ~/.zshrc ] || rm -v ~/.zshrc
 	@[ ! -L ~/.config/fish ] || rm -rfv ~/.config/fish
+	@[ ! -L ~/.config/peco/config.json ] || rm -rfv ~/.config/peco/config.json
 
 .DEFAULT_GOAL := help
