@@ -26,7 +26,6 @@ brew "fzf" # Command-line fuzzy finder written in Go
 brew "git" # Distributed revision control system
 brew "gitui" # Blazing fast terminal-ui for git written in rust
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
-brew "go" # Open source programming language to build simple/reliable/efficient software
 brew "golangci-lint" # Fast linters runner for Go
 brew "gomplate" # Command-line Golang template processor
 brew "helm" # Kubernetes package manager
