@@ -1,4 +1,5 @@
 {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
@@ -25,6 +26,8 @@
     "files.associations": {
         "*.gotmpl": "go-template"
     },
+    "go.toolsManagement.autoUpdate": true,
+    "ruby.intellisense": "rubyLocate",
     "terminal.integrated.env.osx": {
         "FIG_NEW_SESSION": "1"
     },
