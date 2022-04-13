@@ -19,6 +19,7 @@ brew "diff-so-fancy" # Good-lookin' diffs with diff-highlight and more
 brew "direnv" # Load/unload environment variables based on $PWD
 brew "exa" # Modern replacement for `ls`
 brew "exercism" # Command-line tool to interact with exercism.io
+brew "fd" # Simple, fast and user-friendly alternative to find
 brew "figlet" # Banner-like program prints strings as ASCII art
 brew "fish" # User-friendly command-line shell for UNIX-like operating systems
 brew "fortune" # Infamous electronic fortune-cookie generator
@@ -31,8 +32,12 @@ brew "gomplate" # Command-line Golang template processor
 brew "helm" # Kubernetes package manager
 brew "helmfile" # Deploy Kubernetes Helm Charts
 brew "htop" # Improved top (interactive process viewer)
+brew "httpie" # User-friendly cURL replacement (command-line HTTP client)
 brew "imagemagick" # Tools and libraries to manipulate images in many formats
+brew "jc" # Serializes the output of command-line tools to structured JSON output
+brew "jo" # JSON output from a shell
 brew "jq" # Lightweight and flexible command-line JSON processor
+brew "jump" # Helps you navigate your file system faster by learning your habits
 brew "kubectl" # Kubernetes command-line interface
 brew "kubergrunt" # Collection of commands to fill in the gaps between Terraform, Helm, and Kubectl
 brew "libsodium" # NaCl networking and cryptography library
@@ -42,13 +47,16 @@ brew "mas" # Mac App Store command-line interface
 brew "minikube" # Run a Kubernetes cluster locally
 brew "peco" # Simplistic interactive filtering tool
 brew "postgresql" # Object-relational database system
+brew "ripgrep" # Search tool like grep and The Silver Searcher
 brew "starship" # Cross-shell prompt for astronauts
 brew "telnet" # User interface to the TELNET protocol
 brew "terragrunt" # Thin wrapper for Terraform e.g. for locking state
+brew "tig" # Text interface for Git repositories
 brew "tldr" # Simplified and community-driven man pages
 brew "tree" # Display directories as trees (with optional color/HTML output)
 brew "wget" # Internet file retriever
 brew "yamllint" # Linter for YAML files
+brew "yq" # Process YAML documents from the CLI
 brew "zsh-autosuggestions" # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-completions" # Additional completion definitions for zsh
 

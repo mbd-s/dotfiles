@@ -21,5 +21,7 @@ set -g GREEN (tput setaf 2)
 set -g RED (tput setaf 1)
 set -g RESET (tput sgr0)
 
+jump shell fish | source
+
 source /usr/local/opt/asdf/libexec/asdf.fish
 starship init fish | source
