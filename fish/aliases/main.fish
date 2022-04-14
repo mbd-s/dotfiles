@@ -1,6 +1,6 @@
 alias ... "cd ../.."
 alias be "bundle exec"
-alias brewski "brew update && brew upgrade --greedy --ignore-pinned && brew cleanup && mas upgrade"
+alias brewski "brew update && brew upgrade --greedy --ignore-pinned && brew cleanup"
 alias dc "docker-compose"
 alias exa "exa -a --icons"
 alias exal "exa -lbha --icons --time-style=long-iso --color-scale"
