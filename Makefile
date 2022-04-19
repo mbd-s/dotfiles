@@ -79,6 +79,6 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/Library/Application\ Support/Code/User/snippets/go.json ] || rm -v ~/Library/Application\ Support/Code/User/snippets/go.json
 	@[ ! -L ~/.zshrc ] || rm -v ~/.zshrc
 	@[ ! -L ~/.config/fish ] || rm -rfv ~/.config/fish
-	@[ ! -L ~/.config/peco/config.json ] || rm -rfv ~/.config/peco/config.json
+	@[ ! -L ~/.config/peco/config.json ] || rm -v ~/.config/peco/config.json
 
 .DEFAULT_GOAL := help
