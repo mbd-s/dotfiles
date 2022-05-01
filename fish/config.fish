@@ -13,15 +13,14 @@ if [ -f $HOME/.config/fish/aliases/main.fish ]
 end
 
 set -g theme_color_scheme dracula
-set fish_greeting
+set fish_greeting # Disable fish_greeting
 
 set -gx HOMEBREW_NO_ENV_HINTS 1
 set -gx LESS "-R"
 set -g GREEN (tput setaf 2)
 set -g RED (tput setaf 1)
-set -g RESET (tput sgr0)
+set -g RESET_COLOR (tput sgr0)
 
-jump shell fish | source
-
-source /usr/local/opt/asdf/libexec/asdf.fish
-starship init fish | source
+jump shell fish | source # Configure jump
+source /usr/local/opt/asdf/libexec/asdf.fish # Configure asdf
+starship init fish | source # Configure starship

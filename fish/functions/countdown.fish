@@ -13,7 +13,7 @@ function countdown -a seconds
         set -f now (date +%s)
     end
 
-    printf "Time's up!"$RESET
+    printf "Time's up!"$RESET_COLOR
     osascript -e 'display alert "Time\'s up!"' > /dev/null
     echo
 end

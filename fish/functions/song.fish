@@ -13,6 +13,6 @@ function song
 
     set album $(osascript -e 'tell application "Music" to get album of current track')
 
-    echo "$GREEN♫ $song$RESET by $GREEN$artist$RESET
-    from $GREEN$album$RESET"
+    echo "$GREEN♫ $song$RESET_COLOR by $GREEN$artist$RESET_COLOR
+    from $GREEN$album$RESET_COLOR"
 end

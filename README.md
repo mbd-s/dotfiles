@@ -5,14 +5,14 @@ My personal dotfiles for an Intel-based Mac running macOS 12 and using a `fish` 
 ## Prerequisites
 
 - Install [Homebrew](https://brew.sh/)
-- Set [`fish`](https://fishshell.com/) as your default shell:
+- Install [`fish`](https://fishshell.com/) and set it as your default shell:
 
 ```shell
 $ brew install fish
 $ chsh -s $(which fish)
 ```
 
-You can also use these dotfiles with `zsh`. See the [installation instructions](#zsh-shell).
+You can also use these dotfiles with `zsh`. (I use `fish` day-to-day but keep the `zsh` config handy in case I need to drop into a POSIX-compliant shell.) See the [installation instructions](#zsh-shell).
 
 ## Installation
 
