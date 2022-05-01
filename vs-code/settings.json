@@ -1,35 +1,42 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
-    "editor.fontSize": 15,
-    "editor.fontFamily": "Input Mono",
-    "python.terminal.executeInFileDir": true,
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Input Mono",
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-    "terminal.integrated.fontSize": 16,
-    "editor.tabSize": 2,
-    "editor.inlineSuggest.enabled": true,
-    "redhat.telemetry.enabled": false,
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 120,
-    "go.lintTool": "golangci-lint",
-    "gopls": {
-        "experimentalWorkspaceModule": true,
-    },
-    "files.trimTrailingWhitespace": true,
-    "workbench.colorTheme": "Dark-Dracula",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 100,
-    "files.associations": {
-        "*.gotmpl": "go-template"
-    },
-    "go.toolsManagement.autoUpdate": true,
-    "ruby.intellisense": "rubyLocate",
-    "terminal.integrated.env.osx": {
-        "FIG_NEW_SESSION": "1"
-    },
-    "editor.accessibilitySupport": "off"
+  "terminal.integrated.shell.osx" : "\/usr\/local\/bin\/fish",
+  "editor.wordWrap" : "on",
+  "terminal.integrated.fontFamily" : "Input Mono",
+  "workbench.colorCustomizations" : {
+    "[*Dark*]" : {
+      "sideBar.foreground" : "#ca8dfd",
+      "list.hoverForeground" : "#00ff00"
+    }
+  },
+  "editor.fontFamily" : "Input Mono",
+  "editor.fontSize" : 15,
+  "terminal.integrated.fontSize" : 16,
+  "editor.wordWrapColumn" : 120,
+  "ruby.intellisense" : "rubyLocate",
+  "gopls" : {
+    "experimentalWorkspaceModule" : true
+  },
+  "workbench.colorTheme" : "Dark-Dracula",
+  "editor.defaultFormatter" : "esbenp.prettier-vscode",
+  "files.autoSaveDelay" : 100,
+  "redhat.telemetry.enabled" : false,
+  "editor.inlineSuggest.enabled" : true,
+  "workbench.editorAssociations" : {
+    "*.ipynb" : "jupyter.notebook.ipynb"
+  },
+  "terminal.external.osxExec" : "iTerm.app",
+  "go.toolsManagement.autoUpdate" : true,
+  "python.terminal.executeInFileDir" : true,
+  "editor.accessibilitySupport" : "off",
+  "editor.tabSize" : 2,
+  "files.trimTrailingWhitespace" : true,
+  "go.lintTool" : "golangci-lint",
+  "terminal.integrated.env.osx" : {
+    "FIG_NEW_SESSION": "1"
+  },
+  "files.autoSave" : "afterDelay",
+  "files.associations" : {
+    "*.gotmpl" : "go-template"
+  },
+  "explorer.confirmDelete": false
 }
