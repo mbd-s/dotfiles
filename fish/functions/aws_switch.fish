@@ -14,7 +14,7 @@ function aws_switch -a environment
             echo $credentials_error_message && return
         case 254
             type -q creds; or echo $credentials_error_message && return
-            echo $GREEN"Refreshing credentials..."$RESET_COLOR && creds && sleep 7 && aws sts get-caller-identity --no-cli-pager; or echo $credentials_error_message && return
+            echo $GREEN"Refreshing credentials..."$RESET_COLOR && creds && sleep 8 && aws sts get-caller-identity --no-cli-pager; or echo $credentials_error_message && return
     end
     echo
 
