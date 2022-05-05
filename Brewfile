@@ -10,6 +10,7 @@ cask_args require_sha: true
 brew 'asdf' # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "aws-iam-authenticator" # Use AWS IAM credentials to authenticate to Kubernetes
 brew "awscli" # Official Amazon AWS command-line interface
+brew "awsume" # Utility for easily assuming AWS IAM roles from the command-line
 brew "bat" # Clone of cat(1) with syntax highlighting and Git integration
 brew "cfssl" # CloudFlare's PKI toolkit
 brew "chroma" # General purpose syntax highlighter in pure Go (only configured for zsh)
