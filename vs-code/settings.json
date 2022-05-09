@@ -6,6 +6,10 @@
     "[*Dark*]" : {
       "sideBar.foreground" : "#ca8dfd",
       "list.hoverForeground" : "#00ff00"
+    },
+    "[*Light*]" : {
+      "sideBar.foreground" : "#9627f2",
+      "list.hoverForeground" : "#f70707"
     }
   },
   "editor.fontFamily" : "Input Mono",
