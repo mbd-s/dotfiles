@@ -1,4 +1,4 @@
-function aws_switch -a profile
+function aws_switch -a profile -d 'Switch between AWS profiles and Kubernetes contexts'
     awsume $profile
     kubectl config unset current-context > /dev/null
 

@@ -9,11 +9,12 @@ alias fopen "vi ~/.config/fish/config.fish"
 alias fource "source ~/.config/fish/config.fish"
 alias github "web-search github"
 alias google "web-search google"
-alias gti "git"
-alias k "kubectl"
-alias mine "code"
+alias gti git
+alias k kubectl
+alias mine code
 alias sfish "source ~/.config/fish/config.fish"
 alias shrug "echo '¯\_(ツ)_/¯' | pbcopy"
 alias so "web-search stackoverflow"
 alias speedtest "networkQuality -v"
 alias tree "command tree -C"
+alias us "awsume --unset && kubectl config unset current-context > /dev/null"

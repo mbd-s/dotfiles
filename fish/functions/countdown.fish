@@ -1,4 +1,4 @@
-function countdown -a seconds
+function countdown -d 'Command line timer' -a seconds
     if not test (string match -r '^[0-9]+$' "$seconds")
         echo "Usage: countdown <seconds>" && return
     end
