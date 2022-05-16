@@ -20,7 +20,6 @@
   "gopls" : {
     "experimentalWorkspaceModule" : true
   },
-  "workbench.colorTheme" : "Dark-Dracula",
   "editor.defaultFormatter" : "esbenp.prettier-vscode",
   "files.autoSaveDelay" : 100,
   "redhat.telemetry.enabled" : false,
@@ -42,5 +41,8 @@
   "files.associations" : {
     "*.gotmpl" : "go-template"
   },
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "workbench.preferredDarkColorTheme": "Dark-Dracula",
+  "workbench.preferredLightColorTheme": "Atom One Light",
+  "window.autoDetectColorScheme": true
 }
