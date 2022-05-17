@@ -44,5 +44,7 @@
   "explorer.confirmDelete": false,
   "workbench.preferredDarkColorTheme": "Dark-Dracula",
   "workbench.preferredLightColorTheme": "Atom One Light",
-  "window.autoDetectColorScheme": true
+  "window.autoDetectColorScheme": true,
+  "workbench.startupEditor": "none",
+  "files.insertFinalNewline": true
 }
