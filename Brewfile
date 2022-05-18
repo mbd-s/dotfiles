@@ -51,7 +51,6 @@ brew "postgresql" # Object-relational database system
 brew "ripgrep" # Search tool like grep and The Silver Searcher
 brew "starship" # Cross-shell prompt for astronauts
 brew "telnet" # User interface to the TELNET protocol
-brew "terragrunt" # Thin wrapper for Terraform e.g. for locking state
 brew "tig" # Text interface for Git repositories
 brew "tldr" # Simplified and community-driven man pages
 brew "tree" # Display directories as trees (with optional color/HTML output)

@@ -68,6 +68,8 @@ plugins: ## Adds asdf plugins, installs specified versions of them, and sets glo
 	@asdf install istioctl latest
 	@asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git || true
 	@asdf install kubectl latest
+	@asdf plugin-add terragrunt https://github.com/ohmer/asdf-terragrunt || true
+	@asdf install terragrunt latest
 
 setup: | link bundle plugins ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
