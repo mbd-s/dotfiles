@@ -40,6 +40,7 @@ brew "jo" # JSON output from a shell
 brew "jq" # Lightweight and flexible command-line JSON processor
 brew "jump" # Helps you navigate your file system faster by learning your habits
 brew "kubergrunt" # Collection of commands to fill in the gaps between Terraform, Helm, and Kubectl
+brew "lf" # Terminal file manager
 brew "libsodium" # NaCl networking and cryptography library
 brew "lolcat" # Rainbows and unicorns in your console!
 brew "mailhog" # Web and API based SMTP testing tool

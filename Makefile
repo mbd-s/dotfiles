@@ -23,6 +23,8 @@ link: ## Links config files. Usage: `make link`.
 	@[ -d ~/.config/fish ] || ln -s -v $(PWD)/fish ~/.config/fish
 	@mkdir -p ~/.config/peco
 	@[ -f ~/.config/peco/config.json ] || ln -s -v $(PWD)/peco/config.json ~/.config/peco/config.json
+	@mkdir -p ~/.config/lf
+	@[ -f ~/.config/lf/lfrc ] || ln -s -v $(PWD)/lf/lfrc ~/.config/lf/lfrc
 
 link-zshrc: ## Links .zshrc. Usage: `make link-zshrc`.
 	$(info Linking .zshrc...)
@@ -43,6 +45,8 @@ overwrite: ## Links config files, overwriting any existing files. Usage: `make o
 	@ln -sfn $(PWD)/fish ~/.config
 	@mkdir -p ~/.config/peco
 	@ln -sfn $(PWD)/peco/config.json ~/.config/peco/config.json
+	@mkdir -p ~/.config/lf
+	@ln -sfn $(PWD)/lf/lfrc ~/.config/lf/lfrc
 
 plugins: ## Adds asdf plugins, installs specified versions of them, and sets global versions. Usage: `make plugins`.
 	$(info Installing asdf plugins...)
@@ -82,5 +86,6 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/.zshrc ] || rm -v ~/.zshrc
 	@[ ! -L ~/.config/fish ] || rm -rfv ~/.config/fish
 	@[ ! -L ~/.config/peco/config.json ] || rm -v ~/.config/peco/config.json
+	@[ ! -L ~/.config/lf/lfrc ] || rm -v ~/.config/lf/lfrc
 
 .DEFAULT_GOAL := help
