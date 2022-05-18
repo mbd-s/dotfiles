@@ -7,7 +7,8 @@ tap "homebrew/services"
 cask_args require_sha: true
 
 # 'brew install'
-brew 'asdf' # Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "ansible" # Automate deployment, configuration, and upgrading
+brew "asdf" # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "aws-iam-authenticator" # Use AWS IAM credentials to authenticate to Kubernetes
 brew "awscli" # Official Amazon AWS command-line interface
 brew "awsume" # Utility for easily assuming AWS IAM roles from the command-line
