@@ -1,5 +1,5 @@
 function aws_switch -a profile -d 'Switch between AWS profiles and Kubernetes contexts'
-    awsume $profile
+    set -gx AWS_PROFILE $profile
     kubectl config unset current-context > /dev/null
 
     echo $GREEN"----------------| AWS Identity |----------------
