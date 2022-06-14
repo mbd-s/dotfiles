@@ -16,6 +16,7 @@ brew "cfssl" # CloudFlare's PKI toolkit
 brew "chroma" # General purpose syntax highlighter in pure Go (only configured for zsh)
 brew "coreutils" # GNU File, Shell, and Text utilities
 brew "cowsay" # Configurable talking characters in ASCII art
+brew "derailed/k9s/k9s" # Kubernetes CLI To Manage Your Clusters In Style!
 brew "diff-so-fancy" # Good-lookin' diffs with diff-highlight and more
 brew "direnv" # Load/unload environment variables based on $PWD
 brew "exa" # Modern replacement for `ls`
@@ -76,7 +77,6 @@ cask "font-hack-nerd-font" # A typeface designed for source code
 cask "font-input", args: { require_sha: false } # Input is a flexible system of fonts designed specifically for code by David Jonathan Ross
 cask "google-chrome", args: { require_sha: false } # Web browser
 cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
-cask "lens" # Kubernetes IDE
 cask "libreoffice" # Office suite
 cask "postman" # Collaboration platform for API development
 cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas
