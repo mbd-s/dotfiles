@@ -46,5 +46,11 @@
   "workbench.preferredLightColorTheme": "Atom One Light",
   "window.autoDetectColorScheme": true,
   "workbench.startupEditor": "none",
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  }
 }
