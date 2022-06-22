@@ -14,7 +14,7 @@ link: ## Links config files. Usage: `make link`.
 	@[ -f ~/.gitconfig ] || ln -s -v $(PWD)/git/.gitconfig ~/.gitconfig
 	@[ -f ~/.gitignore_global ] || ln -s -v $(PWD)/git/.gitignore_global ~/.gitignore_global
 	@[ -f ~/.vimrc ] || ln -s -v $(PWD)/vim/.vimrc ~/.vimrc
-	@[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s -v $(PWD)/vs-code/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	@[ -f ~/Library/Application\ Support/Code/User/settings.json ] || cp $(PWD)/vs-code/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	@[ -f ~/Library/Application\ Support/Code/User/snippets/go.json ] || ln -s -v $(PWD)/vs-code/snippets/go.json ~/Library/Application\ Support/Code/User/snippets/go.json
 	@mkdir -p ~/.config
 	@mkdir -p ~/.config/bat
@@ -36,7 +36,7 @@ overwrite: ## Links config files, overwriting any existing files. Usage: `make o
 	@ln -sfn $(PWD)/git/.gitconfig ~/.gitconfig
 	@ln -sfn $(PWD)/git/.gitignore_global ~/.gitignore_global
 	@ln -sfn $(PWD)/vim/.vimrc ~/.vimrc
-	@ln -sfn $(PWD)/vs-code/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	@cp $(PWD)/vs-code/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	@ln -sfn $(PWD)/vs-code/snippets/go.json ~/Library/Application\ Support/Code/User/snippets/go.json
 	@mkdir -p ~/.config
 	@mkdir -p ~/.config/bat
