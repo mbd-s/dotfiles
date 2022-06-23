@@ -3,6 +3,5 @@
 server.sh
 .vscode/
 .byebug_history
-.tool-versions
 private.fish
 fish_variables
