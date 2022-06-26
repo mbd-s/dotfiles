@@ -90,6 +90,7 @@ cask "zoom" # Video communication and virtual meeting platform
 
 # 'mas install'
 mas "Bear", id: 1091189122 # Private Markdown Editor for iPhone, iPad and Mac
+mas "Save to Pocket", id: 1477385213 # Your save button for the internet
 mas "Shazam", id: 897118787 # Identify the music playing around you
 mas "StuffIt Expander", id: 919269455 # Free tool to expand SITX, ZIP, ZIPX, SIT5, and RAR archives
 mas "Telephone", id: 406825478 # SIP softphone
