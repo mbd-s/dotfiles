@@ -13,7 +13,7 @@ function aws_switch -a profile -d 'Switch between AWS profiles and Kubernetes co
             echo $credentials_error_message && return
         case 254
             type -q creds; or echo $credentials_error_message && return
-            echo $GREEN"Refreshing credentials..."$RESET_COLOR && creds && sleep 8 && aws --profile $profile sts get-caller-identity --no-cli-pager; or echo $credentials_error_message && return
+            echo $GREEN"Refreshing credentials..."$RESET_COLOR && creds && sleep 5 && aws --profile $profile sts get-caller-identity --no-cli-pager; or echo $credentials_error_message && return
     end
     echo
 
