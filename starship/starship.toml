@@ -23,6 +23,7 @@ $terraform
 [aws]
 format = '([$symbol($profile)(\($region\))]($style))'
 style = "bold cyan"
+force_display = true
 
 [aws.region_aliases]
 eu-central-1 = ""
