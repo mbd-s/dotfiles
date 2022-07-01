@@ -9,11 +9,24 @@
         attributesfile = ~/.gitattributes
         pager = diff-so-fancy | less --tabs=4 -R
 [alias]
-        st = status
+        aa = add .
+        br = branch
+        ca = commit --amend
+        ci = commit
+        cm = commit -m
         co = checkout
-        ck = checkout
+        cp = cherry-pick
+        cv = commit -v
+        d = diff
+        last = log -1 HEAD
+        ll = log --oneline
         lp = log -p
+        mine = log --author='Michael Silverberg'
         pf = push --force-with-lease
+        ri = rebase -i
+        rv = remote -v
+        st = status -sb
+        sw = switch
 [pager]
         branch = false
 [pull]
