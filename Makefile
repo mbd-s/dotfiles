@@ -1,4 +1,4 @@
-.PHONY: bundle help link link-zshrc overwrite plugins setup setup-force unlink
+.PHONY: bundle help link link-zshrc overwrite asdf setup setup-force unlink
 
 bundle: ## Installs Homebrew packages listed in the Brewfile. Usage: `make bundle`.
 	$(info Installing Homebrew packages)
@@ -48,7 +48,7 @@ overwrite: ## Links config files, overwriting any existing files. Usage: `make o
 	@mkdir -p ~/.config/lf
 	@ln -sfn $(PWD)/lf/lfrc ~/.config/lf/lfrc
 
-plugins: ## Adds asdf plugins, installs specified versions of them, and sets global versions. Usage: `make plugins`.
+asdf: ## Adds asdf plugins, installs specified versions of them, and sets global versions. Usage: `make asdf`.
 	$(info Installing asdf plugins...)
 	@asdf plugin-add golang || true
 	@asdf install golang latest
@@ -73,9 +73,10 @@ plugins: ## Adds asdf plugins, installs specified versions of them, and sets glo
 	@asdf plugin-add kubergrunt || true
 	@asdf install kubergrunt latest
 
-setup: | link bundle plugins ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
-setup-force: | overwrite bundle plugins ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
+setup: | link bundle asdf ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
+
+setup-force: | overwrite bundle asdf ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
 
 unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	$(info Unlinking symlinked config files...)
