@@ -31,6 +31,8 @@
         branch = false
 [pull]
         rebase = false
+[push]
+	autoSetupRemote = true
 [interactive]
 	diffFilter = diff-so-fancy --patch
 [color]
