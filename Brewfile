@@ -37,6 +37,7 @@ brew "htop" # Improved top (interactive process viewer)
 brew "httpie" # User-friendly cURL replacement (command-line HTTP client)
 brew "imagemagick" # Tools and libraries to manipulate images in many formats
 brew "jc" # Serializes the output of command-line tools to structured JSON output
+brew "jjuarez/tap/kubecolor" # Colorize your kubectl output (Alternate formula since brew installation is currently broken for the main repo: https://github.com/hidetatz/kubecolor/issues/90
 brew "jo" # JSON output from a shell
 brew "jq" # Lightweight and flexible command-line JSON processor
 brew "jump" # Helps you navigate your file system faster by learning your habits
