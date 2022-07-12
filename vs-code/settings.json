@@ -1,5 +1,5 @@
 {
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terminal.integrated.shell.osx": "/opt/homebrew/bin/fish",
   "editor.wordWrap": "on",
   "terminal.integrated.fontFamily": "Input Mono",
   "workbench.colorCustomizations": {

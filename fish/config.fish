@@ -22,5 +22,12 @@ set -g RED (tput setaf 1)
 set -g RESET_COLOR (tput sgr0)
 
 jump shell fish | source # Configure jump
-source /usr/local/opt/asdf/libexec/asdf.fish # Configure asdf
+
+# Configure asdf
+if test (arch) = 'arm64'
+    source /opt/homebrew/opt/asdf/libexec/asdf.fish
+else
+    source /usr/local/opt/asdf/libexec/asdf.fish
+end
+
 starship init fish | source # Configure starship

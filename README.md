@@ -1,6 +1,6 @@
 # Dotfiles
 
-My personal dotfiles for an Intel-based Mac running macOS 12 and using a `fish` shell. You probably don't want to adopt these wholesale, but feel free to use what you like.
+My personal dotfiles for an ARM or Intel Mac running macOS 12 and using a `fish` shell. You probably don't want to adopt these wholesale, but feel free to use what you like.
 
 ## Prerequisites
 
@@ -8,9 +8,13 @@ My personal dotfiles for an Intel-based Mac running macOS 12 and using a `fish` 
 - [Xcode Command Line Tools](https://mac.install.guide/commandlinetools/index.html)
 - [`fish`](https://fishshell.com/)
 
+To install `fish`, add it to the list of system shells, set it as the default shell, and add `brew` binaries to the `fish` path:
+
 ```shell
-$ brew install fish
-$ chsh -s $(which fish)
+brew install fish
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
+set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
 ```
 
 You can also use these dotfiles with `zsh`. (I use `fish` day-to-day but keep the `zsh` config handy in case I need to drop into a POSIX-compliant shell.) See the [installation instructions](#zsh-shell).
@@ -34,7 +38,7 @@ The command is nondestructive, so it won't overwrite existing files. To delete a
 
 ### zsh shell
 
-First, follow the above installation instructions. To switch to `zsh`, just run `$ zsh`. To set `zsh` as the default shell:
+First, follow the above installation instructions. To switch to `zsh`, just run `zsh` in the terminal. To set `zsh` as the default shell:
 
 ```shell
 $ chsh -s $(which zsh)
@@ -53,7 +57,7 @@ curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/instal
 sh ohmyzsh-install.sh --keep-zshrc;
 ```
 
-To switch back to `fish`, run `$ fish`.
+To switch back to `fish`, run `fish`.
 
 ## Configuration
 
@@ -84,9 +88,10 @@ alias secret echo Something secret!
 3. Select `Profiles`, then `Keys`.
 4. Select the `Presets...` dropdown menu and click `Import...`.
 5. Choose `~/dotfiles/iterm/custom.itermkeymap`.
+
 ### Visual Studio Code
 
-You can also synchronize your editor configuration across machines with [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync).
+Visual Studio Code settings are copied rather than symlinked. You can synchronize your editor configuration across machines with [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync).
 
 ### Git
 
@@ -99,13 +104,7 @@ To split home and work concerns in `git`, nest work-related repositories inside 
 
 ## Uninstalling
 
-To remove the symlinks and uninstall Oh My Zsh:
-
-```shell
-make clean
-```
-
-To just remove the symlinks:
+To remove symlinked files:
 
 ```shell
 make unlink

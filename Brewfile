@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "jjuarez/tap-1"
 cask_args require_sha: true
 
 # 'brew install'
@@ -16,7 +17,6 @@ brew "cfssl" # CloudFlare's PKI toolkit
 brew "chroma" # General purpose syntax highlighter in pure Go (only configured for zsh)
 brew "coreutils" # GNU File, Shell, and Text utilities
 brew "cowsay" # Configurable talking characters in ASCII art
-brew "derailed/k9s/k9s" # Kubernetes CLI To Manage Your Clusters In Style!
 brew "diff-so-fancy" # Good-lookin' diffs with diff-highlight and more
 brew "direnv" # Load/unload environment variables based on $PWD
 brew "exa" # Modern replacement for `ls`
@@ -37,10 +37,11 @@ brew "htop" # Improved top (interactive process viewer)
 brew "httpie" # User-friendly cURL replacement (command-line HTTP client)
 brew "imagemagick" # Tools and libraries to manipulate images in many formats
 brew "jc" # Serializes the output of command-line tools to structured JSON output
-brew "jjuarez/tap/kubecolor" # Colorize your kubectl output (Alternate formula since brew installation is currently broken for the main repo: https://github.com/hidetatz/kubecolor/issues/90
+brew "jjuarez/tap-1/kubecolor" # Colorize your kubectl output (Alternate formula since brew installation is currently broken for the main repo: https://github.com/hidetatz/kubecolor/issues/90)
 brew "jo" # JSON output from a shell
 brew "jq" # Lightweight and flexible command-line JSON processor
 brew "jump" # Helps you navigate your file system faster by learning your habits
+brew "k9s" # Kubernetes CLI to manage your clusters in style!
 brew "lf" # Terminal file manager
 brew "libsodium" # NaCl networking and cryptography library
 brew "lolcat" # Rainbows and unicorns in your console!
