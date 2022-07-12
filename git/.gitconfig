@@ -58,3 +58,5 @@
         defaultBranch = main
 [diff-so-fancy]
 	stripLeadingSymbols = true
+[add "interactive"]
+	useBuiltin = false
