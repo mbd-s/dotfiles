@@ -4,8 +4,9 @@ My personal dotfiles for an Intel-based Mac running macOS 12 and using a `fish` 
 
 ## Prerequisites
 
-- Install [Homebrew](https://brew.sh/)
-- Install [`fish`](https://fishshell.com/) and set it as your default shell:
+- [Homebrew](https://brew.sh/)
+- [Xcode Command Line Tools](https://mac.install.guide/commandlinetools/index.html)
+- [`fish`](https://fishshell.com/)
 
 ```shell
 $ brew install fish
