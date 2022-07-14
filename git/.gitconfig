@@ -60,3 +60,5 @@
 	stripLeadingSymbols = true
 [add "interactive"]
 	useBuiltin = false
+[rebase]
+	autosquash = true
