@@ -9,7 +9,7 @@
         attributesfile = ~/.gitattributes
         pager = diff-so-fancy | less --tabs=4 -R
 [alias]
-        aa = add .
+        aa = add -A
         br = branch
         ca = commit --amend
         ci = commit
