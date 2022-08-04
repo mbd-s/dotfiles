@@ -1,6 +1,7 @@
 # Dotfiles
 
-My personal dotfiles for an ARM or Intel Mac running macOS 12 and using a `fish` shell. You probably don't want to adopt these wholesale, but feel free to use what you like.
+My personal dotfiles for an ARM or Intel Mac running macOS 12 and using a `fish` shell. You probably
+don't want to adopt these wholesale, but feel free to use what you like.
 
 ## Prerequisites
 
@@ -8,37 +9,45 @@ My personal dotfiles for an ARM or Intel Mac running macOS 12 and using a `fish`
 - [Xcode Command Line Tools](https://mac.install.guide/commandlinetools/index.html)
 - [`fish`](https://fishshell.com/)
 
-To install `fish`, add it to the list of system shells, set it as the default shell, and add `brew` binaries to the `fish` path:
+To set up `fish` as your default shell, run the following commands. They will install `fish`, add it
+to the list of system shells, set it as the default shell, and add `brew` binaries to the PATH:
 
 ```shell
 brew install fish
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
-set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+set -U fish_user_paths /opt/homebrew/bin $fish_user_paths # ARM
+set -U fish_user_paths /usr/local/homebrew/bin $fish_user_paths # Intel
 ```
 
-You can also use these dotfiles with `zsh`. (I use `fish` day-to-day but keep the `zsh` config handy in case I need to drop into a POSIX-compliant shell.) See the [installation instructions](#zsh-shell).
+You can also use these dotfiles with `zsh`. I use `fish` day-to-day but keep my (by now fairly
+outdated) `zsh` config handy in case I need to drop into a POSIX-compliant shell. See the
+[installation instructions](#zsh-shell).
 
 ## Installation
 
-First, clone the project:
+First, clone the project and `cd` into the directory:
 
 ```shell
 git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script bootstraps a new Mac. It will install a bunch of Homebrew packages (as defined in the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins; and symlink the config files:
+The setup script bootstraps a new Mac. It will install a bunch of Homebrew packages (as defined in
+the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins;
+and symlink the config files:
 
 ```shell
 make setup
 ```
 
-The command is nondestructive, so it won't overwrite existing files. To delete any existing files, replacing them with the config in this project, run `make setup-force`.
+The command is nondestructive, so it won't overwrite existing files. To delete any existing files,
+replacing them with the config in this project, run `make setup-force`.
 
 ### zsh shell
 
-First, follow the above installation instructions. To switch to `zsh`, just run `zsh` in the terminal. To set `zsh` as the default shell:
+First, follow the above installation instructions. To switch to `zsh`, just run `zsh` in the
+terminal. To set `zsh` as the default shell:
 
 ```shell
 $ chsh -s $(which zsh)
@@ -50,7 +59,8 @@ Next, symlink the `.zshrc` file in this project to your home directory:
 make zsh-link
 ```
 
-Finally, install Oh My Zsh, passing the `--keep-zshrc` flag so it won't overwrite the existing `.zshrc` with a boilerplate one:
+Finally, install Oh My Zsh, passing the `--keep-zshrc` flag so it won't overwrite the existing
+`.zshrc` with a boilerplate one:
 
 ```shell
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o ohmyzsh-install.sh; \
@@ -63,13 +73,18 @@ To switch back to `fish`, run `fish`.
 
 ### fish
 
-Private configuration can be stored in `$HOME/.config/fish/private.fish`. It will be ignored by `git`. Example `private.fish`:
+Private configuration can be stored in `$HOME/.config/fish/private.fish`. It will be ignored by
+`git`. Example `private.fish`:
 
 ```shell
 set -x CDPATH . ~ /path/to/directory/that/you/want/in/CDPATH
 
-alias secret echo Something secret!
+alias secret "echo Something secret!"
 ```
+
+### git
+
+Make sure to update the `.gitconfig` with your own user details.
 
 ### iTerm2
 
@@ -91,11 +106,15 @@ alias secret echo Something secret!
 
 ### Visual Studio Code
 
-Visual Studio Code settings are copied rather than symlinked. You can synchronize your editor configuration across machines with [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync).
+The Visual Studio Code settings file is copied rather than symlinked. I prefer copying over
+symlinking because it gets around the mess created when you have a versioned file and also use VS
+Code's [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync) across multiple
+machines.
 
 ### Git
 
-To split home and work concerns in `git`, nest work-related repositories inside a `work/` directory and configure a different `git` user at `~/dotfiles/git/work/.gitconfig`. Example:
+To split home and work concerns in `git`, nest work-related repositories inside a `work/` directory
+and configure a different `git` user at `~/dotfiles/git/work/.gitconfig`. Example:
 
 ```
 [user]

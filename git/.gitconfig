@@ -7,7 +7,7 @@
         excludesfile = ~/.gitignore_global
         autocrlf = input
         attributesfile = ~/.gitattributes
-        pager = diff-so-fancy | less --tabs=4 -RF
+        pager = diff-so-fancy | less --tabs=4
 [alias]
         aa = add -A
         br = branch
@@ -21,7 +21,7 @@
         last = log -1 HEAD
         ll = log --oneline
         lp = log -p
-        mine = log --author='Michael Silverberg'
+        mine = log --author="Michael Silverberg"
         pf = push --force-with-lease
         ri = rebase -i
         rv = remote -v
@@ -58,7 +58,5 @@
         defaultBranch = main
 [diff-so-fancy]
 	stripLeadingSymbols = true
-[add "interactive"]
-	useBuiltin = false
 [rebase]
 	autosquash = true

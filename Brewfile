@@ -1,4 +1,4 @@
-# 'brew tap'
+# brew tap
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -7,7 +7,7 @@ tap "homebrew/services"
 tap "jjuarez/tap-1"
 cask_args require_sha: true
 
-# 'brew install'
+# brew install
 brew "ansible" # Automate deployment, configuration, and upgrading
 brew "asdf" # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "aws-iam-authenticator" # Use AWS IAM credentials to authenticate to Kubernetes
@@ -62,7 +62,7 @@ brew "yq" # Process YAML documents from the CLI
 brew "zsh-autosuggestions" # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-completions" # Additional completion definitions for zsh
 
-# 'brew install --cask'
+# brew install --cask
 cask "1password" # Password manager that keeps all passwords secure behind one password
 cask "adobe-acrobat-reader" # View, print, and comment on PDF documents
 cask "alfred" # Application launcher and productivity software
@@ -91,7 +91,7 @@ cask "vlc" # Multimedia player
 cask "whatsapp" # Desktop client for WhatsApp
 cask "zoom" # Video communication and virtual meeting platform
 
-# 'mas install'
+# mas install
 mas "Bear", id: 1091189122 # Private Markdown Editor for iPhone, iPad and Mac
 mas "Save to Pocket", id: 1477385213 # Your save button for the internet
 mas "Shazam", id: 897118787 # Identify the music playing around you
