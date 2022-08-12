@@ -71,7 +71,6 @@ cask "caffeine" # Utility that prevents the system from going to sleep
 cask "dbeaver-community" # Universal database tool and SQL client
 cask "discord" # Voice and text chat software
 cask "docker" # App to build and share containerized applications and microservices
-cask "dropbox", args: { require_sha: false } # Client for the Dropbox cloud storage service
 cask "fig" # Fig adds IDE-style autocomplete to your existing terminal
 cask "firefox" # Web browser
 cask "font-hack-nerd-font" # A typeface designed for source code
