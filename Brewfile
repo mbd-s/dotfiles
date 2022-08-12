@@ -48,6 +48,7 @@ brew "lolcat" # Rainbows and unicorns in your console!
 brew "mailhog" # Web and API based SMTP testing tool
 brew "mas" # Mac App Store command-line interface
 brew "minikube" # Run a Kubernetes cluster locally
+brew "nmap" # Port scanning utility for large networks
 brew "peco" # Simplistic interactive filtering tool
 brew "postgresql" # Object-relational database system
 brew "ripgrep" # Search tool like grep and The Silver Searcher
