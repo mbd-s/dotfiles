@@ -26,7 +26,7 @@ asdf: ## Adds asdf plugins, installs specified versions of them, and sets global
 	@asdf install kubergrunt latest
 
 brew: ## Installs Homebrew packages listed in the Brewfile. Usage: `make brew`.
-	$(info Installing Homebrew packages)
+	$(info Installing Homebrew packages...)
 	@brew bundle
 	@brew cleanup
 
@@ -41,47 +41,47 @@ help: ## Shows this help message. Usage: `make help`.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 link: ## Links config files. Usage: `make link`.
-	$(info Linking config files...)
-	@[ -f ~/.asdfrc ] || ln -s -v $(PWD)/asdf/.asdfrc ~/.asdfrc
-	@[ -f ~/.gitconfig ] || ln -s -v $(PWD)/git/.gitconfig ~/.gitconfig
-	@[ -f ~/.gitignore_global ] || ln -s -v $(PWD)/git/.gitignore_global ~/.gitignore_global
-	@[ -f ~/.vimrc ] || ln -s -v $(PWD)/vim/.vimrc ~/.vimrc
+	$(info Linking config files)
+	@[ -f ~/.asdfrc ] || ln -sv $(PWD)/asdf/.asdfrc ~/.asdfrc
+	@[ -f ~/.gitconfig ] || ln -sv $(PWD)/git/.gitconfig ~/.gitconfig
+	@[ -f ~/.gitignore_global ] || ln -sv $(PWD)/git/.gitignore_global ~/.gitignore_global
+	@[ -f ~/.vimrc ] || ln -sv $(PWD)/vim/.vimrc ~/.vimrc
 	@mkdir -p ~/.config
 	@mkdir -p ~/.config/bat
-	@[ -f ~/.config/bat/config ] || ln -s -v $(PWD)/bat/config ~/.config/bat/config
-	@[ -f ~/.config/starship.toml ] || ln -s -v $(PWD)/starship/starship.toml ~/.config/starship.toml
-	@[ -d ~/.config/fish ] || ln -s -v $(PWD)/fish ~/.config/fish
+	@[ -f ~/.config/bat/config ] || ln -sv $(PWD)/bat/config ~/.config/bat/config
+	@[ -f ~/.config/starship.toml ] || ln -sv $(PWD)/starship/starship.toml ~/.config/starship.toml
+	@[ -d ~/.config/fish ] || ln -sv $(PWD)/fish ~/.config/fish
 	@mkdir -p ~/.config/peco
-	@[ -f ~/.config/peco/config.json ] || ln -s -v $(PWD)/peco/config.json ~/.config/peco/config.json
+	@[ -f ~/.config/peco/config.json ] || ln -sv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf
-	@[ -f ~/.config/lf/lfrc ] || ln -s -v $(PWD)/lf/lfrc ~/.config/lf/lfrc
+	@[ -f ~/.config/lf/lfrc ] || ln -sv $(PWD)/lf/lfrc ~/.config/lf/lfrc
 
 link-zshrc: ## Links .zshrc. Usage: `make link-zshrc`.
-	$(info Linking .zshrc...)
-	@[ -f ~/.zshrc ] || ln -s -v $(PWD)/zsh/.zshrc ~/.zshrc
+	$(info Linking .zshrc)
+	@[ -f ~/.zshrc ] || ln -sv $(PWD)/zsh/.zshrc ~/.zshrc
 
 overwrite: ## Links config files, overwriting any existing files. Usage: `make overwrite`.
-	$(info Overwriting config files...)
-	@ln -sfn $(PWD)/asdf/.asdfrc ~/.asdfrc
-	@ln -sfn $(PWD)/git/.gitconfig ~/.gitconfig
-	@ln -sfn $(PWD)/git/.gitignore_global ~/.gitignore_global
-	@ln -sfn $(PWD)/vim/.vimrc ~/.vimrc
+	$(info Overwriting config files)
+	@ln -sfnv $(PWD)/asdf/.asdfrc ~/.asdfrc
+	@ln -sfnv $(PWD)/git/.gitconfig ~/.gitconfig
+	@ln -sfnv $(PWD)/git/.gitignore_global ~/.gitignore_global
+	@ln -sfnv $(PWD)/vim/.vimrc ~/.vimrc
 	@mkdir -p ~/.config
 	@mkdir -p ~/.config/bat
-	@ln -sfn $(PWD)/bat/config ~/.config/bat/config
-	@ln -sfn $(PWD)/starship/starship.toml ~/.config/starship.toml
-	@ln -sfn $(PWD)/fish ~/.config
+	@ln -sfnv $(PWD)/bat/config ~/.config/bat/config
+	@ln -sfnv $(PWD)/starship/starship.toml ~/.config/starship.toml
+	@ln -sfnv $(PWD)/fish ~/.config
 	@mkdir -p ~/.config/peco
-	@ln -sfn $(PWD)/peco/config.json ~/.config/peco/config.json
+	@ln -sfnv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf
-	@ln -sfn $(PWD)/lf/lfrc ~/.config/lf/lfrc
+	@ln -sfnv $(PWD)/lf/lfrc ~/.config/lf/lfrc
 
 setup: | link chip-support brew vs-code asdf ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
 setup-force: | overwrite chip-support brew vs-code-overwrite asdf ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
 
 unlink: ## Removes all symlinked config files. Usage: `make unlink`.
-	$(info Unlinking symlinked config files...)
+	$(info Unlinking symlinked config files)
 	@[ ! -L ~/.asdfrc ] || rm -v ~/.asdfrc
 	@[ ! -L ~/.config/bat/config ] || rm -v ~/.config/bat/config
 	@[ ! -L ~/.gitconfig ] || rm -v ~/.gitconfig
