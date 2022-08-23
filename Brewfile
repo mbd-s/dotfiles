@@ -14,6 +14,7 @@ brew "aws-iam-authenticator" # Use AWS IAM credentials to authenticate to Kubern
 brew "awscli" # Official Amazon AWS command-line interface
 brew "bat" # Clone of cat(1) with syntax highlighting and Git integration
 brew "cfssl" # CloudFlare's PKI toolkit
+brew "checkov" # Prevent cloud misconfigurations during build-time for IaC tools
 brew "chroma" # General purpose syntax highlighter in pure Go (only configured for zsh)
 brew "coreutils" # GNU File, Shell, and Text utilities
 brew "cowsay" # Configurable talking characters in ASCII art
