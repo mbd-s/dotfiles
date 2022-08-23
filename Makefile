@@ -78,7 +78,7 @@ overwrite: ## Links config files, overwriting any existing files. Usage: `make o
 
 setup: | link chip-support brew vs-code asdf ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
-setup-force: | overwrite chip-support brew vs-code asdf ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
+setup-force: | overwrite chip-support brew vs-code-overwrite asdf ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
 
 unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	$(info Unlinking symlinked config files...)
@@ -93,9 +93,18 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/.config/peco/config.json ] || rm -v ~/.config/peco/config.json
 	@[ ! -L ~/.config/lf/lfrc ] || rm -v ~/.config/lf/lfrc
 
-vs-code: ## Sets up Visual Studio Code config files. Usage: `make vs-code`.
-	$(info Setting up Visual Studio Code config)
+vs-code: ## Sets up VS Code config files. Usage: `make vs-code`.
+	$(info Setting up VS Code config)
 	@[ -f ~/Library/Application\ Support/Code/User/settings.json ] || cp $(PWD)/vs-code/settings.json ~/Library/Application\ Support/Code/User/settings.json
-	@[ -f ~/Library/Application\ Support/Code/User/snippets/go.json ] || ln -s -v $(PWD)/vs-code/snippets/go.json ~/Library/Application\ Support/Code/User/snippets/go.json
+	@[ -f ~/Library/Application\ Support/Code/User/snippets/go.json ] || ln -sv $(PWD)/vs-code/snippets/go.json ~/Library/Application\ Support/Code/User/snippets/go.json
+
+vs-code-overwrite: ## Overwrites VS Code config files. Usage: `make vs-code-overwrite`.
+	$(info Overwriting local VS Code settings)
+	@cp $(PWD)/vs-code/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	@ln -sfv $(PWD)/vs-code/snippets/go.json ~/Library/Application\ Support/Code/User/snippets/go.json
+
+vs-code-local: ## Overwrites this repo's VS Code config with local settings. Useful for managing changes when sync is disabled. Usage: `make vs-code-local`.
+	$(info Overwriting this repo's VS Code settings with the local settings)
+	@cp ~/Library/Application\ Support/Code/User/settings.json $(PWD)/vs-code/settings.json
 
 .DEFAULT_GOAL := help
