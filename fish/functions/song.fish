@@ -1,10 +1,10 @@
 function song -d "Get the current song playing in Apple Music"
     set state $(osascript -e 'tell application "Music" to player state')
 
-    if test "$state" != "playing"
-      and test "$state" != "paused"
-      echo "Music is $state"
-      return
+    if test "$state" != playing
+        and test "$state" != paused
+        echo "Music is $state"
+        return
     end
 
     set artist $(osascript -e 'tell application "Music" to get artist of current track')

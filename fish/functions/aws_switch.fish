@@ -1,6 +1,6 @@
 function aws_switch -a profile -d "Switch AWS profile and Kubernetes context"
     set -gx AWS_PROFILE $profile
-    kubectl config unset current-context > /dev/null
+    kubectl config unset current-context >/dev/null
 
     echo $GREEN"----------------| AWS Identity |----------------
     "$RESET_COLOR

@@ -22,7 +22,7 @@ set fish_greeting
 # Disable Homebrew hints
 set -gx HOMEBREW_NO_ENV_HINTS 1
 # Set default options for less
-set -gx LESS "-FR"
+set -gx LESS -FR
 # Add aliases for colored text
 set -g GREEN (tput setaf 2)
 set -g RED (tput setaf 1)
@@ -32,7 +32,7 @@ set -g RESET_COLOR (tput sgr0)
 jump shell fish | source
 
 # Configure asdf
-if test (arch) = "arm64"
+if test (arch) = arm64
     source /opt/homebrew/opt/asdf/libexec/asdf.fish
 else
     source /usr/local/opt/asdf/libexec/asdf.fish

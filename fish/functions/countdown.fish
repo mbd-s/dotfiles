@@ -14,6 +14,6 @@ function countdown -d "Command line timer" -a seconds
     end
 
     printf "Time's up!"$RESET_COLOR
-    osascript -e 'display alert "Time\'s up!"' > /dev/null
+    osascript -e 'display alert "Time\'s up!"' >/dev/null
     echo
 end

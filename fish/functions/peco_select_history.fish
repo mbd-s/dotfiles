@@ -4,8 +4,8 @@ function peco_select_history -d "Fuzzy-find search history" -a query
     builtin history | peco $options | read match
 
     if [ $match ]
-      commandline $match
+        commandline $match
     else
-      commandline ""
+        commandline ""
     end
 end
