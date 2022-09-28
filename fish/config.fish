@@ -10,11 +10,6 @@ if [ -f $HOME/.config/fish/private.fish ]
     source $HOME/.config/fish/private.fish
 end
 
-# Source the alias definitions if they exist
-if [ -f $HOME/.config/fish/aliases/main.fish ]
-    source $HOME/.config/fish/aliases/main.fish
-end
-
 # Set dracula color scheme
 set -g theme_color_scheme dracula
 # Disable fish_greeting
