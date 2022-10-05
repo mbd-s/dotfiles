@@ -4,7 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "jjuarez/tap-1"
+tap "kubecolor/tap"
 cask_args require_sha: true
 
 # brew install
@@ -38,11 +38,11 @@ brew "htop" # Improved top (interactive process viewer)
 brew "httpie" # User-friendly cURL replacement (command-line HTTP client)
 brew "imagemagick" # Tools and libraries to manipulate images in many formats
 brew "jc" # Serializes the output of command-line tools to structured JSON output
-brew "jjuarez/tap-1/kubecolor" # Colorize your kubectl output (Alternate formula since brew installation is currently broken for the main repo: https://github.com/hidetatz/kubecolor/issues/90)
 brew "jo" # JSON output from a shell
 brew "jq" # Lightweight and flexible command-line JSON processor
 brew "jump" # Helps you navigate your file system faster by learning your habits
 brew "k9s" # Kubernetes CLI to manage your clusters in style!
+brew "kubecolor/tap/kubecolor" # Colorize your kubectl output
 brew "lf" # Terminal file manager
 brew "libsodium" # NaCl networking and cryptography library
 brew "lolcat" # Rainbows and unicorns in your console!
