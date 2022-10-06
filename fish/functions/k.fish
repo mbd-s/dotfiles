@@ -1,3 +1,3 @@
 function k --wraps=kubectl --description 'alias k kubectl'
-  kubecolor $argv;
+    kubecolor $argv
 end
