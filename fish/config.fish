@@ -5,9 +5,10 @@ if status is-interactive
     end
 end
 
-# Source the private config if it exists
-if [ -f $HOME/.config/fish/private.fish ]
-    source $HOME/.config/fish/private.fish
+# Source any fish files in the private config directory
+set -l FILES $HOME/.config/fish/private/*.fish
+for file in $FILES
+    source $file
 end
 
 # Set dracula color scheme

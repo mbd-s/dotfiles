@@ -73,8 +73,8 @@ To switch back to `fish`, run `fish`.
 
 ### fish
 
-Private configuration can be stored in `$HOME/.config/fish/private.fish`. It will be ignored by
-`git`. Example `private.fish`:
+Private configuration can be stored in `$HOME/.config/fish/private/` with the `.fish` extension. It will be ignored by
+`git`. Example:
 
 ```shell
 set -x CDPATH . ~ /path/to/directory/that/you/want/in/CDPATH

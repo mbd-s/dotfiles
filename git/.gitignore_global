@@ -3,9 +3,3 @@
 server.sh
 .vscode/
 .byebug_history
-private.fish
-fish_variables
-fisher.fish
-man.fish
-web-search.fish
-*fig*.fish
