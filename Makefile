@@ -55,6 +55,7 @@ link: ## Links config files. Usage: `make link`.
 	@[ -f ~/.config/peco/config.json ] || ln -sv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf
 	@[ -f ~/.config/lf/lfrc ] || ln -sv $(PWD)/lf/lfrc ~/.config/lf/lfrc
+	@[ -f ~/.tmux.conf ] || ln -sv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 
 link-zshrc: ## Links .zshrc. Usage: `make link-zshrc`.
 	$(info Linking .zshrc)
@@ -75,6 +76,7 @@ overwrite: ## Links config files, overwriting any existing files. Usage: `make o
 	@ln -sfnv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf
 	@ln -sfnv $(PWD)/lf/lfrc ~/.config/lf/lfrc
+	@ln -sfnv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 
 setup: | link chip-support brew vs-code asdf ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
@@ -92,6 +94,7 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/.config/fish ] || rm -rfv ~/.config/fish
 	@[ ! -L ~/.config/peco/config.json ] || rm -v ~/.config/peco/config.json
 	@[ ! -L ~/.config/lf/lfrc ] || rm -v ~/.config/lf/lfrc
+	@[ ! -L ~/.tmux.conf ] || rm -v ~/.tmux.conf
 
 vs-code: ## Sets up VS Code config files. Usage: `make vs-code`.
 	$(info Setting up VS Code config)

@@ -58,6 +58,7 @@ brew "starship" # Cross-shell prompt for astronauts
 brew "telnet" # User interface to the TELNET protocol
 brew "tig" # Text interface for Git repositories
 brew "tldr" # Simplified and community-driven man pages
+brew "tmux" # Terminal multiplexer
 brew "tree" # Display directories as trees (with optional color/HTML output)
 brew "wget" # Internet file retriever
 brew "yamllint" # Linter for YAML files
