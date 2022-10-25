@@ -36,9 +36,6 @@ truncation_length = 6
 [character]
 success_symbol = "[❯](green)"
 
-[gcloud]
-disabled = true
-
 [git_branch]
 format = "[$symbol$branch]($style) "
 style = "bold #8A2BE2"

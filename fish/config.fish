@@ -27,11 +27,13 @@ set -g RESET_COLOR (tput sgr0)
 # Configure jump
 jump shell fish | source
 
-# Configure asdf
+# Configure asdf and gcloud
 if test (arch) = arm64
     source /opt/homebrew/opt/asdf/libexec/asdf.fish
+    source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 else
     source /usr/local/opt/asdf/libexec/asdf.fish
+    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 end
 
 # Configure starship
