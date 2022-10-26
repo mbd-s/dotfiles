@@ -1,3 +1,3 @@
 function ... --wraps='cd ../..' --description 'alias ... cd ../..'
-  cd ../.. $argv; 
+    cd ../.. $argv
 end

@@ -21,16 +21,16 @@ $terraform
 """
 
 [aws]
+force_display = true
 format = '([$symbol($profile)(\($region\))]($style))'
 style = "bold cyan"
-force_display = true
 
 [aws.region_aliases]
 eu-central-1 = ""
 
 [directory]
-style = "#1E90FF"
 repo_root_style = "bold #0000FF"
+style = "#1E90FF"
 truncation_length = 6
 
 [character]
@@ -42,17 +42,17 @@ style = "bold #8A2BE2"
 truncation_length = 30
 
 [git_status]
-format = "([$all_status$ahead_behind]($style))"
-conflicted = "[!](#DC143C) "
 ahead = "⇡ "
 behind = "⇣ "
-diverged = "⇕ "
-untracked = '[?\($count\)](#DC143C) '
-stashed = '[\$](#0000FF) '
-modified = '[*\($count\)](#DC143C) '
-staged = '[+\($count\)](green) '
-renamed = '[»\($count\)](green) '
+conflicted = "[!](#DC143C) "
 deleted = '[✘\($count\)](#DC143C) '
+diverged = "⇕ "
+format = "([$all_status$ahead_behind]($style))"
+modified = '[*\($count\)](#DC143C) '
+renamed = '[»\($count\)](green) '
+staged = '[+\($count\)](green) '
+stashed = '[\$](#0000FF) '
+untracked = '[?\($count\)](#DC143C) '
 
 [golang]
 format = "[$symbol($version )]($style)"
@@ -76,11 +76,11 @@ symbol = "🔺 "
 version_format = "${raw}"
 
 [terraform]
-format = " [$symbol$workspace]($style)"
 detect_extensions = ["tf", "tfplan", "tfstate", "hcl"]
+format = " [$symbol$workspace]($style)"
 
 [time]
 disabled = false
 format = "[$time]($style)"
+style = "#95A5A6 dimmed"
 time_format = "%H:%M "
-style ="#95A5A6 dimmed"
