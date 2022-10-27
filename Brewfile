@@ -62,6 +62,7 @@ brew "tmux" # Terminal multiplexer
 brew "tree" # Display directories as trees (with optional color/HTML output)
 brew "wget" # Internet file retriever
 brew "yamllint" # Linter for YAML files
+brew "yarn" # JavaScript package manager
 brew "yq" # Process YAML documents from the CLI
 brew "zsh-autosuggestions" # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-completions" # Additional completion definitions for zsh
