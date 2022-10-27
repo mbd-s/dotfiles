@@ -1,6 +1,5 @@
-[user]
-        name = Michael Silverberg
-        email = 13588399+mbd-s@users.noreply.github.com
+[include]
+        path = ~/dotfiles/git/.gitlocal
 [includeIf "gitdir:~/work/"]
         path = ~/dotfiles/git/work/.gitconfig
 [core]
@@ -21,7 +20,6 @@
         last = log -1 HEAD
         ll = log --oneline
         lp = log -p
-        mine = log --author='Michael Silverberg'
         pf = push --force-with-lease
         ri = rebase -i
         rv = remote -v

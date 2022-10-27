@@ -84,7 +84,23 @@ alias secret "echo Something secret!"
 
 ### git
 
-Make sure to update the `.gitconfig` with your own user details.
+Create a file at `~/dotfiles/git/.gitlocal` with your own `git` user details. Example:
+
+```
+[user]
+        name = Your Name
+        email = your-git-commit-email-address@example.com
+[alias]
+        mine = log --author='Your name'
+```
+
+To split home and work concerns, nest all work-related repositories inside a `work/` directory and
+configure a `git` user for your work projects at `~/dotfiles/git/work/.gitconfig`. Example:
+
+```
+[user]
+        email = your-work-git-commit-email-address@example.com
+```
 
 ### iTerm2
 
@@ -110,16 +126,6 @@ The Visual Studio Code settings file is copied rather than symlinked. I prefer c
 symlinking because it gets around the mess created when you have a versioned file and also use VS
 Code's [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync) across multiple
 machines.
-
-### Git
-
-To split home and work concerns in `git`, nest work-related repositories inside a `work/` directory
-and configure a different `git` user at `~/dotfiles/git/work/.gitconfig`. Example:
-
-```
-[user]
-	email = your.name@example.com
-```
 
 ## Uninstalling
 
