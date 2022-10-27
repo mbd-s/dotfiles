@@ -1,7 +1,8 @@
 # Dotfiles
 
-My personal dotfiles for an ARM or Intel Mac running macOS 12 and using a `fish` shell. You probably
-don't want to adopt these wholesale, but feel free to use what you like.
+My personal dotfiles for a `fish` shell on macOS 12 (or later), including basic tools and
+opinionated settings. You probably don't want to adopt these wholesale, but feel free to use what
+you like.
 
 ## Prerequisites
 
@@ -16,13 +17,13 @@ to the list of system shells, set it as the default shell, and add `brew` binari
 brew install fish
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
-set -U fish_user_paths /opt/homebrew/bin $fish_user_paths # ARM
-set -U fish_user_paths /usr/local/homebrew/bin $fish_user_paths # Intel
+set -U fish_user_paths /opt/homebrew/bin $fish_user_paths # For M1/M2 ARM architecture
+set -U fish_user_paths /usr/local/homebrew/bin $fish_user_paths # For Intel x86 architecture
 ```
 
 You can also use these dotfiles with `zsh`. I use `fish` day-to-day but keep my (by now fairly
 outdated) `zsh` config handy in case I need to drop into a POSIX-compliant shell. See the
-[installation instructions](#zsh-shell).
+[zsh installation instructions](#zsh-shell) below.
 
 ## Installation
 
@@ -33,53 +34,53 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script bootstraps a new Mac. It will install a bunch of Homebrew packages (as defined in
-the [Brewfile](Brewfile)); install and configure [asdf](https://github.com/asdf-vm/asdf) plugins;
-and symlink the config files:
+The setup script bootstraps a new Mac. It will symlink the config files and install a bunch
+of tools (iTerm2, Visual Studio Code, Go, etc.) via Homebrew and
+[asdf](https://github.com/asdf-vm/asdf):
 
 ```shell
 make setup
 ```
 
-The command is nondestructive, so it won't overwrite existing files. To delete any existing files,
-replacing them with the config in this project, run `make setup-force`.
+The command is nondestructive, so it won't overwrite existing files. To overwrite local files with
+the config in this project, run `make setup-force`. Run `make help` to see all available commands.
 
 ### zsh shell
 
-First, follow the above installation instructions. To switch to `zsh`, just run `zsh` in the
-terminal. To set `zsh` as the default shell:
+First, follow the [general installation instructions](#installation) above. To switch to `zsh`, just
+run `zsh` in the terminal. To reset `zsh` as the default shell, run:
 
 ```shell
-$ chsh -s $(which zsh)
+chsh -s $(which zsh)
 ```
 
-Next, symlink the `.zshrc` file in this project to your home directory:
+Next, symlink the `.zshrc` in this project to your home directory:
 
 ```shell
 make zsh-link
 ```
 
-Finally, install Oh My Zsh, passing the `--keep-zshrc` flag so it won't overwrite the existing
-`.zshrc` with a boilerplate one:
+Finally, install Oh My Zsh, passing the `--keep-zshrc` flag so it won't overwrite the `.zshrc` you
+just symlinked with a boilerplate one:
 
 ```shell
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o ohmyzsh-install.sh; \
 sh ohmyzsh-install.sh --keep-zshrc;
 ```
 
-To switch back to `fish`, run `fish`.
+To switch back to `fish`, just type `fish`.
 
 ## Configuration
 
 ### fish
 
-Private configuration can be stored in `$HOME/.config/fish/private/` with the `.fish` extension. It will be ignored by
-`git`. Example:
+Private configuration can be stored in `~/.config/fish/private/` with the `.fish` extension. It will
+be ignored by `git`. Example:
 
 ```shell
 set -x CDPATH . ~ /path/to/directory/that/you/want/in/CDPATH
 
-alias secret "echo Something secret!"
+alias secret "Something secret!"
 ```
 
 ### git
