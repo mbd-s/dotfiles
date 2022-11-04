@@ -52,7 +52,7 @@
     "*": true,
     "yaml": true,
     "plaintext": false,
-    "markdown": false
+    "markdown": true
   },
   "terminal.integrated.profiles.osx": {
     "bash": {
@@ -80,5 +80,8 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "[fish]": {
     "editor.defaultFormatter": "bmalehorn.vscode-fish"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "be5invis.toml"
   }
 }
