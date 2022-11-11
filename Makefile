@@ -50,7 +50,7 @@ link: ## Links config files. Usage: `make link`.
 	@mkdir -p ~/.config/bat
 	@[ -f ~/.config/bat/config ] || ln -sv $(PWD)/bat/config ~/.config/bat/config
 	@[ -f ~/.config/starship.toml ] || ln -sv $(PWD)/starship/starship.toml ~/.config/starship.toml
-	@[ -d ~/.config/fish ] || ln -sv $(PWD)/fish ~/.config/fish
+	@[ -d ~/.config/fish ] || ln -sv $(PWD)/fish ~/.config
 	@mkdir -p ~/.config/peco
 	@[ -f ~/.config/peco/config.json ] || ln -sv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf

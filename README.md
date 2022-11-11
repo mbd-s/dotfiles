@@ -10,13 +10,13 @@ you like.
 - [Xcode Command Line Tools](https://mac.install.guide/commandlinetools/index.html)
 - [`fish`](https://fishshell.com/)
 
-To set up `fish` as your default shell, run the following commands. They will install `fish`, add it
-to the list of system shells, set it as the default shell, and add `brew` binaries to the PATH:
+To configure `fish` as your default shell, run the following commands:
 
 ```shell
-brew install fish
-echo $(which fish) | sudo tee -a /etc/shells
-chsh -s $(which fish)
+brew install fish # Install fish
+echo $(which fish) | sudo tee -a /etc/shells # Add fish to the list of system shells
+chsh -s $(which fish) # Set fish as the default shell
+fish # Start a new fish shell
 fish_add_path /opt/homebrew/bin # Add brew binaries to the PATH (for M1/M2 ARM architecture)
 fish_add_path /usr/local/bin /usr/local/sbin # Add brew binaries to the PATH (for Intel x86 architecture)
 ```
