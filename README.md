@@ -17,8 +17,8 @@ to the list of system shells, set it as the default shell, and add `brew` binari
 brew install fish
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
-set -U fish_user_paths /opt/homebrew/bin $fish_user_paths # For M1/M2 ARM architecture
-set -U fish_user_paths /usr/local/homebrew/bin $fish_user_paths # For Intel x86 architecture
+fish_add_path /opt/homebrew/bin # Add brew binaries to the PATH (for M1/M2 ARM architecture)
+fish_add_path /usr/local/bin /usr/local/sbin # Add brew binaries to the PATH (for Intel x86 architecture)
 ```
 
 You can also use these dotfiles with `zsh`. I use `fish` day-to-day but keep my (by now fairly

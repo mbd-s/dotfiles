@@ -68,7 +68,7 @@ export ZSH_COLORIZE_STYLE=igor # Also nice: arduino, borland
 export PATH=/usr/local/sbin:$PATH
 
 # Add gcloud components to PATH
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 export HOMEBREW_NO_ENV_HINTS=1
 
