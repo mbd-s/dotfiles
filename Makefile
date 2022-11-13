@@ -24,6 +24,8 @@ asdf: ## Adds asdf plugins, installs specified versions of them, and sets global
 	@asdf install terragrunt latest
 	@asdf plugin-add kubergrunt || true
 	@asdf install kubergrunt latest
+	@asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git || true
+	@asdf install nodejs latest
 
 brew: ## Installs Homebrew packages listed in the Brewfile. Usage: `make brew`.
 	$(info Installing Homebrew packages...)
