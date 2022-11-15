@@ -1,31 +1,27 @@
 .PHONY: asdf brew chip-support help link link-zshrc overwrite setup setup-force unlink vs-code
 
-asdf: ## Adds asdf plugins, installs specified versions of them, and sets global versions. Usage: `make asdf`.
+asdf: ## Adds asdf plugins and installs the latest versions of them. Usage: `make asdf`.
 	$(info Installing asdf plugins...)
-	@asdf plugin-add golang || true
+	@asdf plugin add golang https://github.com/kennyp/asdf-golang.git || true
 	@asdf install golang latest
-	@asdf global golang latest
-	@asdf plugin-add python || true
-	@asdf install python latest
-	@asdf global python latest
-	@asdf plugin-add richgo || true
-	@asdf install richgo latest
-	@asdf global richgo latest
-	@asdf plugin-add ruby || true
-	@asdf install ruby latest
-	@asdf global ruby latest
-	@asdf plugin-add terraform || true
-	@asdf install terraform latest
-	@asdf plugin-add istioctl || true
+	@asdf plugin add istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git || true
 	@asdf install istioctl latest
-	@asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git || true
+	@asdf plugin add kubectl https://github.com/asdf-community/asdf-kubectl.git || true
 	@asdf install kubectl latest
-	@asdf plugin-add terragrunt https://github.com/ohmer/asdf-terragrunt || true
-	@asdf install terragrunt latest
-	@asdf plugin-add kubergrunt || true
+	@asdf plugin add kubergrunt https://github.com/NeoHsu/asdf-kubergrunt.git || true
 	@asdf install kubergrunt latest
 	@asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git || true
 	@asdf install nodejs latest
+	@asdf plugin add python https://github.com/danhper/asdf-python.git || true
+	@asdf install python latest
+	@asdf plugin add richgo https://github.com/paxosglobal/asdf-richgo.git || true
+	@asdf install richgo latest
+	@asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git || true
+	@asdf install ruby latest
+	@asdf plugin add terraform https://github.com/asdf-community/asdf-hashicorp.git || true
+	@asdf install terraform latest
+	@asdf plugin add terragrunt https://github.com/ohmer/asdf-terragrunt || true
+	@asdf install terragrunt latest
 
 brew: ## Installs Homebrew packages listed in the Brewfile. Usage: `make brew`.
 	$(info Installing Homebrew packages...)

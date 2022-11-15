@@ -5,10 +5,9 @@ if status is-interactive
     end
 end
 
-# Source any fish files in the private config directory
-set -l FILES $HOME/.config/fish/private/*.fish
-for file in $FILES
-    source $file
+# Source any .fish files in the private config directory
+for fish_file in $HOME/.config/fish/private/*.fish
+    source $fish_file
 end
 
 # Set dracula color scheme
@@ -26,12 +25,9 @@ set -g RESET_COLOR (tput sgr0)
 
 # Configure jump
 jump shell fish | source
-
 # Configure asdf
 source (brew --prefix)/opt/asdf/libexec/asdf.fish
-
 # Configure gcloud
 source (brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
-
 # Configure starship
 starship init fish | source
