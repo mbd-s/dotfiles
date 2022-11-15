@@ -1,11 +1,11 @@
-# Install and update fisher if it's not already installed
+# Install fisher if it's not already installed
 if status is-interactive
     if ! functions -q fisher
         curl -sL https://git.io/fisher | source && fisher update
     end
 end
 
-# Source any .fish files in the private config directory
+# Source any .fish files in the private directory
 for fish_file in $HOME/.config/fish/private/*.fish
     source $fish_file
 end
