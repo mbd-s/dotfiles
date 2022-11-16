@@ -57,6 +57,7 @@ brew "postgresql@14" # Object-relational database system
 brew "ripgrep" # Search tool like grep and The Silver Searcher
 brew "starship" # Cross-shell prompt for astronauts
 brew "telnet" # User interface to the TELNET protocol
+brew "terraform-docs" # Tool to generate documentation from Terraform modules
 brew "tig" # Text interface for Git repositories
 brew "tldr" # Simplified and community-driven man pages
 brew "tmux" # Terminal multiplexer
