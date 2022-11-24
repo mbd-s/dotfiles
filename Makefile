@@ -54,6 +54,7 @@ link: ## Links config files. Usage: `make link`.
 	@mkdir -p ~/.config/lf
 	@[ -f ~/.config/lf/lfrc ] || ln -sv $(PWD)/lf/lfrc ~/.config/lf/lfrc
 	@[ -f ~/.tmux.conf ] || ln -sv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
+	@[ -f ~/.digrc ] || ln -sv $(PWD)/dig/.digrc ~/.digrc
 
 link-zshrc: ## Links .zshrc. Usage: `make link-zshrc`.
 	$(info Linking .zshrc)
@@ -75,6 +76,7 @@ overwrite: ## Links config files, overwriting any existing files. Usage: `make o
 	@mkdir -p ~/.config/lf
 	@ln -sfnv $(PWD)/lf/lfrc ~/.config/lf/lfrc
 	@ln -sfnv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
+	@ln -sfnv $(PWD)/dig/.digrc ~/.digrc
 
 setup: | link chip-support brew vs-code asdf ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
