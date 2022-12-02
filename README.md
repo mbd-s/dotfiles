@@ -1,6 +1,6 @@
 # Dotfiles
 
-My personal dotfiles for a `fish` shell on macOS 13, including basic tools and
+My personal dotfiles for a `fish` shell on a Silicon Mac running macOS 13, including basic tools and
 opinionated settings. You probably don't want to adopt these wholesale, but feel free to use what
 you like.
 
@@ -17,8 +17,7 @@ brew install fish # Install fish via Homebrew
 echo $(which fish) | sudo tee -a /etc/shells # Add fish to the list of system shells
 chsh -s $(which fish) # Set fish as the default shell
 fish # Start a new fish shell
-fish_add_path /opt/homebrew/bin # Add brew binaries to the PATH (for M1/M2 ARM architecture)
-fish_add_path /usr/local/bin /usr/local/sbin # Add brew binaries to the PATH (for Intel x86 architecture)
+fish_add_path /opt/homebrew/bin # Add brew binaries to the PATH
 ```
 
 ## 🔌 Installation
