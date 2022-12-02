@@ -1,6 +1,6 @@
 # Dotfiles
 
-My personal dotfiles for a `fish` shell on macOS 12 (or later), including basic tools and
+My personal dotfiles for a `fish` shell on macOS 13, including basic tools and
 opinionated settings. You probably don't want to adopt these wholesale, but feel free to use what
 you like.
 
