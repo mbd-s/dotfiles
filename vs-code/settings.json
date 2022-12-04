@@ -37,6 +37,7 @@
   "python.terminal.executeInFileDir": true,
   "redhat.telemetry.enabled": false,
   "ruby.intellisense": "rubyLocate",
+  "search.excludeFolders": [".vscode"],
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.env.osx": {
