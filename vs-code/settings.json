@@ -1,59 +1,49 @@
 {
-  "editor.wordWrap": "on",
-  "editor.rulers": [100],
-  "terminal.integrated.fontFamily": "Input Mono",
-  "workbench.colorCustomizations": {
-    "[*Dark*]": {
-      "sideBar.foreground": "#ca8dfd",
-      "list.hoverForeground": "#00ff00"
-    },
-    "[*Light*]": {
-      "sideBar.foreground": "#9627f2",
-      "list.hoverForeground": "#f70707"
-    }
+  "[fish]": {
+    "editor.defaultFormatter": "bmalehorn.vscode-fish"
   },
+  "[toml]": {
+    "editor.defaultFormatter": "be5invis.toml"
+  },
+  "editor.accessibilitySupport": "off",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Input Mono",
   "editor.fontSize": 15,
-  "terminal.integrated.fontSize": 16,
-  "editor.wordWrapColumn": 120,
-  "ruby.intellisense": "rubyLocate",
-  "gopls": {
-    "experimentalWorkspaceModule": true
-  },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.autoSaveDelay": 100,
-  "redhat.telemetry.enabled": false,
   "editor.inlineSuggest.enabled": true,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "terminal.external.osxExec": "iTerm.app",
-  "go.toolsManagement.autoUpdate": true,
-  "python.terminal.executeInFileDir": true,
-  "editor.accessibilitySupport": "off",
+  "editor.rulers": [100],
   "editor.tabSize": 2,
-  "files.trimTrailingWhitespace": true,
-  "go.lintTool": "golangci-lint",
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "files.autoSave": "afterDelay",
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
+  "explorer.confirmDelete": false,
   "files.associations": {
     "*.gotmpl": "go-template",
     "*.fish": "fish"
   },
-  "explorer.confirmDelete": false,
-  "workbench.preferredDarkColorTheme": "Dark-Dracula",
-  "workbench.preferredLightColorTheme": "Atom One Light",
-  "window.autoDetectColorScheme": true,
-  "workbench.startupEditor": "none",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 100,
   "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
     "plaintext": false,
     "markdown": true
   },
+  "go.lintTool": "golangci-lint",
+  "go.toolsManagement.autoUpdate": true,
+  "gopls": {
+    "experimentalWorkspaceModule": true
+  },
+  "python.terminal.executeInFileDir": true,
+  "redhat.telemetry.enabled": false,
+  "ruby.intellisense": "rubyLocate",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.fontFamily": "Input Mono",
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.profiles.osx": {
     "bash": {
       "path": "bash",
@@ -77,11 +67,21 @@
       "icon": "terminal-powershell"
     }
   },
-  "terminal.integrated.defaultProfile.osx": "fish",
-  "[fish]": {
-    "editor.defaultFormatter": "bmalehorn.vscode-fish"
+  "window.autoDetectColorScheme": true,
+  "workbench.colorCustomizations": {
+    "[*Dark*]": {
+      "sideBar.foreground": "#ca8dfd",
+      "list.hoverForeground": "#00ff00"
+    },
+    "[*Light*]": {
+      "sideBar.foreground": "#9627f2",
+      "list.hoverForeground": "#f70707"
+    }
   },
-  "[toml]": {
-    "editor.defaultFormatter": "be5invis.toml"
-  }
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "workbench.preferredDarkColorTheme": "Dark-Dracula",
+  "workbench.preferredLightColorTheme": "Atom One Light",
+  "workbench.startupEditor": "none"
 }
