@@ -21,10 +21,6 @@ fish_add_path /opt/homebrew/bin # Add brew binaries to the PATH (for M1/M2 ARM a
 fish_add_path /usr/local/bin /usr/local/sbin # Add brew binaries to the PATH (for Intel x86 architecture)
 ```
 
-You can also use these dotfiles with `zsh`. I use `fish` day-to-day but keep my (by now fairly
-outdated) `zsh` config handy in case I need to drop into a POSIX-compliant shell. See the
-[zsh configuration instructions](#zsh) below.
-
 ## 🔌 Installation
 
 First, clone the project in your home directory and `cd` into it:
@@ -104,31 +100,6 @@ The Visual Studio Code settings file is copied rather than symlinked. I prefer c
 symlinking because it gets around the mess created when you have a versioned file and also use VS
 Code's [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync) across multiple
 machines.
-
-### zsh
-
-First, follow the [general installation instructions](#installation) above. To switch to `zsh`, just
-run `zsh` in the terminal. To reset `zsh` as the default shell, run:
-
-```shell
-chsh -s $(which zsh)
-```
-
-Next, symlink the `.zshrc` in this project to your home directory:
-
-```shell
-make zsh-link
-```
-
-Finally, install Oh My Zsh, passing the `--keep-zshrc` flag so it won't overwrite the `.zshrc` you
-just symlinked with a boilerplate one:
-
-```shell
-curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o ohmyzsh-install.sh; \
-sh ohmyzsh-install.sh --keep-zshrc;
-```
-
-To fall back to `fish`, just type `fish`.
 
 ## ✂️ Uninstalling
 

@@ -1,4 +1,4 @@
-.PHONY: asdf brew chip-support help link link-zshrc overwrite setup setup-force unlink vs-code
+.PHONY: asdf brew chip-support help link overwrite setup setup-force unlink vs-code
 
 asdf: ## Adds asdf plugins and installs the latest versions of them. Usage: `make asdf`.
 	$(info Installing asdf plugins...)
@@ -56,10 +56,6 @@ link: ## Links config files. Usage: `make link`.
 	@[ -f ~/.tmux.conf ] || ln -sv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	@[ -f ~/.digrc ] || ln -sv $(PWD)/dig/.digrc ~/.digrc
 
-link-zshrc: ## Links .zshrc. Usage: `make link-zshrc`.
-	$(info Linking .zshrc)
-	@[ -f ~/.zshrc ] || ln -sv $(PWD)/zsh/.zshrc ~/.zshrc
-
 overwrite: ## Links config files, overwriting any existing files. Usage: `make overwrite`.
 	$(info Overwriting config files)
 	@ln -sfnv $(PWD)/asdf/.asdfrc ~/.asdfrc
@@ -90,7 +86,6 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/.gitignore_global ] || rm -v ~/.gitignore_global
 	@[ ! -L ~/.config/starship.toml ] || rm -v ~/.config/starship.toml
 	@[ ! -L ~/.vimrc ] || rm -v ~/.vimrc
-	@[ ! -L ~/.zshrc ] || rm -v ~/.zshrc
 	@[ ! -L ~/.config/fish ] || rm -rfv ~/.config/fish
 	@[ ! -L ~/.config/peco/config.json ] || rm -v ~/.config/peco/config.json
 	@[ ! -L ~/.config/lf/lfrc ] || rm -v ~/.config/lf/lfrc
