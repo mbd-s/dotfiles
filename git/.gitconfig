@@ -28,7 +28,7 @@
 [pager]
         branch = false
 [pull]
-        rebase = false
+        ff = only
 [push]
 	autoSetupRemote = true
 [interactive]
@@ -58,3 +58,5 @@
 	stripLeadingSymbols = true
 [rebase]
 	autosquash = true
+[fetch]
+        prune = true
