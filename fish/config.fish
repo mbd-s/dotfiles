@@ -19,9 +19,9 @@ set -gx HOMEBREW_NO_ENV_HINTS 1
 # Set default options for less
 set -gx LESS -FR
 # Add aliases for colored text
-set -g GREEN (tput setaf 2)
-set -g RED (tput setaf 1)
-set -g RESET_COLOR (tput sgr0)
+set -g GREEN (set_color green)
+set -g RED (set_color red)
+set -g RESET_COLOR (set_color normal)
 
 # Configure jump
 jump shell fish | source
