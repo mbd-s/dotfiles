@@ -70,6 +70,7 @@ brew "yq" # Process YAML documents from the CLI
 cask "1password" # Password manager that keeps all passwords secure behind one password
 cask "adobe-acrobat-reader" # View, print, and comment on PDF documents
 cask "alfred" # Application launcher and productivity software
+cask "arc" # Chromium based browser
 cask "backblaze", args: { require_sha: false } # Data backup and storage service
 cask "caffeine" # Utility that prevents the system from going to sleep
 cask "dbeaver-community" # Universal database tool and SQL client
