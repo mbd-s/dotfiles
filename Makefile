@@ -38,7 +38,7 @@ endif
 help: ## Shows this help message. Usage: `make help`.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-link: ## Links config files. Usage: `make link`.
+link: ## Symlinks config files. Usage: `make link`.
 	$(info Linking config files)
 	@[ -f ~/.asdfrc ] || ln -sv $(PWD)/asdf/.asdfrc ~/.asdfrc
 	@[ -f ~/.gitconfig ] || ln -sv $(PWD)/git/.gitconfig ~/.gitconfig
@@ -56,7 +56,7 @@ link: ## Links config files. Usage: `make link`.
 	@[ -f ~/.tmux.conf ] || ln -sv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	@[ -f ~/.digrc ] || ln -sv $(PWD)/dig/.digrc ~/.digrc
 
-overwrite: ## Links config files, overwriting any existing files. Usage: `make overwrite`.
+overwrite: ## Symlinks config files, replacing any existing files. Usage: `make overwrite`.
 	$(info Overwriting config files)
 	@ln -sfnv $(PWD)/asdf/.asdfrc ~/.asdfrc
 	@ln -sfnv $(PWD)/git/.gitconfig ~/.gitconfig
@@ -74,7 +74,7 @@ overwrite: ## Links config files, overwriting any existing files. Usage: `make o
 	@ln -sfnv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	@ln -sfnv $(PWD)/dig/.digrc ~/.digrc
 
-setup: | link chip-support brew vs-code asdf ## Links config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
+setup: | link chip-support brew vs-code asdf ## Symlinks config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
 setup-force: | overwrite chip-support brew vs-code-overwrite asdf ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
 
