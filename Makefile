@@ -90,6 +90,7 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/.config/peco/config.json ] || rm -v ~/.config/peco/config.json
 	@[ ! -L ~/.config/lf/lfrc ] || rm -v ~/.config/lf/lfrc
 	@[ ! -L ~/.tmux.conf ] || rm -v ~/.tmux.conf
+	@[ ! -L ~/.digrc ] || rm -v ~/.digrc
 
 vs-code: ## Sets up VS Code config files. Usage: `make vs-code`.
 	$(info Setting up VS Code config)
