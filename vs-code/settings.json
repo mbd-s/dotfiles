@@ -68,7 +68,6 @@
       "icon": "terminal-powershell"
     }
   },
-  "window.autoDetectColorScheme": true,
   "workbench.colorCustomizations": {
     "[*Dark*]": {
       "sideBar.foreground": "#ca8dfd",
@@ -84,7 +83,5 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "workbench.preferredDarkColorTheme": "Dark-Dracula",
-  "workbench.preferredLightColorTheme": "Atom One Light",
   "workbench.startupEditor": "none"
 }
