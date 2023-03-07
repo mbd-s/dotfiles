@@ -30,6 +30,7 @@ brew "ghorg" # Quickly clone an entire org's or user's repositories into one dir
 brew "git" # Distributed revision control system
 brew "gitui" # Blazing fast terminal-ui for git written in rust
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
+brew "go-jira" # Simple jira command-line client in Go
 brew "golangci-lint" # Fast linters runner for Go
 brew "gomplate" # Command-line Golang template processor
 brew "helm" # Kubernetes package manager
@@ -42,6 +43,7 @@ brew "jc" # Serializes the output of command-line tools to structured JSON outpu
 brew "jo" # JSON output from a shell
 brew "jq" # Lightweight and flexible command-line JSON processor
 brew "jump" # Helps you navigate your file system faster by learning your habits
+brew "k3d" # Little helper to run CNCF's k3s in Docker
 brew "k9s" # Kubernetes CLI to manage your clusters in style!
 brew "kubecolor/tap/kubecolor" # Colorize your kubectl output
 brew "lf" # Terminal file manager
