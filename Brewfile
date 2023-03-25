@@ -19,6 +19,7 @@ brew "coreutils" # GNU File, Shell, and Text utilities
 brew "cowsay" # Configurable talking characters in ASCII art
 brew "diff-so-fancy" # Good-lookin' diffs with diff-highlight and more
 brew "direnv" # Load/unload environment variables based on $PWD
+brew "etcd" # Key value store for shared configuration and service discovery
 brew "exa" # Modern replacement for `ls`
 brew "exercism" # Command-line tool to interact with exercism.io
 brew "fd" # Simple, fast and user-friendly alternative to find
@@ -56,6 +57,7 @@ brew "nmap" # Port scanning utility for large networks
 brew "peco" # Simplistic interactive filtering tool
 brew "postgresql@14" # Object-relational database system
 brew "ripgrep" # Search tool like grep and The Silver Searcher
+brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
 brew "starship" # Cross-shell prompt for astronauts
 brew "telnet" # User interface to the TELNET protocol
 brew "terraform-docs" # Tool to generate documentation from Terraform modules
