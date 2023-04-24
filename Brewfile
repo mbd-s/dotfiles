@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "kubecolor/tap"
+tap "qmk/qmk"
 cask_args require_sha: true
 
 # brew install
@@ -57,6 +58,7 @@ brew "minikube" # Run a Kubernetes cluster locally
 brew "nmap" # Port scanning utility for large networks
 brew "peco" # Simplistic interactive filtering tool
 brew "postgresql@14" # Object-relational database system
+brew "qmk/qmk/qmk" # Quantum Mechanical Keyboard (QMK) Firmware
 brew "ripgrep" # Search tool like grep and The Silver Searcher
 brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
 brew "starship" # Cross-shell prompt for astronauts
@@ -97,6 +99,7 @@ cask "signal" # Instant messaging application focusing on security
 cask "skype" # Video chat, voice call and instant messaging application
 cask "slack" # Team communication and collaboration software
 cask "torguard" # VPN client
+cask "via" # Keyboard configurator
 cask "visual-studio-code" # Open-source code editor
 cask "vlc" # Multimedia player
 cask "whatsapp" # Desktop client for WhatsApp
