@@ -28,6 +28,6 @@ jump shell fish | source
 # Configure asdf
 source (brew --prefix)/opt/asdf/libexec/asdf.fish
 # Configure gcloud
-source (brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+source (brew --prefix)/share/google-cloud-sdk/path.fish.inc
 # Configure starship
 starship init fish | source
