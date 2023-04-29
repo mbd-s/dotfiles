@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "kreuzwerker/taps"
 tap "kubecolor/tap"
 tap "qmk/qmk"
 cask_args require_sha: true
@@ -48,6 +49,7 @@ brew "jq" # Lightweight and flexible command-line JSON processor
 brew "jump" # Helps you navigate your file system faster by learning your habits
 brew "k3d" # Little helper to run CNCF's k3s in Docker
 brew "k9s" # Kubernetes CLI to manage your clusters in style!
+brew "kreuzwerker/taps/m1-terraform-provider-helper" # CLI to support downloading and compiling Terraform providers for ARM-based Macs
 brew "kubecolor/tap/kubecolor" # Colorize your kubectl output
 brew "lf" # Terminal file manager
 brew "libsodium" # NaCl networking and cryptography library
