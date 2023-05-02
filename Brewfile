@@ -31,6 +31,7 @@ brew "gh" # GitHub command-line tool
 brew "ghorg" # Quickly clone an entire org's or user's repositories into one directory
 brew "git" # Distributed revision control system
 brew "gitui" # Blazing fast terminal-ui for git written in rust
+brew "glab" # Open-source GitLab command-line tool
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
 brew "go-jira" # Simple jira command-line client in Go
 brew "golangci-lint" # Fast linters runner for Go
