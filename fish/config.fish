@@ -21,6 +21,7 @@ set -gx LESS -FR
 # Add aliases for colored text
 set -g GREEN (set_color green)
 set -g RED (set_color red)
+set -g BOLD (set_color -o)
 set -g RESET_COLOR (set_color normal)
 
 # Configure jump
