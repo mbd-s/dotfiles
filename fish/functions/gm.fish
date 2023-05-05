@@ -1,6 +1,6 @@
 function gm -d "Update various dependencies and reclaim disk space"
     brewski && echo
     docker_clean && echo
-    asdf plugin update --all && echo
+    asdf_plugin_update && echo
     fisher update
 end
