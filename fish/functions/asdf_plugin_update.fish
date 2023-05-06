@@ -1,13 +1,15 @@
 function asdf_plugin_update -d "Update outdated asdf plugins"
     echo $BOLD"Updating outdated asdf plugins"$RESET_COLOR
-    asdf plugin-update --all
-    set -l plugins (asdf latest --all)
+    asdf plugin-update --all > /dev/null
+    set -l plugins (asdf plugin list)
     for plugin in $plugins
-        switch $plugin
-            case "*missing"
-                set -l missing_plugin (string match -r '[a-z]+' $plugin)
-                echo $BOLD"Installing latest version of $missing_plugin"$RESET_COLOR
-                asdf install $missing_plugin latest
+        set -l latest_version (asdf latest $plugin)
+        set -l installed_versions (string match -r '[0-9.]+' (asdf list $plugin))
+        if contains $latest_version $installed_versions
+            echo $GREEN"$plugin $latest_version is already installed"$RESET_COLOR
+        else
+            echo $BOLD"Installing $plugin $latest_version"$RESET_COLOR
+            asdf install $plugin latest
         end
     end
 end
