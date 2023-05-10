@@ -1,4 +1,5 @@
 abbr ... "cd ../.."
+abbr .... "cd ../../.."
 abbr be "bundle exec"
 abbr dc "docker-compose"
 abbr fopen "vi ~/.config/fish/config.fish"
