@@ -23,6 +23,8 @@ set -g GREEN (set_color green)
 set -g RED (set_color red)
 set -g BOLD (set_color -o)
 set -g RESET_COLOR (set_color normal)
+# Include go.mod/go.work in asdf Go version selection
+set -gx ASDF_GOLANG_MOD_VERSION_ENABLED true
 
 # Configure jump
 jump shell fish | source
