@@ -87,7 +87,6 @@ cask "docker" # App to build and share containerized applications and microservi
 cask "fig" # Fig adds IDE-style autocomplete to your existing terminal
 cask "firefox" # Web browser
 cask "font-hack-nerd-font" # A typeface designed for source code
-cask "font-input", args: { require_sha: false } # Input is a flexible system of fonts designed specifically for code by David Jonathan Ross
 cask "google-chrome", args: { require_sha: false } # Web browser
 cask "google-cloud-sdk", args: { require_sha: false } # Set of tools to manage resources and applications hosted on Google Cloud
 cask "google-drive", args: { require_sha: false } # Client for the Google Drive storage service

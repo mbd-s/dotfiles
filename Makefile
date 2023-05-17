@@ -1,4 +1,4 @@
-.PHONY: asdf brew chip-support help link overwrite setup setup-force unlink vs-code
+.PHONY: asdf brew chip-support fonts help link overwrite setup setup-force unlink vs-code
 
 asdf: ## Adds asdf plugins and installs the latest versions of them. Usage: `make asdf`.
 	$(info Installing asdf plugins...)
@@ -38,6 +38,14 @@ endif
 help: ## Shows this help message. Usage: `make help`.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
+fonts: ## Installs Input fonts. Usage: `make fonts`.
+	$(info Installing Input fonts from https://input.djr.com)
+	@mkdir -p /tmp/input-font
+	@curl 'https://input.djr.com/build/?basic=1&fontSelection=whole&a=0&g=0&i=0&l=0&zero=0&asterisk=0&lineHeight=1.2&accept=I+do' --output /tmp/input-font/Input-Font.zip
+	@unzip /tmp/input-font/Input-Font.zip -d /tmp/input-font > /dev/null
+	@cp -R /tmp/input-font/Input_Fonts/*/*/* ~/Library/Fonts
+	@rm -rf /tmp/input-font
+
 link: ## Symlinks config files. Usage: `make link`.
 	$(info Linking config files)
 	@[ -f ~/.asdfrc ] || ln -sv $(PWD)/asdf/.asdfrc ~/.asdfrc
@@ -74,9 +82,9 @@ overwrite: ## Symlinks config files, replacing any existing files. Usage: `make 
 	@ln -sfnv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	@ln -sfnv $(PWD)/dig/.digrc ~/.digrc
 
-setup: | link chip-support brew vs-code asdf ## Symlinks config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
+setup: | link chip-support brew vs-code asdf fonts ## Symlinks config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
-setup-force: | overwrite chip-support brew vs-code-overwrite asdf ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
+setup-force: | overwrite chip-support brew vs-code-overwrite asdf fonts ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
 
 unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	$(info Unlinking symlinked config files)
