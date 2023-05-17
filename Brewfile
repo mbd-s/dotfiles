@@ -80,7 +80,6 @@ cask "adobe-acrobat-reader" # View, print, and comment on PDF documents
 cask "alfred" # Application launcher and productivity software
 cask "arc" # Chromium based browser
 cask "backblaze", args: { require_sha: false } # Data backup and storage service
-cask "caffeine" # Utility that prevents the system from going to sleep
 cask "dbeaver-community" # Universal database tool and SQL client
 cask "discord" # Voice and text chat software
 cask "docker" # App to build and share containerized applications and microservices
@@ -92,7 +91,6 @@ cask "google-cloud-sdk", args: { require_sha: false } # Set of tools to manage r
 cask "google-drive", args: { require_sha: false } # Client for the Google Drive storage service
 cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
 cask "libreoffice" # Office suite
-cask "microsoft-teams" # Meet, chat, call, and collaborate in just one place
 cask "postman" # Collaboration platform for API development
 cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas
 cask "signal" # Instant messaging application focusing on security
@@ -101,7 +99,6 @@ cask "slack" # Team communication and collaboration software
 cask "torguard" # VPN client
 cask "via" # Keyboard configurator
 cask "visual-studio-code" # Open-source code editor
-cask "vlc" # Multimedia player
 cask "whatsapp" # Desktop client for WhatsApp
 cask "zoom" # Video communication and virtual meeting platform
 
