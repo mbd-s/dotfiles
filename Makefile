@@ -1,4 +1,4 @@
-.PHONY: asdf brew chip-support fonts help link overwrite setup setup-force unlink vs-code
+.PHONY: asdf brew chip-support fisher fonts help link overwrite setup setup-force unlink vs-code
 
 asdf: ## Adds asdf plugins and installs the latest versions of them. Usage: `make asdf`.
 	$(info Installing asdf plugins...)
@@ -35,6 +35,11 @@ else
 	@echo "No extra dependencies needed for this architecture"
 endif
 
+fisher: ## Installs fisher and plugins. Usage: `make fisher`.
+	$(info Installing fisher...)
+	@fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+	@fish -c "fisher update"
+
 help: ## Shows this help message. Usage: `make help`.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
@@ -56,7 +61,11 @@ link: ## Symlinks config files. Usage: `make link`.
 	@mkdir -p ~/.config/bat
 	@[ -f ~/.config/bat/config ] || ln -sv $(PWD)/bat/config ~/.config/bat/config
 	@[ -f ~/.config/starship.toml ] || ln -sv $(PWD)/starship/starship.toml ~/.config/starship.toml
-	@[ -d ~/.config/fish ] || ln -sv $(PWD)/fish ~/.config
+	@[ -d ~/.config/fish/custom_functions ] || ln -sfnv $(PWD)/fish/custom_functions ~/.config/fish/custom_functions
+	@[ -d ~/.config/fish/private ] || ln -sfnv $(PWD)/fish/private ~/.config/fish/private
+	@[ -f ~/.config/fish/config.fish ] || ln -sv $(PWD)/fish/config.fish ~/.config/fish/config.fish
+	@[ -f ~/.config/fish/conf.d/abbreviations.fish ] || ln -sfnv $(PWD)/fish/abbreviations.fish ~/.config/fish/conf.d/abbreviations.fish
+	@[ -f ~/.config/fish/fish_plugins ] || ln -sfnv $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
 	@mkdir -p ~/.config/peco
 	@[ -f ~/.config/peco/config.json ] || ln -sv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf
@@ -74,7 +83,11 @@ overwrite: ## Symlinks config files, replacing any existing files. Usage: `make 
 	@mkdir -p ~/.config/bat
 	@ln -sfnv $(PWD)/bat/config ~/.config/bat/config
 	@ln -sfnv $(PWD)/starship/starship.toml ~/.config/starship.toml
-	@ln -sfnv $(PWD)/fish ~/.config
+	@ln -sfnv $(PWD)/fish/custom_functions ~/.config/fish/custom_functions
+	@ln -sfnv $(PWD)/fish/private ~/.config/fish/private
+	@ln -sfnv $(PWD)/fish/config.fish ~/.config/fish/config.fish
+	@ln -sfnv $(PWD)/fish/abbreviations.fish ~/.config/fish/conf.d/abbreviations.fish
+	@ln -sfnv $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
 	@mkdir -p ~/.config/peco
 	@ln -sfnv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf
@@ -82,9 +95,9 @@ overwrite: ## Symlinks config files, replacing any existing files. Usage: `make 
 	@ln -sfnv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	@ln -sfnv $(PWD)/dig/.digrc ~/.digrc
 
-setup: | link chip-support brew vs-code asdf fonts ## Symlinks config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
+setup: | link fisher chip-support brew vs-code asdf fonts ## Symlinks config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
-setup-force: | overwrite chip-support brew vs-code-overwrite asdf fonts ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
+setup-force: | overwrite fisher chip-support brew vs-code-overwrite asdf fonts ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
 
 unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	$(info Unlinking symlinked config files)
@@ -94,7 +107,10 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/.gitignore_global ] || rm -v ~/.gitignore_global
 	@[ ! -L ~/.config/starship.toml ] || rm -v ~/.config/starship.toml
 	@[ ! -L ~/.vimrc ] || rm -v ~/.vimrc
-	@[ ! -L ~/.config/fish ] || rm -rfv ~/.config/fish
+	@[ ! -L ~/.config/fish/custom_functions ] || rm -rfv ~/.config/fish/custom_functions
+	@[ ! -L ~/.config/fish/config.fish ] || rm -v ~/.config/fish/config.fish
+	@[ ! -L ~/.config/fish/conf.d/abbreviations.fish ] || rm -v ~/.config/fish/conf.d/abbreviations.fish
+	@[ ! -L ~/.config/fish/fish_plugins ] || rm -v ~/.config/fish/fish_plugins
 	@[ ! -L ~/.config/peco/config.json ] || rm -v ~/.config/peco/config.json
 	@[ ! -L ~/.config/lf/lfrc ] || rm -v ~/.config/lf/lfrc
 	@[ ! -L ~/.tmux.conf ] || rm -v ~/.tmux.conf

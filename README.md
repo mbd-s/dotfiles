@@ -45,7 +45,7 @@ available commands.
 
 ### fish
 
-Private configuration can be stored in files with the `.fish` extension in `fish/private/`.
+Private configuration can be stored in files with the `.fish` extension in `$__fish_config_dir/private/`.
 (Everything in this directory will be ignored by `git`.) Example `secret-config.fish`:
 
 ```shell
