@@ -1,0 +1,10 @@
+AllCops:
+  NewCops: enable
+
+Layout/LineLength:
+  Exclude:
+    - "Brewfile"
+
+Style/NumericLiterals:
+  Exclude:
+    - "Brewfile"
