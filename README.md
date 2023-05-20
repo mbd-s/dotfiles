@@ -75,6 +75,13 @@ directory and configure a `git` user for your work projects at `git/work/.gitcon
         email = your-work-git-commit-email-address@example.com
 ```
 
+### Homebrew
+
+I've split Homebrew packages similarly along home and work concerns. To install the home packages,
+create an empty `.home` file in the root of this project. To install the work packages, create an
+empty `.work` file instead. (Both files are ignored by `git`.) The common packages are installed in
+any case.
+
 ### iTerm2
 
 #### Profile

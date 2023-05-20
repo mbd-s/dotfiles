@@ -1,13 +1,12 @@
-# brew tap
+# Taps
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "kreuzwerker/taps"
 tap "kubecolor/tap"
 tap "qmk/qmk"
-cask_args require_sha: true
 
-# brew install
+# Formulas
 brew "ansible" # Automate deployment, configuration, and upgrading
 brew "asdf" # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "aws-iam-authenticator" # Use AWS IAM credentials to authenticate to Kubernetes
@@ -33,7 +32,6 @@ brew "git" # Distributed revision control system
 brew "gitui" # Blazing fast terminal-ui for git written in rust
 brew "glab" # Open-source GitLab command-line tool
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
-brew "go-jira" # Simple jira command-line client in Go
 brew "golangci-lint" # Fast linters runner for Go
 brew "gomplate" # Command-line Golang template processor
 brew "helm" # Kubernetes package manager
@@ -74,14 +72,12 @@ brew "yamllint" # Linter for YAML files
 brew "yarn" # JavaScript package manager
 brew "yq" # Process YAML documents from the CLI
 
-# brew install --cask
-cask "1password" # Password manager that keeps all passwords secure behind one password
+# GUI apps
+cask_args require_sha: true
 cask "adobe-acrobat-reader" # View, print, and comment on PDF documents
 cask "alfred" # Application launcher and productivity software
 cask "arc" # Chromium based browser
-cask "backblaze", args: { require_sha: false } # Data backup and storage service
 cask "dbeaver-community" # Universal database tool and SQL client
-cask "discord" # Voice and text chat software
 cask "docker" # App to build and share containerized applications and microservices
 cask "fig" # Fig adds IDE-style autocomplete to your existing terminal
 cask "firefox" # Web browser
@@ -93,18 +89,28 @@ cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
 cask "libreoffice" # Office suite
 cask "postman" # Collaboration platform for API development
 cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas
-cask "signal" # Instant messaging application focusing on security
-cask "skype" # Video chat, voice call and instant messaging application
 cask "slack" # Team communication and collaboration software
-cask "torguard" # VPN client
 cask "via" # Keyboard configurator
 cask "visual-studio-code" # Open-source code editor
-cask "whatsapp" # Desktop client for WhatsApp
-cask "zoom" # Video communication and virtual meeting platform
 
-# mas install
+# Mac App Store-managed apps
 mas "Bear", id: 1091189122 # Private Markdown Editor for iPhone, iPad and Mac
 mas "Save to Pocket", id: 1477385213 # Your save button for the internet
-mas "Shazam", id: 897118787 # Identify the music playing around you
 mas "StuffIt Expander", id: 919269455 # Free tool to expand SITX, ZIP, ZIPX, SIT5, and RAR archives
 mas "Telephone", id: 406825478 # SIP softphone
+
+# Home- and work-specific dependencies
+if File.exist?('.home')
+  cask "1password" # Password manager that keeps all passwords secure behind one password
+  cask "backblaze", args: { require_sha: false } # Data backup and storage service
+  cask "discord" # Voice and text chat software
+  cask "signal" # Instant messaging application focusing on security
+  cask "skype" # Video chat, voice call and instant messaging application
+  cask "torguard" # VPN client
+  cask "whatsapp" # Desktop client for WhatsApp
+  cask "zoom" # Video communication and virtual meeting platform
+
+  mas "Shazam", id: 897118787 # Identify the music playing around you
+elsif File.exist?('.work')
+  brew "go-jira" # Simple jira command-line client in Go
+end

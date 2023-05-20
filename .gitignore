@@ -1,3 +1,5 @@
 Brewfile.lock.json
 git/work/.gitconfig
 git/.gitlocal
+.home
+.work
