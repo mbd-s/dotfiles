@@ -1,5 +1,6 @@
+---
 name: Lint files
-on:
+"on":
   push:
     branches:
       - main
@@ -23,5 +24,11 @@ jobs:
       - name: Install RuboCop
         run: gem install rubocop
 
-      - name: Lint Ruby files
+      - name: Install yamllint
+        run: pip install yamllint
+
+      - name: Lint Ruby filea
         run: rubocop
+
+      - name: Lint YAML files
+        run: yamllint .
