@@ -17,7 +17,8 @@ brew install fish # Install fish via Homebrew
 echo $(which fish) | sudo tee -a /etc/shells # Add fish to the list of system shells
 chsh -s $(which fish) # Set fish as the default shell
 fish # Start a new fish shell
-fish_add_path /opt/homebrew/bin # Add brew binaries to the PATH
+set fish_user_paths (brew --prefix)/bin (brew --prefix)/sbin $fish_user_paths
+ # Add brew binaries to $PATH
 ```
 
 ## 🔌 Installation
