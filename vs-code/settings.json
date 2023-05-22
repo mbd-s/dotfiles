@@ -10,10 +10,9 @@
   "editor.fontFamily": "Input Mono",
   "editor.fontSize": 15,
   "editor.inlineSuggest.enabled": true,
-  "editor.rulers": [100],
+  "editor.rulers": [120],
   "editor.tabSize": 2,
-  "editor.wordWrap": "on",
-  "editor.wordWrapColumn": 120,
+  "editor.wordWrap": "bounded",
   "explorer.confirmDelete": false,
   "files.associations": {
     "*.gotmpl": "go-template",
@@ -25,9 +24,10 @@
   "files.trimTrailingWhitespace": true,
   "github.copilot.enable": {
     "*": true,
-    "yaml": true,
-    "plaintext": false,
-    "markdown": true
+    "plaintext": true,
+    "markdown": true,
+    "scminput": true,
+    "yaml": true
   },
   "go.lintTool": "golangci-lint",
   "go.toolsManagement.autoUpdate": true,
@@ -37,6 +37,17 @@
   "python.terminal.executeInFileDir": true,
   "redhat.telemetry.enabled": false,
   "ruby.intellisense": "rubyLocate",
+  "ruby.useBundler": true,
+"ruby.useLanguageServer": true,
+"ruby.lint": {
+  "rubocop": {
+    "useBundler": true
+  },
+  "reek": {
+    "useBundler": true
+  }
+},
+"ruby.format": "rubocop",
   "search.excludeFolders": [".vscode"],
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "fish",
@@ -83,5 +94,6 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "editor.wordWrapColumn": 120
 }
