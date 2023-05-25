@@ -12,9 +12,6 @@ $character
 """
 
 right_format = """
-$golang\
-$python\
-$ruby\
 $aws\
 $kubernetes\
 $terraform
@@ -57,10 +54,6 @@ staged = '[+\($count\)](#50fa7b) '
 stashed = '[\$](#8be9fd) '
 untracked = '[?\($count\)](#bd93f9) '
 
-[golang]
-format = "[$symbol($version )]($style)"
-version_format = "${raw}"
-
 [kubernetes]
 disabled = false
 format = '[ $symbol$context( \($namespace\))]($style)'
@@ -68,15 +61,6 @@ style = "bold #f1fa8c"
 
 [kubernetes.context_aliases]
 'arn:.*:cluster/(?P<cluster>[\w-]+)' = "$cluster"
-
-[python]
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-version_format = "${raw}"
-
-[ruby]
-format = "[$symbol($version )]($style)"
-symbol = "🔺 "
-version_format = "${raw}"
 
 [terraform]
 detect_extensions = ["tf", "tfplan", "tfstate", "hcl"]
