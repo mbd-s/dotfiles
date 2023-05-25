@@ -69,7 +69,7 @@ don't want to check into version control. Example:
 ```
 
 To split home and work concerns, you could nest all work-related repositories inside a `work/`
-directory and configure a `git` user for your work projects at `git/work/.gitconfig`. Example:
+directory and configure a `git` user for your work projects at `git/work/.gitlocal`. Example:
 
 ```
 [user]

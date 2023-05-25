@@ -1,7 +1,7 @@
 [include]
         path = ~/dotfiles/git/.gitlocal
 [includeIf "gitdir:~/work/"]
-        path = ~/dotfiles/git/work/.gitconfig
+        path = ~/dotfiles/git/work/.gitlocal
 [core]
         excludesfile = ~/.gitignore_global
         autocrlf = input
