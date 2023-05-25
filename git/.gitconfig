@@ -1,65 +1,65 @@
 [include]
-        path = ~/dotfiles/git/.gitlocal
+  path = ~/dotfiles/git/.gitlocal
 [includeIf "gitdir:~/work/"]
-        path = ~/dotfiles/git/work/.gitlocal
+  path = ~/dotfiles/git/work/.gitlocal
 [core]
-        excludesfile = ~/.gitignore_global
-        autocrlf = input
-        attributesfile = ~/.gitattributes
-        pager = diff-so-fancy | less --tabs=4
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+  attributesfile = ~/.gitattributes
+  pager = diff-so-fancy | less --tabs=4
 [alias]
-        aa = add -A
-        br = branch
-        ca = commit --amend
-        ci = commit
-        cm = commit -m
-        co = checkout
-        cp = cherry-pick
-        cv = commit -v
-        d = diff
-        last = log -1 HEAD
-        ll = log --oneline
-        lp = log -p
-        pf = push --force-with-lease
-        ri = rebase -i
-        rv = remote -v
-        st = status
-        sst = status -sb
-        sw = switch
+  aa = add -A
+  br = branch
+  ca = commit --amend
+  ci = commit
+  cm = commit -m
+  co = checkout
+  cp = cherry-pick
+  cv = commit -v
+  d = diff
+  last = log -1 HEAD
+  ll = log --oneline
+  lp = log -p
+  pf = push --force-with-lease
+  ri = rebase -i
+  rv = remote -v
+  st = status
+  sst = status -sb
+  sw = switch
 [color]
-	ui = auto
+  ui = auto
 [color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  meta = 11
+  frag = magenta bold
+  func = 146 bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [color "status"]
-        added = green
-        changed = "#DC143C"
-        untracked = "#DC143C"
+  added = green
+  changed = "#DC143C"
+  untracked = "#DC143C"
 [diff-so-fancy]
-	stripLeadingSymbols = true
+  stripLeadingSymbols = true
 [fetch]
-        prune = true
+  prune = true
 [help]
-    autocorrect = 30
+  autocorrect = 30
 [init]
-        defaultBranch = main
+  defaultBranch = main
 [interactive]
-	diffFilter = diff-so-fancy --patch
+  diffFilter = diff-so-fancy --patch
 [pager]
-        branch = false
+  branch = false
 [pull]
-        ff = only
+  ff = only
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
 [rebase]
-	autosquash = true
+  autosquash = true
