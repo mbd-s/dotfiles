@@ -23,10 +23,11 @@
         pf = push --force-with-lease
         ri = rebase -i
         rv = remote -v
-        st = status -sb
+        st = status
+        sst = status -sb
         sw = switch
 [color]
-	ui = true
+	ui = auto
 [color "diff"]
 	meta = 11
 	frag = magenta bold
@@ -48,6 +49,8 @@
 	stripLeadingSymbols = true
 [fetch]
         prune = true
+[help]
+    autocorrect = 30
 [init]
         defaultBranch = main
 [interactive]
