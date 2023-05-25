@@ -28,23 +28,33 @@
   sw = switch
 [color]
   ui = auto
+[color "branch"]
+  current = cyan bold reverse
+  local = white
+  remote = cyan
 [color "diff"]
-  meta = 11
-  frag = magenta bold
-  func = 146 bold
-  commit = yellow bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+  meta = magenta
+  frag = cyan bold reverse
+  func = cyan
+  commit = yellow
+  old = red
+  new = green
+  whitespace = magenta reverse
 [color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
+  oldHighlight = bold
+  newHighlight = bold
+[color "grep"]
+  filename = cyan
+  linenumber = "bold #50fa7b"
+  match = bold magenta
+  separator = "#bd93f9"
 [color "status"]
   added = green
-  changed = "#DC143C"
-  untracked = "#DC143C"
+  changed = yellow
+  untracked = "#ffb86c"
+  remoteBranch = cyan bold
+  unmerged = magenta bold reverse
+  updated = green bold
 [diff-so-fancy]
   stripLeadingSymbols = true
 [fetch]

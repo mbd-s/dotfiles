@@ -23,36 +23,39 @@ $terraform
 [aws]
 force_display = true
 format = '([$symbol($profile)(\($region\))]($style))'
-style = "bold cyan"
+style = "bold #ffb86c"
 
 [aws.region_aliases]
 eu-central-1 = ""
 
 [directory]
-repo_root_style = "bold #0000FF"
-style = "#1E90FF"
+style = "bold #50fa7b"
 truncation_length = 6
 
 [character]
-success_symbol = "[❯](green)"
+error_symbol = "[❯](bold #ff5555)"
+success_symbol = "[❯](bold #50fa7b)"
+
+[cmd_duration]
+style = "bold #f1fa8c"
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-style = "bold #8A2BE2"
+style = "bold #ff79c6"
 truncation_length = 30
 
 [git_status]
 ahead = "⇡ "
 behind = "⇣ "
-conflicted = "[!](#DC143C) "
-deleted = '[✘\($count\)](#DC143C) '
+conflicted = "[!](#ff5555) "
+deleted = '[✘\($count\)](#ff5555) '
 diverged = "⇕ "
 format = "([$all_status$ahead_behind]($style))"
-modified = '[*\($count\)](#DC143C) '
-renamed = '[»\($count\)](green) '
-staged = '[+\($count\)](green) '
-stashed = '[\$](#0000FF) '
-untracked = '[?\($count\)](#DC143C) '
+modified = '[*\($count\)](#ff5555) '
+renamed = '[»\($count\)](#50fa7b) '
+staged = '[+\($count\)](#50fa7b) '
+stashed = '[\$](#8be9fd) '
+untracked = '[?\($count\)](#bd93f9) '
 
 [golang]
 format = "[$symbol($version )]($style)"
@@ -61,7 +64,7 @@ version_format = "${raw}"
 [kubernetes]
 disabled = false
 format = '[ $symbol$context( \($namespace\))]($style)'
-style = "bold #FFCC99"
+style = "bold #f1fa8c"
 
 [kubernetes.context_aliases]
 'arn:.*:cluster/(?P<cluster>[\w-]+)' = "$cluster"
@@ -78,9 +81,10 @@ version_format = "${raw}"
 [terraform]
 detect_extensions = ["tf", "tfplan", "tfstate", "hcl"]
 format = " [$symbol$workspace]($style)"
+style = "bold #8be9fd"
 
 [time]
 disabled = false
 format = "[$time]($style)"
-style = "#95A5A6 dimmed"
+style = "#6272a4"
 time_format = "%H:%M "

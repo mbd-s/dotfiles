@@ -1,4 +1,4 @@
-.PHONY: asdf brew chip-support fisher fonts help link overwrite setup setup-force unlink vs-code
+.PHONY: asdf brew chip-support dracula fisher fonts help link overwrite setup setup-force unlink vs-code
 
 asdf: ## Adds asdf plugins and installs the latest versions of them. Usage: `make asdf`.
 	$(info Installing asdf plugins...)
@@ -35,13 +35,26 @@ else
 	@echo "No extra dependencies needed for this architecture"
 endif
 
+dracula: ## Installs Dracula theme. Usage: `make dracula`.
+	$(info Installing Dracula theme for vim, fish, and fzf)
+	@if [ ! -d ~/.vim/pack/themes/start/dracula ]; then \
+		mkdir -p ~/.vim/pack/themes/start && \
+		git clone https://github.com/dracula/vim.git ~/.vim/pack/themes/start/dracula; \
+	fi
+	@mkdir -p /tmp/dracula && \
+	curl -sSL https://github.com/dracula/fish/archive/master.zip -o /tmp/dracula/fish.zip
+	@unzip /tmp/dracula/fish.zip -d /tmp/dracula > /dev/null
+	@mv /tmp/dracula/fish-master/themes/Dracula\ Official.theme ~/.config/fish/themes
+	@rm -rf /tmp/dracula
+	@fish -c 'set -Ux FZF_DEFAULT_OPTS "--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"'
+
 fisher: ## Installs fisher and plugins. Usage: `make fisher`.
 	$(info Installing fisher...)
 	@fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 	@fish -c "fisher update"
 
 help: ## Shows this help message. Usage: `make help`.
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[38;5;117m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 fonts: ## Installs Input fonts. Usage: `make fonts`.
 	$(info Installing Input fonts from https://input.djr.com)
@@ -95,9 +108,9 @@ overwrite: ## Symlinks config files, replacing any existing files. Usage: `make 
 	@ln -sfnv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	@ln -sfnv $(PWD)/dig/.digrc ~/.digrc
 
-setup: | link fisher chip-support brew vs-code asdf fonts ## Symlinks config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
+setup: | link fisher chip-support dracula brew vs-code asdf fonts ## Symlinks config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
 
-setup-force: | overwrite fisher chip-support brew vs-code-overwrite asdf fonts ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
+setup-force: | overwrite fisher chip-support dracula brew vs-code-overwrite asdf fonts ## Overwrites existing config files and installs Homebrew packages and asdf plugins. Usage: `make setup-force`.
 
 unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	$(info Unlinking symlinked config files)

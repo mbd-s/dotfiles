@@ -1,4 +1,4 @@
-" Boilerplate .vimrc template borrowed from https://gist.github.com/simonista/8703722
+" Boilerplate .vimrc template borrowed from https://gist.github.com/simonista/8703722 and extended
 
 " Don't try to be vi compatible
 set nocompatible
@@ -97,9 +97,19 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme (terminal)
 set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
+packadd! dracula
+syntax enable
+colorscheme dracula
+
+" Set the CursorLine highlight group
+augroup CursorLineHighlight
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave,BufWinLeave * setlocal nocursorline
+augroup END
+
+" Set the CursorLine color
+highlight CursorLine cterm=underline ctermfg=81 ctermbg=NONE
+
+" Set the CursorLineNr highlight group
+highlight CursorLineNr ctermfg=yellow ctermbg=none

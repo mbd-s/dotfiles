@@ -89,7 +89,7 @@
       "list.hoverForeground": "#f70707"
     }
   },
-  "workbench.colorTheme": "Dark-Dracula",
+  "workbench.colorTheme": "Dracula",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"

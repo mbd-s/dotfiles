@@ -1,5 +1,10 @@
 title = "Slack theme"
 
 # Copy and paste into "Create a custom theme": https://slack.com/help/articles/205166337-Change-your-Slack-theme
+
 [work_profile]
 hex_codes = #d4d4d4,#bdbdbd,#0015ff,#1EFF00,#bababa,#000000,#1EFF00,#ff00ee,#bdbdbd,#000000
+
+#https://draculatheme.com/slack
+[dracula]
+hex_codes = #282A36,#44475A,#44475A,#8BE9FD,#6272A4,#FFFFFF,#50FA7B,#FF5555
