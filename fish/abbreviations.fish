@@ -1,7 +1,7 @@
 abbr ... "cd ../.."
 abbr .... "cd ../../.."
 abbr be "bundle exec"
-abbr dc "docker-compose"
+abbr dc "docker compose"
 abbr fopen "vi ~/.config/fish/config.fish"
 abbr fource "source ~/.config/fish/config.fish"
 abbr github "web-search github"
