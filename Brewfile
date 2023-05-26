@@ -54,6 +54,7 @@ brew 'lf' # Terminal file manager
 brew 'libsodium' # NaCl networking and cryptography library
 brew 'lolcat' # Rainbows and unicorns in your console!
 brew 'mailhog' # Web and API based SMTP testing tool
+brew 'mariadb' # Drop-in replacement for MySQL
 brew 'mas' # Mac App Store command-line interface
 brew 'minikube' # Run a Kubernetes cluster locally
 brew 'nmap' # Port scanning utility for large networks
@@ -61,11 +62,13 @@ brew 'peco' # Simplistic interactive filtering tool
 brew 'pkg-config' # Manage compile and link flags for libraries
 brew 'postgresql@14' # Object-relational database system
 brew 'qmk/qmk/qmk' # Quantum Mechanical Keyboard (QMK) Firmware
+brew 'redis' # Persistent key-value database, with built-in net interface
 brew 'ripgrep' # Search tool like grep and The Silver Searcher
 brew 'shellcheck' # Static analysis and lint tool, for (ba)sh scripts
 brew 'starship' # Cross-shell prompt for astronauts
 brew 'telnet' # User interface to the TELNET protocol
 brew 'terraform-docs' # Tool to generate documentation from Terraform modules
+brew 'texinfo' # Official documentation format of the GNU project
 brew 'tig' # Text interface for Git repositories
 brew 'tldr' # Simplified and community-driven man pages
 brew 'tmux' # Terminal multiplexer
