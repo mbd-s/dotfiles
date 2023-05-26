@@ -17,11 +17,12 @@
   cp = cherry-pick
   cv = commit -v
   d = diff
+  fixup = !sh -c 'git commit --fixup :/\"$1\"' -
   last = log -1 HEAD
   ll = log --oneline
   lp = log -p
   pf = push --force-with-lease
-  ri = rebase -i
+  ri = !sh -c 'git rebase -i $1~' -
   rv = remote -v
   st = status
   sst = status -sb
