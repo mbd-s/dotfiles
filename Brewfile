@@ -38,6 +38,7 @@ brew 'golangci-lint' # Fast linters runner for Go
 brew 'gomplate' # Command-line Golang template processor
 brew 'helm' # Kubernetes package manager
 brew 'helmfile' # Deploy Kubernetes Helm Charts
+brew 'highlight' # Convert source code to formatted text with syntax highlighting
 brew 'htop' # Improved top (interactive process viewer)
 brew 'httpie' # User-friendly cURL replacement (command-line HTTP client)
 brew 'imagemagick' # Tools and libraries to manipulate images in many formats
@@ -64,6 +65,7 @@ brew 'qmk/qmk/qmk' # Quantum Mechanical Keyboard (QMK) Firmware
 brew 'redis' # Persistent key-value database, with built-in net interface
 brew 'ripgrep' # Search tool like grep and The Silver Searcher
 brew 'shellcheck' # Static analysis and lint tool, for (ba)sh scripts
+brew 'source-highlight' # Source-code syntax highlighter
 brew 'starship' # Cross-shell prompt for astronauts
 brew 'telnet' # User interface to the TELNET protocol
 brew 'terraform-docs' # Tool to generate documentation from Terraform modules

@@ -81,6 +81,8 @@ link: ## Symlinks config files. Usage: `make link`.
 	@[ -f ~/.config/fish/fish_plugins ] || ln -sfnv $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
 	@mkdir -p ~/.config/lf
 	@[ -f ~/.config/lf/lfrc ] || ln -sv $(PWD)/lf/lfrc ~/.config/lf/lfrc
+	@[ -f ~/.config/lf/icons ] || ln -sv $(PWD)/lf/icons ~/.config/lf/icons
+	@[ -f ~/.config/lf/pv.sh ] || ln -sv $(PWD)/lf/pv.sh ~/.config/lf/pv.sh
 	@[ -f ~/.tmux.conf ] || ln -sv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	@[ -f ~/.digrc ] || ln -sv $(PWD)/dig/.digrc ~/.digrc
 
@@ -101,6 +103,8 @@ overwrite: ## Symlinks config files, replacing any existing files. Usage: `make 
 	@ln -sfnv $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
 	@mkdir -p ~/.config/lf
 	@ln -sfnv $(PWD)/lf/lfrc ~/.config/lf/lfrc
+	@ln -sfnv $(PWD)/lf/icons ~/.config/lf/icons
+	@ln -sfnv $(PWD)/lf/pv.sh ~/.config/lf/pv.sh
 	@ln -sfnv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	@ln -sfnv $(PWD)/dig/.digrc ~/.digrc
 
@@ -121,6 +125,8 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/.config/fish/conf.d/abbreviations.fish ] || rm -v ~/.config/fish/conf.d/abbreviations.fish
 	@[ ! -L ~/.config/fish/fish_plugins ] || rm -v ~/.config/fish/fish_plugins
 	@[ ! -L ~/.config/lf/lfrc ] || rm -v ~/.config/lf/lfrc
+	@[ ! -L ~/.config/lf/icons ] || rm -v ~/.config/lf/icons
+	@[ ! -L ~/.config/lf/pv.sh ] || rm -v ~/.config/lf/pv.sh
 	@[ ! -L ~/.tmux.conf ] || rm -v ~/.tmux.conf
 	@[ ! -L ~/.digrc ] || rm -v ~/.digrc
 
