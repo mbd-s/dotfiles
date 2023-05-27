@@ -79,8 +79,6 @@ link: ## Symlinks config files. Usage: `make link`.
 	@[ -f ~/.config/fish/config.fish ] || ln -sv $(PWD)/fish/config.fish ~/.config/fish/config.fish
 	@[ -f ~/.config/fish/conf.d/abbreviations.fish ] || ln -sfnv $(PWD)/fish/abbreviations.fish ~/.config/fish/conf.d/abbreviations.fish
 	@[ -f ~/.config/fish/fish_plugins ] || ln -sfnv $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
-	@mkdir -p ~/.config/peco
-	@[ -f ~/.config/peco/config.json ] || ln -sv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf
 	@[ -f ~/.config/lf/lfrc ] || ln -sv $(PWD)/lf/lfrc ~/.config/lf/lfrc
 	@[ -f ~/.tmux.conf ] || ln -sv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
@@ -101,8 +99,6 @@ overwrite: ## Symlinks config files, replacing any existing files. Usage: `make 
 	@ln -sfnv $(PWD)/fish/config.fish ~/.config/fish/config.fish
 	@ln -sfnv $(PWD)/fish/abbreviations.fish ~/.config/fish/conf.d/abbreviations.fish
 	@ln -sfnv $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
-	@mkdir -p ~/.config/peco
-	@ln -sfnv $(PWD)/peco/config.json ~/.config/peco/config.json
 	@mkdir -p ~/.config/lf
 	@ln -sfnv $(PWD)/lf/lfrc ~/.config/lf/lfrc
 	@ln -sfnv $(PWD)/tmux/.tmux.conf ~/.tmux.conf
@@ -124,7 +120,6 @@ unlink: ## Removes all symlinked config files. Usage: `make unlink`.
 	@[ ! -L ~/.config/fish/config.fish ] || rm -v ~/.config/fish/config.fish
 	@[ ! -L ~/.config/fish/conf.d/abbreviations.fish ] || rm -v ~/.config/fish/conf.d/abbreviations.fish
 	@[ ! -L ~/.config/fish/fish_plugins ] || rm -v ~/.config/fish/fish_plugins
-	@[ ! -L ~/.config/peco/config.json ] || rm -v ~/.config/peco/config.json
 	@[ ! -L ~/.config/lf/lfrc ] || rm -v ~/.config/lf/lfrc
 	@[ ! -L ~/.tmux.conf ] || rm -v ~/.tmux.conf
 	@[ ! -L ~/.digrc ] || rm -v ~/.digrc

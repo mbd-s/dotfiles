@@ -58,7 +58,6 @@ brew 'mariadb' # Drop-in replacement for MySQL
 brew 'mas' # Mac App Store command-line interface
 brew 'minikube' # Run a Kubernetes cluster locally
 brew 'nmap' # Port scanning utility for large networks
-brew 'peco' # Simplistic interactive filtering tool
 brew 'pkg-config' # Manage compile and link flags for libraries
 brew 'postgresql@14' # Object-relational database system
 brew 'qmk/qmk/qmk' # Quantum Mechanical Keyboard (QMK) Firmware

@@ -1,8 +1,0 @@
-{
-  "Use256Color": true,
-  "Style": {
-    "Selected": ["on_magenta", "white"],
-    "Query": ["yellow", "bold"]
-  },
-  "Layout": "bottom-up"
-}
