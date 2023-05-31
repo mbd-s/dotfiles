@@ -20,7 +20,6 @@
   },
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 100,
-  "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "github.copilot.enable": {
     "*": true,
@@ -95,5 +94,7 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "workbench.startupEditor": "none",
-  "editor.wordWrapColumn": 120
+  "editor.wordWrapColumn": 120,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true
 }
