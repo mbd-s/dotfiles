@@ -2,6 +2,8 @@ add_newline = false
 command_timeout = 1000
 
 format = """
+$username\
+$hostname\
 $directory\
 $time\
 $git_branch\
@@ -14,7 +16,8 @@ $character
 right_format = """
 $aws\
 $kubernetes\
-$terraform
+$terraform\
+$helm
 """
 
 [aws]
@@ -25,16 +28,16 @@ style = "bold #ffb86c"
 [aws.region_aliases]
 eu-central-1 = ""
 
-[directory]
-style = "bold #50fa7b"
-truncation_length = 6
-
 [character]
 error_symbol = "[❯](bold #ff5555)"
 success_symbol = "[❯](bold #50fa7b)"
 
 [cmd_duration]
 style = "bold #f1fa8c"
+
+[directory]
+style = "bold #50fa7b"
+truncation_length = 3
 
 [git_branch]
 format = "[$symbol$branch]($style) "
@@ -54,6 +57,14 @@ staged = '[+\($count\)](#50fa7b) '
 stashed = '[\$](#8be9fd) '
 untracked = '[?\($count\)](#bd93f9) '
 
+[helm]
+symbol = '🕸️ '
+format = '[$symbol ($version )]($style)'
+style = 'bold #f8f8f2'
+
+[hostname]
+style = "bold #ff5555"
+
 [kubernetes]
 disabled = false
 format = '[ $symbol$context( \($namespace\))]($style)'
@@ -72,3 +83,7 @@ disabled = false
 format = "[$time]($style)"
 style = "#6272a4"
 time_format = "%H:%M "
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold #bd93f9"
