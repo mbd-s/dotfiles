@@ -1,27 +1,23 @@
 .PHONY: asdf brew chip-support dracula fisher fonts help link overwrite setup setup-force unlink vs-code
 
-asdf: ## Adds asdf plugins and installs the latest versions of them. Usage: `make asdf`.
-	$(info Installing asdf plugins...)
-	@asdf plugin add golang https://github.com/kennyp/asdf-golang.git || true
-	@asdf install golang latest
-	@asdf plugin add istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git || true
-	@asdf install istioctl latest
-	@asdf plugin add kubectl https://github.com/asdf-community/asdf-kubectl.git || true
-	@asdf install kubectl latest
-	@asdf plugin add kubergrunt https://github.com/NeoHsu/asdf-kubergrunt.git || true
-	@asdf install kubergrunt latest
-	@asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git || true
-	@asdf install nodejs latest
-	@asdf plugin add python https://github.com/danhper/asdf-python.git || true
-	@asdf install python latest
-	@asdf plugin add richgo https://github.com/paxosglobal/asdf-richgo.git || true
-	@asdf install richgo latest
-	@asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git || true
-	@asdf install ruby latest
-	@asdf plugin add terraform https://github.com/asdf-community/asdf-hashicorp.git || true
-	@asdf install terraform latest
-	@asdf plugin add terragrunt https://github.com/ohmer/asdf-terragrunt || true
-	@asdf install terragrunt latest
+ASDF_PLUGINS := \
+	golang \
+	istioctl \
+	kubectl \
+	kubergrunt \
+	nodejs \
+	python \
+	richgo \
+	ruby \
+	terraform \
+	terragrunt
+
+asdf: ## Installs latest versions of asdf plugins. Usage: `make asdf`.
+	$(info Installing asdf plugins)
+	@for plugin in $(ASDF_PLUGINS); do \
+		asdf plugin add $$plugin || true; \
+		asdf install $$plugin latest; \
+	done
 
 brew: ## Installs Homebrew packages listed in the Brewfile. Usage: `make brew`.
 	$(info Installing Homebrew packages...)
