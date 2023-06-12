@@ -10,6 +10,8 @@
   "editor.fontFamily": "Input Mono",
   "editor.fontSize": 15,
   "editor.inlineSuggest.enabled": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
   "editor.rulers": [120],
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
