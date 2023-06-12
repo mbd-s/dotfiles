@@ -121,6 +121,7 @@ if File.exist?('.home')
   cask 'zoom' # Video communication and virtual meeting platform
 
   mas 'Shazam', id: 897118787 # Identify the music playing around you
+
 elsif File.exist?('.work')
   brew 'go-jira' # Simple jira command-line client in Go
 

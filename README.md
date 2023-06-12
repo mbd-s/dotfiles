@@ -1,8 +1,7 @@
 # Dotfiles
 
-My personal dotfiles for a `fish` shell on a Silicon Mac running macOS 13, including basic tools and
-opinionated settings. You probably don't want to adopt these wholesale, but feel free to use what
-you like.
+My personal dotfiles for a `fish` shell on an ARM-based Mac, including essential tools and opinionated settings. You
+probably don't want to adopt these wholesale, but feel free to take what you like.
 
 ## 🧭 Prerequisites
 
@@ -30,22 +29,22 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script bootstraps a new Mac. It will symlink the config files and install a bunch of tools
-(iTerm2, Visual Studio Code, Go, Terraform, Starship, etc.) via Homebrew and
-[asdf](https://github.com/asdf-vm/asdf):
+The setup script bootstraps a new Mac. It will symlink the config files and install a bunch of tools (iTerm2, Visual
+Studio Code, Go, Terraform, Starship, etc.) via Homebrew and [asdf](https://github.com/asdf-vm/asdf):
 
 ```shell
 make setup
 ```
 
-The command is nondestructive, so it won't overwrite existing files. Run `make help` to see all
-available commands.
+The command is nondestructive, so it won't overwrite existing files. Run `make help` to see all available commands.
 
 ## ⚙️ Configuration
 
 ### fish
 
-Private configuration can be stored in files with the `.fish` extension in `$DOTFILES/fish/private/`. If you ran `make setup`, everything in this directory will be symlinked to `$__fish_config_dir/private/` but ignored by `git`. Example `private/config.fish`:
+Private configuration can be stored in files with the `.fish` extension in `$DOTFILES/fish/.config/fish/private/`. If
+you ran `make setup`, everything in this directory will be symlinked to `$__fish_config_dir/private/` but ignored by
+`git`. Example:
 
 ```shell
 set -x CDPATH . ~ path/to/directory/you/want/in/CDPATH
@@ -55,8 +54,8 @@ alias secret "Something secret!"
 
 ### git
 
-Create a file at `$DOTFILES/git/.gitlocal` with your own `git` user details and any aliases or options you
-don't want to check into version control. Example:
+Create a file at `$DOTFILES/git/.gitlocal` with your own `git` user details and any aliases or options you don't want to
+check into version control. Example:
 
 ```
 [user]
@@ -66,8 +65,8 @@ don't want to check into version control. Example:
         mine = log --author='Your Name'
 ```
 
-To split home and work concerns, you could nest all work-related repositories inside a `work/`
-directory and configure a `git` user for your work projects at `$DOTFILES/git/work/.gitlocal`. Example:
+To split home and work concerns, you could nest all work-related repositories inside a `work/` directory and configure a
+`git` user for your work projects at `$DOTFILES/git/work/.gitlocal`. Example:
 
 ```
 [user]
@@ -76,10 +75,9 @@ directory and configure a `git` user for your work projects at `$DOTFILES/git/wo
 
 ### Homebrew
 
-I've split Homebrew packages similarly along home and work concerns. To install the home packages,
-create an empty `.home` file in the root of this project. To install the work packages, create an
-empty `.work` file instead. (Both files are ignored by `git`.) The common packages are installed in
-any case.
+I've split Homebrew packages similarly along home and work concerns. To install the home packages, create an empty
+`.home` file in the root of this project. To install the work packages, create an empty `.work` file instead. (Both
+files are ignored by `git`.) The common packages are installed in any case.
 
 ### iTerm2
 

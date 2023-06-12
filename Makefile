@@ -1,4 +1,4 @@
-.PHONY: asdf brew chip-support clean dracula fisher fonts help link setup
+.PHONY: asdf brew chip clean dracula fisher fonts help link setup
 
 DOTFILES := $(shell pwd)
 
@@ -38,7 +38,7 @@ brew: Brewfile ## Installs Homebrew packages listed in the Brewfile. Usage: `mak
 	@brew bundle
 	@brew cleanup
 
-chip-support: ## Installs ARM-specific dependencies if necessary. Usage: `make chip-support`.
+chip: ## Installs ARM-specific dependencies if necessary. Usage: `make chip-support`.
 ifeq ($(shell arch),arm64)
 	@[ ! -f /Library/Apple/usr/share/rosetta/rosetta ] && (echo "Installing ARM-specific dependencies" && softwareupdate --install-rosetta --agree-to-license) || echo "ARM-specific dependencies already installed"
 else
@@ -88,6 +88,6 @@ link: ## Symlinks config files. Usage: `make link`.
 		stow -v $$dir; \
 	done
 
-setup: link fisher chip-support dracula brew asdf fonts ## Symlinks config files and installs Homebrew packages and asdf plugins. Usage: `make setup`.
+setup: link fisher chip dracula brew asdf fonts ## Symlinks config files and installs tools. Usage: `make setup`.
 
 .DEFAULT_GOAL := help
