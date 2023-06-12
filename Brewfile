@@ -67,6 +67,7 @@ brew 'ripgrep' # Search tool like grep and The Silver Searcher
 brew 'shellcheck' # Static analysis and lint tool, for (ba)sh scripts
 brew 'source-highlight' # Source-code syntax highlighter
 brew 'starship' # Cross-shell prompt for astronauts
+brew 'stow' # Organize software neatly under a single directory tree (e.g., /usr/local)
 brew 'telnet' # User interface to the TELNET protocol
 brew 'terraform-docs' # Tool to generate documentation from Terraform modules
 brew 'texinfo' # Official documentation format of the GNU project

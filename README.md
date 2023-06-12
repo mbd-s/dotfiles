@@ -17,8 +17,8 @@ brew install fish # Install fish via Homebrew
 echo $(which fish) | sudo tee -a /etc/shells # Add fish to the list of system shells
 chsh -s $(which fish) # Set fish as the default shell
 fish # Start a new fish shell
-set fish_user_paths (brew --prefix)/bin (brew --prefix)/sbin $fish_user_paths
- # Add brew binaries to $PATH
+eval "$(/opt/homebrew/bin/brew shellenv)" # Set up Homebrew in fish
+fish_add_path (brew --prefix)/bin (brew --prefix)/sbin # Add Homebrew binaries to $PATH
 ```
 
 ## 🔌 Installation
@@ -38,16 +38,14 @@ The setup script bootstraps a new Mac. It will symlink the config files and inst
 make setup
 ```
 
-The command is nondestructive, so it won't overwrite existing files. If you want to overwrite your
-local files with the config in this project, run `make setup-force`. Run `make help` to see all
+The command is nondestructive, so it won't overwrite existing files. Run `make help` to see all
 available commands.
 
 ## ⚙️ Configuration
 
 ### fish
 
-Private configuration can be stored in files with the `.fish` extension in `$__fish_config_dir/private/`.
-(Everything in this directory will be ignored by `git`.) Example `secret-config.fish`:
+Private configuration can be stored in files with the `.fish` extension in `$DOTFILES/fish/private/`. If you ran `make setup`, everything in this directory will be symlinked to `$__fish_config_dir/private/` but ignored by `git`. Example `private/config.fish`:
 
 ```shell
 set -x CDPATH . ~ path/to/directory/you/want/in/CDPATH
@@ -57,7 +55,7 @@ alias secret "Something secret!"
 
 ### git
 
-Create a file at `git/.gitlocal` with your own `git` user details and any aliases or options you
+Create a file at `$DOTFILES/git/.gitlocal` with your own `git` user details and any aliases or options you
 don't want to check into version control. Example:
 
 ```
@@ -69,7 +67,7 @@ don't want to check into version control. Example:
 ```
 
 To split home and work concerns, you could nest all work-related repositories inside a `work/`
-directory and configure a `git` user for your work projects at `git/work/.gitlocal`. Example:
+directory and configure a `git` user for your work projects at `$DOTFILES/git/work/.gitlocal`. Example:
 
 ```
 [user]
@@ -91,7 +89,7 @@ any case.
 2. Select `iTerm2 > Preferences`
 3. Select `Profiles`
 4. Select the `Other Actions...` dropdown menu and click `Import JSON profiles...`
-5. Choose the profile you want to use from the ones in `~/dotfiles/iterm/`
+5. Choose the profile you want to use from the ones in `$DOTFILES/iterm/`
 
 #### Key mappings
 
@@ -99,21 +97,14 @@ any case.
 2. Select `iTerm2 > Preferences`
 3. Select `Profiles`, then `Keys`
 4. Select the `Presets...` dropdown menu and click `Import...`
-5. Choose `~/dotfiles/iterm/custom.itermkeymap`
-
-### Visual Studio Code
-
-The Visual Studio Code settings file is copied rather than symlinked. I prefer copying over
-symlinking because it gets around the mess created when you have a versioned file and also use VS
-Code's [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync) across multiple
-machines.
+5. Choose `$DOTFILES/iterm/custom.itermkeymap`
 
 ## ✂️ Uninstalling
 
 To remove symlinked files:
 
 ```shell
-make unlink
+make clean
 ```
 
 ## 🦀 Contributing
