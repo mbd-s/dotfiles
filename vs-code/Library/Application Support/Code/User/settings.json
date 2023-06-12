@@ -93,7 +93,7 @@
   "workbench.colorTheme": "Dracula",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter-notebook"
   },
   "workbench.startupEditor": "none",
   "editor.wordWrapColumn": 120,
