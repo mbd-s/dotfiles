@@ -1,4 +1,4 @@
-.PHONY: asdf brew chip clean dracula fisher fonts help link setup
+.PHONY: asdf brew chip clean dracula fisher fonts help link mac mac-reset setup
 
 DOTFILES := $(shell pwd)
 
@@ -97,6 +97,14 @@ link: ## Symlinks config files. Usage: `make link`.
 		stow --verbose $$dir; \
 	done
 
-setup: chip brew asdf dracula fonts link fisher ## Symlinks config files and installs tools. Usage: `make setup`.
+mac: ## Applies new macOS settings. Usage: `make mac`.
+	$(info Setting new macOS defaults)
+	@./scripts/set-macos-defaults.fish
+
+mac-reset: ## Resets macOS defaults. Usage: `make mac-reset`.
+	$(info Resetting macOS defaults)
+	@./scripts/reset-macos-defaults.fish
+
+setup: chip mac brew asdf dracula fonts link fisher ## Symlinks config files and installs tools. Usage: `make setup`.
 
 .DEFAULT_GOAL := help
