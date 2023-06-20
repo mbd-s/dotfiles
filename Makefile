@@ -51,19 +51,20 @@ clean: ## Removes all symlinked config files. Usage: `make clean`.
 		stow -vD $$dir; \
 	done
 
-dracula: ## Installs Dracula theme. Usage: `make dracula`.
-	$(info Installing Dracula theme for vim, fish, and fzf)
+dracula: ## Installs Dracula theme for vim, fish, fzf, and k9s. Usage: `make dracula`.
+	$(info Installing Dracula theme)
+	@mkdir -p /tmp/dracula ~/.config/fish/themes ~/Library/Application\ Support/k9s ~/.vim/pack/themes/start
 	@if [ ! -d ~/.vim/pack/themes/start/dracula ]; then \
-		mkdir -p ~/.vim/pack/themes/start && \
 		git clone https://github.com/dracula/vim.git ~/.vim/pack/themes/start/dracula; \
 	fi
-	@mkdir -p /tmp/dracula && \
-	curl -sSL https://github.com/dracula/fish/archive/master.zip -o /tmp/dracula/fish.zip
+	@curl -sSL https://github.com/dracula/fish/archive/master.zip -o /tmp/dracula/fish.zip
 	@unzip /tmp/dracula/fish.zip -d /tmp/dracula > /dev/null
-	@mkdir -p ~/.config/fish/themes
 	@mv /tmp/dracula/fish-master/themes/Dracula\ Official.theme ~/.config/fish/themes
 	@rm -rf /tmp/dracula
 	@fish -c 'set -Ux FZF_DEFAULT_OPTS "--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"'
+	@if [ ! -f ~/Library/Application\ Support/k9s/skin.yml ]; then \
+		curl -o ~/Library/Application\ Support/k9s/skin.yml -L https://raw.githubusercontent.com/derailed/k9s/master/skins/dracula.yml; \
+	fi
 
 fisher: $(DOTFILES)/fish/.config/fish/fish_plugins ## Installs fisher and plugins. Usage: `make fisher`.
 	$(info Installing fisher)
