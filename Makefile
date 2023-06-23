@@ -66,18 +66,27 @@ dracula: ## Installs Dracula theme for vim, fish, fzf, and k9s. Usage: `make dra
 		curl -o ~/Library/Application\ Support/k9s/skin.yml -L https://raw.githubusercontent.com/derailed/k9s/master/skins/dracula.yml; \
 	fi
 
-fisher: $(DOTFILES)/fish/.config/fish/fish_plugins ## Installs fisher and plugins. Usage: `make fisher`.
+fisher: ~/.config/fish/fish_plugins ## Installs fisher and plugins. Usage: `make fisher`.
 	$(info Installing fisher)
-	@fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
-	@fish -c "fisher update"
+	@if fish -c "type -q fisher" >/dev/null; then \
+		echo "fisher already installed"; \
+	else \
+		fish -c "curl -sL https://git.io/fisher | source && fisher install < ~/.config/fish/fish_plugins"; \
+	fi
 
 fonts: ## Installs Input fonts. Usage: `make fonts`.
 	$(info Installing Input fonts from https://input.djr.com)
-	@mkdir -p /tmp/input-font
-	@curl 'https://input.djr.com/build/?basic=1&fontSelection=whole&a=0&g=0&i=0&l=0&zero=0&asterisk=0&lineHeight=1.2&accept=I+do' --output /tmp/input-font/Input-Font.zip
-	@unzip /tmp/input-font/Input-Font.zip -d /tmp/input-font > /dev/null
-	@cp -R /tmp/input-font/Input_Fonts/*/*/* ~/Library/Fonts
-	@rm -rf /tmp/input-font
+	@# Input has 168 TrueType files in its current installation
+	@count=$$(find ~/Library/Fonts -type f -name "Input*" | wc -l); \
+	if [ $$count -eq 168 ]; then \
+		echo "Input already installed"; \
+	else \
+		mkdir -p /tmp/input-font; \
+		curl 'https://input.djr.com/build/?basic=1&fontSelection=whole&a=0&g=0&i=0&l=0&zero=0&asterisk=0&lineHeight=1.2&accept=I+do' --output /tmp/input-font/Input-Font.zip; \
+		unzip /tmp/input-font/Input-Font.zip -d /tmp/input-font > /dev/null; \
+		cp -R /tmp/input-font/Input_Fonts/*/*/* ~/Library/Fonts; \
+		rm -rf /tmp/input-font; \
+	fi
 
 help: ## Shows this help message. Usage: `make help`.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[38;5;117m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
