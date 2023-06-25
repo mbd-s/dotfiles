@@ -1,5 +1,7 @@
 # Dotfiles
 
+![Screenshot of my shell prompt](https://user-images.githubusercontent.com/13588399/248551301-5a08c7ba-de5c-4e3b-aafb-4dfaa27fcccd.png)
+
 My personal dotfiles for a `fish` shell on an ARM-based Mac, including essential tools and opinionated settings. You
 probably don't want to adopt these wholesale, but feel free to take what you like.
 
