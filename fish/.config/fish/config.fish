@@ -6,8 +6,12 @@ end
 # Source custom functions
 set fish_function_path $fish_function_path $__fish_config_dir/custom_functions
 
-# Set dracula color scheme
-fish_config theme choose "Dracula Official"
+# Set Dracula Official color scheme if it's installed
+if test -e "$__fish_config_dir/themes/Dracula Official.theme"
+    fish_config theme choose "Dracula Official"
+else
+    fish_config theme choose "Dracula"
+end
 
 # Disable fish_greeting
 set fish_greeting
