@@ -38,7 +38,7 @@ brew: Brewfile ## Installs Homebrew packages listed in the Brewfile. Usage: `mak
 	@brew bundle
 	@brew cleanup
 
-chip: ## Installs ARM-specific dependencies if necessary. Usage: `make chip-support`.
+chip: ## Installs ARM-specific dependencies if necessary. Usage: `make chip`.
 ifeq ($(shell arch),arm64)
 	@[ ! -f /Library/Apple/usr/share/rosetta/rosetta ] && (echo "Installing ARM-specific dependencies" && softwareupdate --install-rosetta --agree-to-license) || echo "ARM-specific dependencies already installed"
 else
