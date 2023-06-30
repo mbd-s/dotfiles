@@ -21,12 +21,15 @@
   last = log -1 HEAD
   ll = log --oneline
   lp = log -p
+  nuke = !sh -c 'git branch | grep -v "main" | grep -v "staging" | xargs git branch -D'
   pf = push --force-with-lease
   ri = !sh -c 'git rebase -i $1~' -
   rv = remote -v
-  st = status
   sst = status -sb
+  st = status
   sw = switch
+  swc = switch -c
+  ut = ls-files --others --exclude-standard
 [color]
   ui = auto
 [color "branch"]
@@ -34,16 +37,16 @@
   local = white
   remote = cyan
 [color "diff"]
-  meta = magenta
+  commit = yellow
   frag = cyan bold reverse
   func = cyan
-  commit = yellow
-  old = red
+  meta = magenta
   new = green
+  old = red
   whitespace = magenta reverse
 [color "diff-highlight"]
-  oldHighlight = bold
   newHighlight = bold
+  oldHighlight = bold
 [color "grep"]
   filename = cyan
   linenumber = "bold #50fa7b"
@@ -52,9 +55,9 @@
 [color "status"]
   added = green
   changed = yellow
-  untracked = "#ffb86c"
   remoteBranch = cyan bold
   unmerged = magenta bold reverse
+  untracked = "#ffb86c"
   updated = green bold
 [diff-so-fancy]
   stripLeadingSymbols = true
