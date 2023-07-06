@@ -99,6 +99,10 @@ files are ignored by `git`.) The common packages are installed in any case.
 4. Select the `Presets...` dropdown menu and click `Import...`
 5. Choose `$DOTFILES/iterm/custom.itermkeymap`
 
+### Visual Studio Code
+
+I find it's best to manage your VS Code settings with profiles and settings sync. The config here is just for reference.
+
 ## ✂️ Uninstalling
 
 To remove symlinked files:

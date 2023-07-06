@@ -23,8 +23,7 @@ SYMLINK_DIRS := \
 	lf \
 	starship \
 	tmux \
-	vim \
-	vs-code
+	vim
 
 asdf: ## Installs latest versions of asdf plugins. Usage: `make asdf`.
 	$(info Installing asdf plugins)
@@ -48,7 +47,7 @@ endif
 clean: ## Removes all symlinked config files. Usage: `make clean`.
 	$(info Unlinking symlinked config files)
 	@for dir in $(SYMLINK_DIRS); do \
-		stow -vD $$dir; \
+		stow --verbose --delete $$dir; \
 	done
 
 dracula: ## Installs Dracula theme for vim, fish, fzf, and k9s. Usage: `make dracula`.
@@ -75,7 +74,7 @@ fisher: ~/.config/fish/fish_plugins ## Installs fisher and plugins. Usage: `make
 	fi
 
 fonts: ## Installs Input fonts. Usage: `make fonts`.
-	$(info Installing Input fonts from https://input.djr.com)
+	$(info Installing Input fonts)
 	@# Input has 168 TrueType files in its current installation
 	@count=$$(find ~/Library/Fonts -type f -name "Input*" | wc -l); \
 	if [ $$count -eq 168 ]; then \
@@ -93,10 +92,11 @@ help: ## Shows this help message. Usage: `make help`.
 
 link: ## Symlinks config files. Usage: `make link`.
 	$(info Linking config files)
+	@brew list stow > /dev/null 2>&1 || brew install stow
 	@for dir in $(SYMLINK_DIRS); do \
-		stow -v $$dir; \
+		stow --verbose $$dir; \
 	done
 
-setup: link fisher chip dracula brew asdf fonts ## Symlinks config files and installs tools. Usage: `make setup`.
+setup: chip brew asdf dracula fonts link fisher ## Symlinks config files and installs tools. Usage: `make setup`.
 
 .DEFAULT_GOAL := help
