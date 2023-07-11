@@ -1,4 +1,4 @@
-function song -d "Get the current song playing in Apple Music"
+function song --description "Get the current song playing in Apple Music"
     set state $(osascript -e 'tell application "Music" to player state')
 
     if test "$state" != playing

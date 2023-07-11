@@ -1,3 +1,3 @@
-function exal --wraps='exa -lbha --icons --time-style=long-iso --color-scale' --description 'alias exal exa -lbha --icons --time-style=long-iso --color-scale'
-    exa -lbha --icons --time-style=long-iso --color-scale -I .DS_Store $argv
+function exal --description "exa with a few more options"
+    command exa --long --binary --header --all --icons --time-style=long-iso --color-scale --ignore-glob .DS_Store $argv
 end

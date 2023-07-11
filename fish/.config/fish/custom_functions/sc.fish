@@ -1,7 +1,7 @@
-function sc -d "Switch Kubernetes context"
+function sc --description "Switch Kubernetes context"
     test "$AWS_PROFILE" = "" && echo $RED"No AWS profile set"$RESET_COLOR && return
 
-    set -f cluster_name $(aws --profile $AWS_PROFILE eks list-clusters --query clusters | jq -r .[] | fzf --prompt="Select a cluster: ")
+    set --function cluster_name $(aws --profile $AWS_PROFILE eks list-clusters --query clusters | jq --raw-output .[] | fzf --prompt="Select a cluster: ")
 
     if test -n "$cluster_name"
         aws eks update-kubeconfig --name $cluster_name --region eu-central-1

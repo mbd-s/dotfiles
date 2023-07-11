@@ -1,4 +1,4 @@
-function weather -d "Get the current weather"
+function weather --description "Get the current weather"
     if count $argv >/dev/null
         curl wttr.in/(string join + $argv)
     else

@@ -1,5 +1,5 @@
-function eks_switch -a profile -d "Connect to an EKS-managed Kubernetes cluster in the given AWS account"
-    set -gx AWS_PROFILE $profile
+function eks_switch --argument-names profile --description "Connect to an EKS-managed Kubernetes cluster in the given AWS account"
+    set --global --export AWS_PROFILE $profile
     kubectl config unset current-context >/dev/null
 
     echo $GREEN"----------------| AWS Identity |----------------
@@ -10,12 +10,12 @@ function eks_switch -a profile -d "Connect to an EKS-managed Kubernetes cluster 
         case 253
             handle_aws_credentials_error && return
         case 254
-            type -q creds; or handle_aws_credentials_error && return
+            type --query creds; or handle_aws_credentials_error && return
             echo $GREEN"Refreshing credentials..."$RESET_COLOR && creds && sleep 5 && aws --profile $profile sts get-caller-identity --no-cli-pager; or handle_aws_credentials_error && return
     end
     echo
 
-    set -f cluster_name $(aws --profile $profile eks list-clusters --query clusters | jq -r .[] | fzf --prompt="Select a cluster: ")
+    set --function cluster_name $(aws --profile $profile eks list-clusters --query clusters | jq --raw-output .[] | fzf --prompt="Select a cluster: ")
 
     if test -n "$cluster_name"
         aws --profile $profile eks update-kubeconfig --name $cluster_name --region eu-central-1

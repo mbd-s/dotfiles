@@ -1,7 +1,7 @@
 abbr ... "cd ../.."
 abbr .... "cd ../../.."
 abbr ..... "cd ../../../.."
-abbr awsus "set -e AWS_PROFILE"
+abbr awsus "set --erase AWS_PROFILE"
 abbr be "bundle exec"
 abbr dc "docker compose"
 abbr fopen "vi ~/.config/fish/config.fish"

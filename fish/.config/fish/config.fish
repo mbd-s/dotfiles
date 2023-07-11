@@ -17,24 +17,24 @@ end
 set fish_greeting
 
 # Disable Homebrew hints
-set -gx HOMEBREW_NO_ENV_HINTS 1
+set --global --export HOMEBREW_NO_ENV_HINTS 1
 
 # Set default options for less
-set -gx LESS -FR
+set --global --export LESS -FR
 
 # Add aliases for colored text
-set -g CYAN (set_color 8be9fd)
-set -g GREEN (set_color 50fa7b)
-set -g ORANGE (set_color ffb86c)
-set -g PINK (set_color ff79c6)
-set -g PURPLE (set_color bd93f9)
-set -g RED (set_color ff5555)
-set -g YELLOW (set_color f1fa8c)
-set -g BOLD (set_color -o)
-set -g RESET_COLOR (set_color normal)
+set --global CYAN (set_color 8be9fd)
+set --global GREEN (set_color 50fa7b)
+set --global ORANGE (set_color ffb86c)
+set --global PINK (set_color ff79c6)
+set --global PURPLE (set_color bd93f9)
+set --global RED (set_color ff5555)
+set --global YELLOW (set_color f1fa8c)
+set --global BOLD (set_color --bold)
+set --global RESET_COLOR (set_color normal)
 
 # Include go.mod/go.work in asdf Go version selection
-set -gx ASDF_GOLANG_MOD_VERSION_ENABLED true
+set --global --export ASDF_GOLANG_MOD_VERSION_ENABLED true
 
 # Configure jump
 jump shell fish | source
