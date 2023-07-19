@@ -20,6 +20,7 @@ brew 'coreutils' # GNU File, Shell, and Text utilities
 brew 'cowsay' # Configurable talking characters in ASCII art
 brew 'diff-so-fancy' # Good-lookin' diffs with diff-highlight and more
 brew 'direnv' # Load/unload environment variables based on $PWD
+brew 'docker' # Pack, ship and run any application as a lightweight container
 brew 'etcd' # Key value store for shared configuration and service discovery
 brew 'exa' # Modern replacement for `ls`
 brew 'exercism' # Command-line tool to interact with exercism.io
@@ -70,6 +71,7 @@ brew 'starship' # Cross-shell prompt for astronauts
 brew 'stow' # Organize software neatly under a single directory tree (e.g., /usr/local)
 brew 'telnet' # User interface to the TELNET protocol
 brew 'terraform-docs' # Tool to generate documentation from Terraform modules
+brew 'terraformer' # CLI tool to generate terraform files from existing infrastructure
 brew 'texinfo' # Official documentation format of the GNU project
 brew 'tig' # Text interface for Git repositories
 brew 'tldr' # Simplified and community-driven man pages
@@ -86,7 +88,6 @@ cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
 cask 'arc' # Chromium based browser
 cask 'dbeaver-community' # Universal database tool and SQL client
-cask 'docker' # App to build and share containerized applications and microservices
 cask 'fig' # Fig adds IDE-style autocomplete to your existing terminal
 cask 'firefox' # Web browser
 cask 'font-hack-nerd-font' # A typeface designed for source code
@@ -95,6 +96,7 @@ cask 'google-cloud-sdk', args: { require_sha: false } # Set of tools to manage r
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'libreoffice' # Office suite
+cask 'orbstack' # Replacement for Docker Desktop
 cask 'postman' # Collaboration platform for API development
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
