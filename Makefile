@@ -1,4 +1,4 @@
-.PHONY: asdf brew chip clean dracula fisher fonts help link mac mac-reset setup
+.PHONY: asdf brew chip clean dracula fisher fonts help link mac mac-reset omz setup
 
 DOTFILES := $(shell pwd)
 
@@ -50,15 +50,20 @@ clean: ## Removes all symlinked config files. Usage: `make clean`.
 		stow --verbose --delete $$dir; \
 	done
 
-dracula: ## Installs Dracula theme for vim, fish, fzf, and k9s. Usage: `make dracula`.
+dracula: ## Installs Dracula theme for vim, fish, fzf, k9s, and Oh My Zsh. Usage: `make dracula`.
 	$(info Installing Dracula theme)
-	@mkdir -p /tmp/dracula ~/.config/fish/themes ~/Library/Application\ Support/k9s ~/.vim/pack/themes/start
+	@mkdir -p /tmp/dracula ~/.config/fish/themes ~/Library/Application\ Support/k9s ~/.vim/pack/themes/start ~/.oh-my-zsh/custom/themes
 	@if [ ! -d ~/.vim/pack/themes/start/dracula ]; then \
 		git clone https://github.com/dracula/vim.git ~/.vim/pack/themes/start/dracula; \
 	fi
 	@curl -sSL https://github.com/dracula/fish/archive/master.zip -o /tmp/dracula/fish.zip
 	@unzip /tmp/dracula/fish.zip -d /tmp/dracula > /dev/null
 	@mv /tmp/dracula/fish-master/themes/Dracula\ Official.theme ~/.config/fish/themes
+	@curl -sSL https://github.com/dracula/zsh/archive/master.zip -o /tmp/dracula/oh-my-zsh.zip
+	@unzip /tmp/dracula/oh-my-zsh.zip -d /tmp/dracula > /dev/null
+	@mv /tmp/dracula/zsh-master/dracula.zsh-theme ~/.oh-my-zsh/themes
+	@rsync -a /tmp/dracula/zsh-master/lib ~/.oh-my-zsh/themes
+	@sed -i.bak 's/^ZSH_THEME=.*/ZSH_THEME="dracula"/' ~/.zshrc
 	@rm -rf /tmp/dracula
 	@fish -c 'set -Ux FZF_DEFAULT_OPTS "--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"'
 	@if [ ! -f ~/Library/Application\ Support/k9s/skin.yml ]; then \
@@ -105,6 +110,14 @@ mac-reset: ## Resets macOS defaults. Usage: `make mac-reset`.
 	$(info Resetting macOS defaults)
 	@./scripts/reset-macos-defaults.fish
 
-setup: chip mac brew asdf dracula fonts link fisher ## Symlinks config files and installs tools. Usage: `make setup`.
+omz: ## Installs Oh My Zsh. Usage: `make omz`.
+	$(info Installing Oh My Zsh)
+	@if [ -d ~/.oh-my-zsh ]; then \
+		echo "Oh My Zsh already installed"; \
+	else \
+		sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; \
+	fi
+
+setup: chip mac brew asdf omz dracula fonts link fisher ## Symlinks config files and installs tools. Usage: `make setup`.
 
 .DEFAULT_GOAL := help
