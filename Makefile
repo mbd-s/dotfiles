@@ -25,32 +25,32 @@ SYMLINK_DIRS := \
 	tmux \
 	vim
 
-asdf: ## Installs latest versions of asdf plugins. Usage: `make asdf`.
+asdf: ## Installs asdf plugins. Usage: `make asdf`.
 	$(info Installing asdf plugins)
 	@for plugin in $(ASDF_PLUGINS); do \
 		asdf plugin add $$plugin || true; \
 		asdf install $$plugin latest; \
 	done
 
-brew: Brewfile ## Installs Homebrew packages listed in the Brewfile. Usage: `make brew`.
+brew: Brewfile ## Installs Homebrew packages. Usage: `make brew`.
 	$(info Installing Homebrew packages)
 	@brew bundle
 	@brew cleanup
 
-chip: ## Installs ARM-specific dependencies if necessary. Usage: `make chip`.
+chip: ## Installs ARM dependencies. Usage: `make chip`.
 ifeq ($(shell arch),arm64)
 	@[ ! -f /Library/Apple/usr/share/rosetta/rosetta ] && (echo "Installing ARM-specific dependencies" && softwareupdate --install-rosetta --agree-to-license) || echo "ARM-specific dependencies already installed"
 else
 	@echo "No extra dependencies needed for this architecture"
 endif
 
-clean: ## Removes all symlinked config files. Usage: `make clean`.
+clean: ## Removes symlinked config files. Usage: `make clean`.
 	$(info Unlinking symlinked config files)
 	@for dir in $(SYMLINK_DIRS); do \
 		stow --verbose --delete $$dir; \
 	done
 
-dracula: ## Installs Dracula theme for vim, fish, fzf, k9s, and Oh My Zsh. Usage: `make dracula`.
+dracula: ## Installs Dracula theme. Usage: `make dracula`.
 	$(info Installing Dracula theme)
 	@mkdir -p /tmp/dracula ~/.config/fish/themes ~/Library/Application\ Support/k9s ~/.vim/pack/themes/start ~/.oh-my-zsh/custom/themes
 	@if [ ! -d ~/.vim/pack/themes/start/dracula ]; then \
