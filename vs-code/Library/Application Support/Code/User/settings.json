@@ -55,7 +55,7 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "terminal.integrated.fontFamily": "Input Mono",
+  "terminal.integrated.fontFamily": "'Input Mono', 'Hack Nerd Font Mono'",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.profiles.osx": {
     "bash": {
