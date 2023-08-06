@@ -100,7 +100,6 @@ cask 'orbstack' # Replacement for Docker Desktop
 cask 'postman' # Collaboration platform for API development
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
-cask 'utm' # Virtual machines UI using QEMU
 cask 'vagrant' # Development environment
 cask 'via' # Keyboard configurator
 cask 'visual-studio-code' # Open-source code editor
