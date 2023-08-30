@@ -117,6 +117,7 @@ if File.exist?('.home')
   cask 'discord' # Voice and text chat software
   cask 'signal' # Instant messaging application focusing on security
   cask 'skype' # Video chat, voice call and instant messaging application
+  cask 'telegram' # Messaging app with a focus on speed and security
   cask 'torguard' # VPN client
   cask 'whatsapp' # Desktop client for WhatsApp
   cask 'zoom' # Video communication and virtual meeting platform
