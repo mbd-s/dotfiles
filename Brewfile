@@ -22,7 +22,7 @@ brew 'diff-so-fancy' # Good-lookin' diffs with diff-highlight and more
 brew 'direnv' # Load/unload environment variables based on $PWD
 brew 'docker' # Pack, ship and run any application as a lightweight container
 brew 'etcd' # Key value store for shared configuration and service discovery
-brew 'exa' # Modern replacement for `ls`
+brew 'eza' # Modern, maintained replacement for ls
 brew 'exercism' # Command-line tool to interact with exercism.io
 brew 'fd' # Simple, fast and user-friendly alternative to find
 brew 'figlet' # Banner-like program prints strings as ASCII art

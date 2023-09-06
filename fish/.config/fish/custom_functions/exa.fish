@@ -1,3 +1,3 @@
-function exa --description "exa with a few options"
-    command exa --all --icons --color-scale --ignore-glob .DS_Store $argv
+function exa --description "eza with a few options"
+    command eza --all --icons --color-scale --ignore-glob .DS_Store $argv
 end
