@@ -21,7 +21,7 @@
   last = log -1 HEAD
   ll = log --oneline
   lp = log -p
-  nuke = !sh -c 'git branch | grep -v "main" | grep -v "staging" | xargs git branch -D'
+  nuke = !sh -c 'git branch | grep -v "main" | xargs git branch -D'
   pf = push --force-with-lease
   ri = !sh -c 'git rebase -i $1~' -
   rv = remote -v
