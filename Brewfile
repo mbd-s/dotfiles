@@ -52,6 +52,7 @@ brew 'k3d' # Little helper to run CNCF's k3s in Docker
 brew 'k9s' # Kubernetes CLI to manage your clusters in style!
 brew 'kreuzwerker/taps/m1-terraform-provider-helper' # CLI to support downloading and compiling Terraform providers for ARM-based Macs
 brew 'kubecolor/tap/kubecolor' # Colorize your kubectl output
+brew 'kubectx' # Tool that can switch between kubectl contexts easily and create aliases
 brew 'lf' # Terminal file manager
 brew 'libsodium' # NaCl networking and cryptography library
 brew 'lolcat' # Rainbows and unicorns in your console!
