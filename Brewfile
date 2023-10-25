@@ -78,6 +78,7 @@ brew 'tig' # Text interface for Git repositories
 brew 'tldr' # Simplified and community-driven man pages
 brew 'tmux' # Terminal multiplexer
 brew 'tree' # Display directories as trees (with optional color/HTML output)
+brew 'watch' # Executes a program periodically, showing output fullscreen
 brew 'wget' # Internet file retriever
 brew 'yamllint' # Linter for YAML files
 brew 'yarn' # JavaScript package manager
