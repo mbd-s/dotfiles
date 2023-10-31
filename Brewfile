@@ -14,6 +14,7 @@ brew 'asdf' # Extendable version manager with support for Ruby, Node.js, Erlang 
 brew 'aws-iam-authenticator' # Use AWS IAM credentials to authenticate to Kubernetes
 brew 'aws-nuke' # Nuke a whole AWS account and delete all its resources
 brew 'awscli' # Official Amazon AWS command-line interface
+brew 'bash' # Bourne-Again SHell, a UNIX command interpreter
 brew 'bat' # Clone of cat(1) with syntax highlighting and Git integration
 brew 'cfssl' # CloudFlare's PKI toolkit
 brew 'checkov' # Prevent cloud misconfigurations during build-time for IaC tools
