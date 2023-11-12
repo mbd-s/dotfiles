@@ -4,16 +4,19 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
+tap 'hashicorp/tap'
 tap 'kreuzwerker/taps'
 tap 'kubecolor/tap'
 tap 'qmk/qmk'
 
 # Formulas
 brew 'ansible' # Automate deployment, configuration, and upgrading
+brew 'argocd' # GitOps Continuous Delivery for Kubernetes
 brew 'asdf' # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew 'aws-iam-authenticator' # Use AWS IAM credentials to authenticate to Kubernetes
 brew 'aws-nuke' # Nuke a whole AWS account and delete all its resources
 brew 'awscli' # Official Amazon AWS command-line interface
+brew 'azure-cli' # Microsoft Azure CLI 2.0
 brew 'bash' # Bourne-Again SHell, a UNIX command interpreter
 brew 'bat' # Clone of cat(1) with syntax highlighting and Git integration
 brew 'cfssl' # CloudFlare's PKI toolkit
@@ -23,6 +26,7 @@ brew 'cowsay' # Configurable talking characters in ASCII art
 brew 'diff-so-fancy' # Good-lookin' diffs with diff-highlight and more
 brew 'direnv' # Load/unload environment variables based on $PWD
 brew 'docker' # Pack, ship and run any application as a lightweight container
+brew 'eksctl' # Simple command-line tool for creating clusters on Amazon EKS
 brew 'etcd' # Key value store for shared configuration and service discovery
 brew 'eza' # Modern, maintained replacement for ls
 brew 'exercism' # Command-line tool to interact with exercism.io
@@ -39,6 +43,8 @@ brew 'glab' # Open-source GitLab command-line tool
 brew 'gnupg' # GNU Pretty Good Privacy (PGP) package
 brew 'golangci-lint' # Fast linters runner for Go
 brew 'gomplate' # Command-line Golang template processor
+brew 'grafana' # Gorgeous metric visualizations and dashboards for timeseries databases
+brew 'hashicorp/tap/vault' # Vault: https://www.vaultproject.io
 brew 'helm' # Kubernetes package manager
 brew 'helmfile' # Deploy Kubernetes Helm Charts
 brew 'highlight' # Convert source code to formatted text with syntax highlighting
@@ -63,8 +69,10 @@ brew 'mariadb' # Drop-in replacement for MySQL
 brew 'mas' # Mac App Store command-line interface
 brew 'minikube' # Run a Kubernetes cluster locally
 brew 'nmap' # Port scanning utility for large networks
+brew 'opa' # Open source, general-purpose policy engine
 brew 'pkg-config' # Manage compile and link flags for libraries
 brew 'postgresql@14' # Object-relational database system
+brew 'prometheus' # Service monitoring system and time series database
 brew 'qmk/qmk/qmk' # Quantum Mechanical Keyboard (QMK) Firmware
 brew 'redis' # Persistent key-value database, with built-in net interface
 brew 'ripgrep' # Search tool like grep and The Silver Searcher
@@ -91,6 +99,7 @@ cask_args require_sha: true
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
 cask 'arc' # Chromium based browser
+cask 'datadog-agent' # Monitoring and security across systems, apps, and services
 cask 'dbeaver-community' # Universal database tool and SQL client
 cask 'fig' # Fig adds IDE-style autocomplete to your existing terminal
 cask 'firefox' # Web browser
