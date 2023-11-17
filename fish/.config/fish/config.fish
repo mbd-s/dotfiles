@@ -36,6 +36,10 @@ set --global RESET_COLOR (set_color normal)
 # Include go.mod/go.work in asdf Go version selection
 set --global --export ASDF_GOLANG_MOD_VERSION_ENABLED true
 
+# Configure bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
 # Configure jump
 jump shell fish | source
 
