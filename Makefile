@@ -25,6 +25,8 @@ SYMLINK_DIRS := \
 	tmux \
 	vim
 
+export __fish_config_dir := $(shell fish -c 'echo $$__fish_config_dir')
+
 asdf: ## Installs asdf plugins. Usage: `make asdf`.
 	$(info Installing asdf plugins)
 	@for plugin in $(ASDF_PLUGINS); do \
@@ -52,13 +54,13 @@ clean: ## Removes symlinked config files. Usage: `make clean`.
 
 dracula: ## Installs Dracula theme. Usage: `make dracula`.
 	$(info Installing Dracula theme)
-	@mkdir -p /tmp/dracula ~/.config/fish/themes ~/Library/Application\ Support/k9s ~/.vim/pack/themes/start ~/.oh-my-zsh/custom/themes
+	@mkdir -p /tmp/dracula $${__fish_config_dir}/themes ~/Library/Application\ Support/k9s ~/.vim/pack/themes/start ~/.oh-my-zsh/custom/themes
 	@if [ ! -d ~/.vim/pack/themes/start/dracula ]; then \
 		git clone https://github.com/dracula/vim.git ~/.vim/pack/themes/start/dracula; \
 	fi
 	@curl -sSL https://github.com/dracula/fish/archive/master.zip -o /tmp/dracula/fish.zip
 	@unzip /tmp/dracula/fish.zip -d /tmp/dracula > /dev/null
-	@mv /tmp/dracula/fish-master/themes/Dracula\ Official.theme ~/.config/fish/themes
+	@mv /tmp/dracula/fish-master/themes/Dracula\ Official.theme $${__fish_config_dir}/themes
 	@curl -sSL https://github.com/dracula/zsh/archive/master.zip -o /tmp/dracula/oh-my-zsh.zip
 	@unzip /tmp/dracula/oh-my-zsh.zip -d /tmp/dracula > /dev/null
 	@mv /tmp/dracula/zsh-master/dracula.zsh-theme ~/.oh-my-zsh/themes
@@ -70,12 +72,12 @@ dracula: ## Installs Dracula theme. Usage: `make dracula`.
 		curl -o ~/Library/Application\ Support/k9s/skin.yml -L https://raw.githubusercontent.com/derailed/k9s/master/skins/dracula.yml; \
 	fi
 
-fisher: ~/.config/fish/fish_plugins ## Installs fisher and plugins. Usage: `make fisher`.
+fisher: $(__fish_config_dir)/fish_plugins ## Installs fisher and plugins. Usage: `make fisher`.
 	$(info Installing fisher)
 	@if fish -c "type -q fisher" >/dev/null; then \
 		echo "fisher already installed"; \
 	else \
-		fish -c "curl -sL https://git.io/fisher | source && fisher install < ~/.config/fish/fish_plugins"; \
+		fish -c "curl -sL https://git.io/fisher | source && fisher install < $${__fish_config_dir}/fish_plugins"; \
 	fi
 
 fonts: ## Installs Input fonts. Usage: `make fonts`.
