@@ -21,6 +21,7 @@ brew 'bash' # Bourne-Again SHell, a UNIX command interpreter
 brew 'bat' # Clone of cat(1) with syntax highlighting and Git integration
 brew 'cfssl' # CloudFlare's PKI toolkit
 brew 'checkov' # Prevent cloud misconfigurations during build-time for IaC tools
+brew 'colima' # Container runtimes on MacOS (and Linux) with minimal setup
 brew 'coreutils' # GNU File, Shell, and Text utilities
 brew 'cowsay' # Configurable talking characters in ASCII art
 brew 'diff-so-fancy' # Good-lookin' diffs with diff-highlight and more
@@ -109,7 +110,6 @@ cask 'google-cloud-sdk', args: { require_sha: false } # Set of tools to manage r
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'libreoffice' # Office suite
-cask 'orbstack' # Replacement for Docker Desktop
 cask 'postman' # Collaboration platform for API development
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
