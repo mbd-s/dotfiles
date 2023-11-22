@@ -8,27 +8,27 @@
   attributesfile = ~/.gitattributes
   pager = diff-so-fancy | less --tabs=4
 [alias]
-  aa = add -A
+  aa = add --all
   br = branch
   ca = commit --amend
   ci = commit
-  cm = commit -m
+  cm = commit --message
   co = checkout
   cp = cherry-pick
-  cv = commit -v
+  cv = commit --verbose
   d = diff
   fixup = !sh -c 'git commit --fixup :/\"$1\"' -
   last = log -1 HEAD
   ll = log --oneline
-  lp = log -p
+  lp = log --patch
   nuke = !sh -c 'git branch | grep -v "main" | xargs git branch -D'
   pf = push --force-with-lease
-  ri = !sh -c 'git rebase -i $1~' -
-  rv = remote -v
-  sst = status -sb
+  ri = !sh -c 'git rebase --interactive $1~' -
+  rv = remote --verbose
+  sst = status --short --branch
   st = status
   sw = switch
-  swc = switch -c
+  swc = switch --create
   ut = ls-files --others --exclude-standard
 [color]
   ui = auto
