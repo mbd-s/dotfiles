@@ -1,8 +1,14 @@
-function exenv --argument-names env_file --description "Export environment variables from a file, in the format KEY=VALUE"
-    set -q env_file[1]; or set env_file env.development
+function exenv --argument-names env_file --description "Export environment variables from a file where the format is KEY=VALUE"
+    if not test -n "$env_file"
+        echo "Usage: exenv <env_file>" && return
+    end
 
-    for line in (cat $env_file);
-      set env_vars (string split --max 1 = $line)
-      set -gx $env_vars[1] $env_vars[2]
+    for line in (cat $env_file)
+        if test -n "$line"; and not string match --quiet --regex '^\s*#' "$line"
+            set env_var (string split --max 1 = $line)
+            if test (count $env_var) -eq 2
+                set --global --export $env_var[1] $env_var[2]
+            end
+        end
     end
 end
