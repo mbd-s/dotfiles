@@ -70,8 +70,9 @@ disabled = false
 format = '[ $symbol$context(\($namespace\))]($style)'
 style = "bold #f1fa8c"
 
-[kubernetes.context_aliases]
-'arn:.*:cluster/(?P<cluster>[\w-]+)' = "$cluster"
+[[kubernetes.contexts]]
+context_pattern = 'arn:.*:cluster/(?P<cluster>[\w-]+)'
+context_alias = "$cluster"
 
 [terraform]
 detect_extensions = ["tf", "tfplan", "tfstate", "hcl"]
