@@ -37,7 +37,6 @@ style = "bold #f1fa8c"
 
 [directory]
 style = "bold #50fa7b"
-truncation_length = 3
 
 [git_branch]
 format = "[$symbol$branch]($style) "
