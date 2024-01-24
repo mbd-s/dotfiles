@@ -73,6 +73,7 @@ brew 'mas' # Mac App Store command-line interface
 brew 'minikube' # Run a Kubernetes cluster locally
 brew 'nmap' # Port scanning utility for large networks
 brew 'opa' # Open source, general-purpose policy engine
+brew 'opentofu' # Drop-in replacement for Terraform. Infrastructure as Code Tool
 brew 'pkg-config' # Manage compile and link flags for libraries
 brew 'postgresql@14' # Object-relational database system
 brew 'prometheus' # Service monitoring system and time series database
