@@ -55,6 +55,7 @@ brew 'htop' # Improved top (interactive process viewer)
 brew 'httpie' # User-friendly cURL replacement (command-line HTTP client)
 brew 'imagemagick' # Tools and libraries to manipulate images in many formats
 brew 'ipcalc' # Calculate various network masks, etc. from a given IP address
+brew 'istioctl' # Istio configuration command-line utility
 brew 'jc' # Serializes the output of command-line tools to structured JSON output
 brew 'jo' # JSON output from a shell
 brew 'jq' # Lightweight and flexible command-line JSON processor

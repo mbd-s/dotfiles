@@ -4,7 +4,6 @@ DOTFILES := $(shell pwd)
 
 ASDF_PLUGINS := \
 	golang \
-	istioctl \
 	kubectl \
 	kubergrunt \
 	nodejs \
