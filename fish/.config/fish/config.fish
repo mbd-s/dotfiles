@@ -41,13 +41,21 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # Configure jump
-jump shell fish | source
+if command -v jump > /dev/null
+    jump shell fish | source
+end
 
 # Configure asdf
-source (brew --prefix)/opt/asdf/libexec/asdf.fish
+if command -v asdf > /dev/null
+    source (brew --prefix)/opt/asdf/libexec/asdf.fish
+end
 
 # Configure gcloud
-source (brew --prefix)/share/google-cloud-sdk/path.fish.inc
+if command -v gcloud > /dev/null
+    source (brew --prefix)/share/google-cloud-sdk/path.fish.inc
+end
 
 # Configure starship
-starship init fish | source
+if command -v starship > /dev/null
+    starship init fish | source
+end
