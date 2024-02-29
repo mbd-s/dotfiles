@@ -47,6 +47,7 @@ brew 'gnupg' # GNU Pretty Good Privacy (PGP) package
 brew 'golangci-lint' # Fast linters runner for Go
 brew 'gomplate' # Command-line Golang template processor
 brew 'grafana' # Gorgeous metric visualizations and dashboards for timeseries databases
+brew 'hashicorp/tap/packer' # Tool for creating identical machine images for multiple platforms
 brew 'hashicorp/tap/vault' # Vault: https://www.vaultproject.io
 brew 'helm' # Kubernetes package manager
 brew 'helmfile' # Deploy Kubernetes Helm Charts
