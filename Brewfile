@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 # Taps
+tap 'hashicorp/tap'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
-tap 'hashicorp/tap'
 tap 'kreuzwerker/taps'
 tap 'kubecolor/tap'
 tap 'qmk/qmk'
@@ -26,9 +26,9 @@ brew 'coreutils' # GNU File, Shell, and Text utilities
 brew 'cowsay' # Configurable talking characters in ASCII art
 brew 'diff-so-fancy' # Good-lookin' diffs with diff-highlight and more
 brew 'direnv' # Load/unload environment variables based on $PWD
-brew 'docker' # Pack, ship and run any application as a lightweight container
 brew 'docker-compose' # Isolated development environments using Docker
 brew 'docker-credential-helper' # Platform keystore credential helper for Docker
+brew 'docker' # Pack, ship and run any application as a lightweight container
 brew 'eksctl' # Simple command-line tool for creating clusters on Amazon EKS
 brew 'etcd' # Key value store for shared configuration and service discovery
 brew 'exercism' # Command-line tool to interact with exercism.io
