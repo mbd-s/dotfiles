@@ -3,3 +3,4 @@ git/work/.gitlocal
 git/.gitlocal
 .home
 .work
+megalinter-reports/
