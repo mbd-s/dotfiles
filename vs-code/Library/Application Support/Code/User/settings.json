@@ -52,9 +52,6 @@
   "search.excludeFolders": [".vscode"],
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "fish",
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
   "terminal.integrated.fontFamily": "'Input Mono', 'Hack Nerd Font Mono'",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.profiles.osx": {
@@ -98,5 +95,8 @@
   "workbench.startupEditor": "none",
   "editor.wordWrapColumn": 120,
   "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true
+  "files.trimFinalNewlines": true,
+  "terminal.integrated.env.osx": {
+    "CW_NEW_SESSION": "1"
+  }
 }
