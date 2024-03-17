@@ -59,3 +59,8 @@ end
 if command -v starship > /dev/null
     starship init fish | source
 end
+
+# Configure 1password-cli
+if command -v op > /dev/null
+    source ~/.config/op/plugins.sh
+end

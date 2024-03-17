@@ -103,6 +103,7 @@ brew 'yq' # Process YAML documents from the CLI
 
 # GUI apps
 cask_args require_sha: true
+cask '1password-cli' # Command-line interface for 1Password
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
 cask 'arc' # Chromium based browser
