@@ -29,6 +29,7 @@ brew 'direnv' # Load/unload environment variables based on $PWD
 brew 'docker-compose' # Isolated development environments using Docker
 brew 'docker-credential-helper' # Platform keystore credential helper for Docker
 brew 'docker' # Pack, ship and run any application as a lightweight container
+brew 'driftctl' # Detect, track and alert on infrastructure drift
 brew 'eksctl' # Simple command-line tool for creating clusters on Amazon EKS
 brew 'etcd' # Key value store for shared configuration and service discovery
 brew 'exercism' # Command-line tool to interact with exercism.io
