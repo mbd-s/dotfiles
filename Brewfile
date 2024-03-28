@@ -70,7 +70,7 @@ brew 'kubectx' # Tool that can switch between kubectl contexts easily and create
 brew 'lf' # Terminal file manager
 brew 'libsodium' # NaCl networking and cryptography library
 brew 'lolcat' # Rainbows and unicorns in your console!
-brew 'mailhog' # Web and API based SMTP testing tool
+brew 'mailpit' # Web and API based SMTP testing
 brew 'mariadb' # Drop-in replacement for MySQL
 brew 'mas' # Mac App Store command-line interface
 brew 'minikube' # Run a Kubernetes cluster locally
