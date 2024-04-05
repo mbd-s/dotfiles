@@ -23,13 +23,6 @@
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 100,
   "files.trimTrailingWhitespace": true,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": true,
-    "markdown": true,
-    "scminput": true,
-    "yaml": true
-  },
   "go.lintTool": "golangci-lint",
   "go.toolsManagement.autoUpdate": true,
   "gopls": {
