@@ -24,14 +24,13 @@ echo "• Click in the scroll bar to jump to the spot that's clicked"
 defaults write -globalDomain AppleScrollerPagingBehavior -bool true
 
 echo "• Autohide the Dock"
-defaults write com.apple.dock "autohide" -bool true
+defaults write com.apple.dock autohide -bool true
 
 echo "• Don't display recent applications in the Dock"
-defaults write com.apple.dock "show-recents" -bool false
+defaults write com.apple.dock show-recents -bool false
 
 echo "• Set the default Finder location to the Home folder"
-defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
-defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
+defaults write com.apple.finder NewWindowTarget -string PfLo && defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
 
 echo "• Set the Appearance to Auto (takes effect after the next restart)"
 defaults write -g AppleInterfaceStyleSwitchesAutomatically -bool true

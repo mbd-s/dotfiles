@@ -1,6 +1,6 @@
 function asdf_plugin_update --description "Update outdated asdf plugins"
     echo $BOLD"Updating outdated asdf plugins"$RESET_COLOR
-    asdf plugin-update --all > /dev/null
+    asdf plugin-update --all >/dev/null
     set --local plugins (asdf plugin list)
     for plugin in $plugins
         set --local latest_version (asdf latest $plugin)

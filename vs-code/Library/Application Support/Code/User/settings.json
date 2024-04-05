@@ -32,16 +32,16 @@
   "redhat.telemetry.enabled": false,
   "ruby.intellisense": "rubyLocate",
   "ruby.useBundler": true,
-"ruby.useLanguageServer": true,
-"ruby.lint": {
-  "rubocop": {
-    "useBundler": true
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true
+    },
+    "reek": {
+      "useBundler": true
+    }
   },
-  "reek": {
-    "useBundler": true
-  }
-},
-"ruby.format": "rubocop",
+  "ruby.format": "rubocop",
   "search.excludeFolders": [".vscode"],
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "fish",

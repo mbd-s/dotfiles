@@ -57,9 +57,9 @@ stashed = '[\$](#8be9fd) '
 untracked = '[?\($count\)](#bd93f9) '
 
 [helm]
-symbol = ' 🕸️ '
 format = '[$symbol ($version)]($style)'
 style = 'bold #f8f8f2'
+symbol = ' 🕸️ '
 
 [hostname]
 style = "bold #ff5555"
@@ -70,8 +70,8 @@ format = '[ $symbol$context(\($namespace\))]($style)'
 style = "bold #f1fa8c"
 
 [[kubernetes.contexts]]
-context_pattern = 'arn:.*:cluster/(?P<cluster>[\w-]+)'
 context_alias = "$cluster"
+context_pattern = 'arn:.*:cluster/(?P<cluster>[\w-]+)'
 
 [terraform]
 detect_extensions = ["tf", "tfplan", "tfstate", "hcl"]

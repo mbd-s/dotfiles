@@ -10,7 +10,7 @@ set fish_function_path $fish_function_path $__fish_config_dir/custom_functions
 if test -e "$__fish_config_dir/themes/Dracula Official.theme"
     fish_config theme choose "Dracula Official"
 else
-    fish_config theme choose "Dracula"
+    fish_config theme choose Dracula
 end
 
 # Disable fish_greeting
@@ -41,26 +41,26 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # Configure jump
-if command -v jump > /dev/null
+if command -v jump >/dev/null
     jump shell fish | source
 end
 
 # Configure asdf
-if command -v asdf > /dev/null
+if command -v asdf >/dev/null
     source (brew --prefix)/opt/asdf/libexec/asdf.fish
 end
 
 # Configure gcloud
-if command -v gcloud > /dev/null
+if command -v gcloud >/dev/null
     source (brew --prefix)/share/google-cloud-sdk/path.fish.inc
 end
 
 # Configure starship
-if command -v starship > /dev/null
+if command -v starship >/dev/null
     starship init fish | source
 end
 
 # Configure 1password-cli
-if command -v op > /dev/null
+if command -v op >/dev/null
     source ~/.config/op/plugins.sh
 end
