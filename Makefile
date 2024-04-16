@@ -1,4 +1,4 @@
-.PHONY: asdf brew chip clean dracula fisher fonts help link mac mac-reset omz setup
+.PHONY: asdf brew chip clean dracula fonts help link mac mac-reset omz setup
 
 DOTFILES := $(shell pwd)
 
@@ -71,14 +71,6 @@ dracula: ## Installs Dracula theme. Usage: `make dracula`.
 		curl -o ~/Library/Application\ Support/k9s/skin.yml -L https://raw.githubusercontent.com/derailed/k9s/master/skins/dracula.yml; \
 	fi
 
-fisher: $(__fish_config_dir)/fish_plugins ## Installs fisher and plugins. Usage: `make fisher`.
-	$(info Installing fisher)
-	@if fish -c "type -q fisher" >/dev/null; then \
-		echo "fisher already installed"; \
-	else \
-		fish -c "curl -sL https://git.io/fisher | source && fisher install < $${__fish_config_dir}/fish_plugins"; \
-	fi
-
 fonts: ## Installs Input fonts. Usage: `make fonts`.
 	$(info Installing Input fonts)
 	@# Input has 168 TrueType files in its current installation
@@ -119,6 +111,6 @@ omz: ## Installs Oh My Zsh. Usage: `make omz`.
 		sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; \
 	fi
 
-setup: chip mac brew asdf omz dracula fonts link fisher ## Symlinks config files and installs tools. Usage: `make setup`.
+setup: chip mac brew asdf omz dracula fonts link ## Symlinks config files and installs tools. Usage: `make setup`.
 
 .DEFAULT_GOAL := help
