@@ -30,19 +30,6 @@
   },
   "python.terminal.executeInFileDir": true,
   "redhat.telemetry.enabled": false,
-  "ruby.intellisense": "rubyLocate",
-  "ruby.useBundler": true,
-  "ruby.useLanguageServer": true,
-  "ruby.lint": {
-    "rubocop": {
-      "useBundler": true
-    },
-    "reek": {
-      "useBundler": true
-    }
-  },
-  "ruby.format": "rubocop",
-  "search.excludeFolders": [".vscode"],
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.fontFamily": "'Input Mono', 'Hack Nerd Font Mono'",
