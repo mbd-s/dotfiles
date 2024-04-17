@@ -61,3 +61,8 @@ end
 if command -v op >/dev/null
     source ~/.config/op/plugins.sh
 end
+
+# Configure krew
+if test -d (brew --prefix)/opt/krew/bin
+    set --global fish_user_paths $HOME/.krew/bin $fish_user_paths
+end
