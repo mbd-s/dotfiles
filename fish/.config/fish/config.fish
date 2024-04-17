@@ -35,7 +35,7 @@ set --global --export ASDF_GOLANG_MOD_VERSION_ENABLED true
 
 # Configure bun
 set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+set --global fish_user_paths $BUN_INSTALL/bin $fish_user_paths
 
 # Configure jump
 if command -v jump >/dev/null
