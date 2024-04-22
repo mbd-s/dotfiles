@@ -16,7 +16,6 @@ ASDF_PLUGINS := \
 SYMLINK_DIRS := \
 	asdf \
 	bat \
-	dig \
 	fish \
 	git \
 	lf \
