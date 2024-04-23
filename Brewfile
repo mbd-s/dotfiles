@@ -109,6 +109,7 @@ cask '1password-cli' # Command-line interface for 1Password
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
 cask 'arc' # Chromium based browser
+cask 'bruno' # Open-source IDE for exploring and testing APIs
 cask 'codewhisperer' # AI-powered productivity tool for the command-line
 cask 'datadog-agent' # Monitoring and security across systems, apps, and services
 cask 'dbeaver-community' # Universal database tool and SQL client
@@ -119,7 +120,6 @@ cask 'google-cloud-sdk', args: { require_sha: false } # Set of tools to manage r
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'libreoffice' # Office suite
-cask 'postman' # Collaboration platform for API development
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
 cask 'vagrant' # Development environment
