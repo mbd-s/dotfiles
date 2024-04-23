@@ -125,6 +125,7 @@ cask 'slack' # Team communication and collaboration software
 cask 'vagrant' # Development environment
 cask 'via' # Keyboard configurator
 cask 'visual-studio-code' # Open-source code editor
+cask 'yubico-yubikey-manager' # Application for configuring any YubiKey
 
 # Mac App Store-managed apps
 mas 'Bear', id: 1091189122 # Private Markdown Editor for iPhone, iPad and Mac
