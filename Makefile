@@ -5,10 +5,8 @@ DOTFILES := $(shell pwd)
 ASDF_PLUGINS := \
 	golang \
 	kubectl \
-	kubergrunt \
 	nodejs \
 	python \
-	richgo \
 	ruby \
 	terraform \
 	terragrunt
