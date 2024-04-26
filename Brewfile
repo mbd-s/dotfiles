@@ -148,7 +148,5 @@ if File.exist?('.home')
   mas 'Shazam', id: 897118787 # Identify the music playing around you
 
 elsif File.exist?('.work')
-  brew 'go-jira' # Simple jira command-line client in Go
-
   cask 'notunes' # Simple application that will prevent iTunes or Apple Music from launching
 end
