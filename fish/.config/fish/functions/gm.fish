@@ -6,5 +6,5 @@ function gm --description "Update various dependencies and reclaim disk space"
     asdf_plugin_update
     echo
     mas upgrade 2>/dev/null
-    cw doctor
+    q doctor
 end
