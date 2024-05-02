@@ -40,6 +40,7 @@ brew 'fortune' # Infamous electronic fortune-cookie generator
 brew 'fzf' # Command-line fuzzy finder written in Go
 brew 'gh' # GitHub command-line tool
 brew 'ghorg' # Quickly clone an entire org's or user's repositories into one directory
+brew 'git-lfs' # Git extension for versioning large files
 brew 'git' # Distributed revision control system
 brew 'gitui' # Blazing fast terminal-ui for git written in rust
 brew 'glab' # Open-source GitLab command-line tool
