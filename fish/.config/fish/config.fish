@@ -66,3 +66,8 @@ end
 if test -d (brew --prefix)/opt/krew/bin
     set --global fish_user_paths $HOME/.krew/bin $fish_user_paths
 end
+
+# Configure fzf
+if command -v fzf >/dev/null
+    fzf --fish | source
+end
