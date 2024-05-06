@@ -34,8 +34,10 @@ set --global RESET_COLOR (set_color normal)
 set --global --export ASDF_GOLANG_MOD_VERSION_ENABLED true
 
 # Configure bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --global fish_user_paths $BUN_INSTALL/bin $fish_user_paths
+fish_add_path $HOME/.bun/bin
+
+# Configure krew
+fish_add_path $HOME/.krew/bin
 
 # Configure jump
 if command -v jump >/dev/null
@@ -60,11 +62,6 @@ end
 # Configure 1password-cli
 if command -v op >/dev/null
     source ~/.config/op/plugins.sh
-end
-
-# Configure krew
-if test -d (brew --prefix)/opt/krew/bin
-    set --global fish_user_paths $HOME/.krew/bin $fish_user_paths
 end
 
 # Configure fzf
