@@ -1,6 +1,6 @@
 function aws_switch --argument-names profile --description "Switch AWS profile"
     function __handle_aws_credentials_error --description "Helper function to catch AWS credentials errors"
-        echo $RED"Check your credentials"$RESET_COLOR
+        echo $RED"Check your credentials"$NORMAL
         set --erase AWS_PROFILE
         functions --erase __handle_aws_credentials_error
     end
@@ -14,7 +14,7 @@ function aws_switch --argument-names profile --description "Switch AWS profile"
             __handle_aws_credentials_error && return
         case 254
             type --query creds; or __handle_aws_credentials_error && return
-            echo $GREEN"Refreshing credentials..."$RESET_COLOR && creds && sleep 5 && aws --profile $profile sts get-caller-identity --no-cli-pager; or __handle_aws_credentials_error && return
+            echo $GREEN"Refreshing credentials..."$NORMAL && creds && sleep 5 && aws --profile $profile sts get-caller-identity --no-cli-pager; or __handle_aws_credentials_error && return
         case 255
             set --erase AWS_PROFILE && return
     end

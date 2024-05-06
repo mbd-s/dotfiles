@@ -28,7 +28,7 @@ set --global PURPLE (set_color bd93f9)
 set --global RED (set_color ff5555)
 set --global YELLOW (set_color f1fa8c)
 set --global BOLD (set_color --bold)
-set --global RESET_COLOR (set_color normal)
+set --global NORMAL (set_color normal)
 
 # Include go.mod/go.work in asdf Go version selection
 set --global --export ASDF_GOLANG_MOD_VERSION_ENABLED true

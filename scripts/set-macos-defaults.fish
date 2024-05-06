@@ -48,7 +48,7 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 echo "• Don't show a warning when changing the file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-echo "• Disable auto-correct"$RESET_COLOR
+echo "• Disable auto-correct"$NORMAL
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
 killall Finder

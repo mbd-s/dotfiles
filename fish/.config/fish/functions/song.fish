@@ -13,6 +13,6 @@ function song --description "Get the current song playing in Apple Music"
 
     set album $(osascript -e 'tell application "Music" to get album of current track')
 
-    echo "$GREEN♫ $song$RESET_COLOR by $GREEN$artist$RESET_COLOR
-    from $GREEN$album$RESET_COLOR"
+    echo "$GREEN♫ $song$NORMAL by $GREEN$artist$NORMAL
+    from $GREEN$album$NORMAL"
 end

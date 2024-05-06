@@ -13,7 +13,7 @@ function countdown --description "Command line timer" --argument-names seconds
         set --function now (date +%s)
     end
 
-    printf "Time's up!"$RESET_COLOR
+    printf "Time's up!"$NORMAL
     osascript -e 'display alert "Time\'s up!"' >/dev/null
     echo
 end

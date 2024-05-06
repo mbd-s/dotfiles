@@ -29,7 +29,7 @@ defaults write com.apple.dock autohide -bool false
 echo "• Display recent applications in the Dock"
 defaults write com.apple.dock show-recents -bool true
 
-echo $YELLOW"• Resetting the default Finder location to the virtual Recents folder has to be done manually. Open Finder settings, select \"Sidebar\", and check \"Recents.\""$RESET_COLOR
+echo $YELLOW"• Resetting the default Finder location to the virtual Recents folder has to be done manually. Open Finder settings, select \"Sidebar\", and check \"Recents.\""$NORMAL
 
 echo $GREEN"• Don't change the Appearance automatically (takes effect after the next restart)"
 defaults write -g AppleInterfaceStyleSwitchesAutomatically -bool false
@@ -46,7 +46,7 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool false
 echo "• Show a warning when changing the file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool true
 
-echo "• Enable auto-correct"$RESET_COLOR
+echo "• Enable auto-correct"$NORMAL
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool true
 
 killall Finder
