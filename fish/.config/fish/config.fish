@@ -33,9 +33,6 @@ set --global NORMAL (set_color normal)
 # Include go.mod/go.work in asdf Go version selection
 set --global --export ASDF_GOLANG_MOD_VERSION_ENABLED true
 
-# Configure bun
-fish_add_path $HOME/.bun/bin
-
 # Configure krew
 fish_add_path $HOME/.krew/bin
 

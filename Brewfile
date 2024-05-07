@@ -7,6 +7,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'kreuzwerker/taps'
 tap 'kubecolor/tap'
+tap 'oven-sh/bun'
 tap 'qmk/qmk'
 
 # Formulas
@@ -78,6 +79,7 @@ brew 'minikube' # Run a Kubernetes cluster locally
 brew 'nmap' # Port scanning utility for large networks
 brew 'opa' # Open source, general-purpose policy engine
 brew 'opentofu' # Drop-in replacement for Terraform. Infrastructure as Code Tool
+brew 'oven-sh/bun/bun' # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew 'pkg-config' # Manage compile and link flags for libraries
 brew 'postgresql@14' # Object-relational database system
 brew 'postgresql@15' # Object-relational database system
