@@ -1,10 +1,42 @@
 function gm --description "Update various dependencies and reclaim disk space"
-    brewski
+    brew update
+    brew upgrade --greedy
+    brew autoremove
+    brew cleanup --prune=all
+    brew doctor >/dev/null
     echo
-    docker_clean
+
+    echo $BOLD"Cleaning up Docker resources..."$NORMAL
+    if docker info &> /dev/null
+        for container in $(docker ps --all --quiet)
+            docker stop $container
+        end
+        docker container prune --force
+        docker volume prune --all --force
+        docker network prune --force
+        docker image prune --all --force
+        docker builder prune --all --force --verbose
+        docker system prune --all --force
+    else
+        echo $RED"Docker isn't running"$NORMAL
+    end
     echo
-    asdf_plugin_update
+
+    echo $BOLD"Updating outdated asdf plugins"$NORMAL
+    asdf plugin-update --all >/dev/null
+    set --local plugins (asdf plugin list)
+    for plugin in $plugins
+        set --local latest_version (asdf latest $plugin)
+        set --local installed_versions (string match --regex "[0-9.]+" (asdf list $plugin))
+        if contains $latest_version $installed_versions
+            echo $GREEN"$plugin $latest_version is already installed"$NORMAL
+        else
+            echo $BOLD"Installing $plugin $latest_version"$NORMAL
+            asdf install $plugin latest
+        end
+    end
     echo
+
     mas upgrade 2>/dev/null
     q doctor
 end
