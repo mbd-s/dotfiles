@@ -4,5 +4,11 @@ function docker_clean --description "Clean up Docker resources"
     for container in $(docker ps --all --quiet)
         docker stop $container
     end
-    docker system prune --force
+
+    docker container prune --force
+    docker volume prune --all --force
+    docker network prune --force
+    docker image prune --all --force
+    docker builder prune --all --force --verbose
+    docker system prune --all --force
 end
