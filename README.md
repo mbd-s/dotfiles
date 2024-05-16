@@ -2,8 +2,8 @@
 
 ![Screenshot of my shell prompt](https://user-images.githubusercontent.com/13588399/248551301-5a08c7ba-de5c-4e3b-aafb-4dfaa27fcccd.png)
 
-My personal dotfiles for a `fish` shell on an ARM-based Mac, including essential tools and opinionated settings. You
-probably don't want to adopt these wholesale, but feel free to take what you like.
+These are my personal dotfiles for a `fish` shell on an ARM-based Mac, including essential tools and opinionated
+settings.
 
 ## 🧭 Prerequisites
 
@@ -31,8 +31,9 @@ git clone https://github.com/mbd-s/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-The setup script bootstraps a new Mac. It will symlink the config files and install a bunch of tools (iTerm2, Visual
-Studio Code, Go, Terraform, Starship, etc.) via Homebrew and [asdf](https://github.com/asdf-vm/asdf):
+The setup script bootstraps a fresh installation of macOS. It will set sane defaults, symlink config files, and install
+a bunch of tools (iTerm2, Visual Studio Code, Go, Terraform, Starship, etc.) via Homebrew and
+[asdf](https://github.com/asdf-vm/asdf):
 
 ```shell
 make setup
@@ -83,21 +84,11 @@ files are ignored by `git`.) The common packages are installed in any case.
 
 ### iTerm2
 
-#### Profile
-
 1. Open iTerm2
 2. Select `iTerm2 > Preferences`
 3. Select `Profiles`
 4. Select the `Other Actions...` dropdown menu and click `Import JSON profiles...`
 5. Choose the profile you want to use from the ones in `$DOTFILES/iterm/`
-
-#### Key mappings
-
-1. Open iTerm2
-2. Select `iTerm2 > Preferences`
-3. Select `Profiles`, then `Keys`
-4. Select the `Presets...` dropdown menu and click `Import...`
-5. Choose `$DOTFILES/iterm/custom.itermkeymap`
 
 ### Visual Studio Code
 

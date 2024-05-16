@@ -21,7 +21,7 @@ SYMLINK_DIRS := \
 	tmux \
 	vim
 
-export __fish_config_dir := $(shell fish -c 'echo $$__fish_config_dir')
+export __fish_config_dir := ${HOME}/.config/fish
 
 asdf: ## Installs asdf plugins. Usage: `make asdf`.
 	$(info Installing asdf plugins)
@@ -89,16 +89,16 @@ link: ## Symlinks config files. Usage: `make link`.
 	$(info Linking config files)
 	@brew list stow > /dev/null 2>&1 || brew install stow
 	@for dir in $(SYMLINK_DIRS); do \
-		stow --verbose $$dir; \
+		stow --verbose --no-folding $$dir; \
 	done
 
 mac: ## Applies new macOS settings. Usage: `make mac`.
 	$(info Setting new macOS defaults)
-	@./scripts/set-macos-defaults.fish
+	@./scripts/set-macos-defaults.sh
 
 mac-reset: ## Resets macOS defaults. Usage: `make mac-reset`.
 	$(info Resetting macOS defaults)
-	@./scripts/reset-macos-defaults.fish
+	@./scripts/reset-macos-defaults.sh
 
 omz: ## Installs Oh My Zsh. Usage: `make omz`.
 	$(info Installing Oh My Zsh)
@@ -108,6 +108,6 @@ omz: ## Installs Oh My Zsh. Usage: `make omz`.
 		sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; \
 	fi
 
-setup: chip mac brew asdf omz dracula fonts link ## Symlinks config files and installs tools. Usage: `make setup`.
+setup: chip mac link brew asdf omz dracula fonts ## Symlinks config files and installs tools. Usage: `make setup`.
 
 .DEFAULT_GOAL := help

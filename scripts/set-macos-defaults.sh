@@ -1,8 +1,8 @@
-#!/usr/bin/env fish
+#!/bin/bash
 
 sudo -v
 
-echo $GREEN"• Show hidden files in the Finder"
+echo "• Show hidden files in the Finder"
 defaults write com.apple.finder AppleShowAllFiles true
 
 echo "• Show all filename extensions"
@@ -18,7 +18,7 @@ echo "• Disable warning before emptying the Trash"
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 echo "• Show scroll bars only when scrolling"
-defaults write -g AppleShowScrollBars -string WhenScrolling
+defaults write -globalDomain AppleShowScrollBars -string WhenScrolling
 
 echo "• Click in the scroll bar to jump to the spot that's clicked"
 defaults write -globalDomain AppleScrollerPagingBehavior -bool true
@@ -33,23 +33,24 @@ echo "• Set the default Finder location to the Home folder"
 defaults write com.apple.finder NewWindowTarget -string PfLo && defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
 
 echo "• Set the Appearance to Auto (takes effect after the next restart)"
-defaults write -g AppleInterfaceStyleSwitchesAutomatically -bool true
+defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
 
 echo "• Set the screenshot location to ~/Documents/Screenshots"
 mkdir -p ~/Documents/Screenshots
 defaults write com.apple.screencapture location -string "~/Documents/Screenshots"
 
 echo "• Show full URLs (apart from the scheme) in Safari"
-defaults write com.apple.safari ShowFullURLInSmartSearchField -bool true
+sudo defaults write com.apple.safari ShowFullURLInSmartSearchField -bool true
 
 echo "• Ask websites not to track"
-defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+sudo defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 echo "• Don't show a warning when changing the file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-echo "• Disable auto-correct"$NORMAL
-defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+echo "• Disable auto-correct"
+defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Restart Finder and Dock to apply changes
 killall Finder
 killall Dock
