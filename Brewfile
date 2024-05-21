@@ -3,7 +3,6 @@
 # Taps
 tap 'hashicorp/tap'
 tap 'homebrew/bundle'
-tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'kreuzwerker/taps'
 tap 'kubecolor/tap'
