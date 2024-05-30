@@ -121,6 +121,7 @@ cask 'google-cloud-sdk', args: { require_sha: false } # Set of tools to manage r
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'libreoffice' # Office suite
+cask 'logi-options-plus' # Software for Logitech devices
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
 cask 'vagrant' # Development environment
