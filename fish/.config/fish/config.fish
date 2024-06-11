@@ -59,4 +59,5 @@ end
 # Configure fzf
 if command -v fzf >/dev/null
     fzf --fish | source
+    bind --erase \cr
 end
