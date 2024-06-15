@@ -77,7 +77,8 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "terminal.integrated.env.osx": {
-    "Q_NEW_SESSION": "1"
+    "Q_NEW_SESSION": "1",
+    "PATH": ""
   },
   "workbench.settings.applyToAllProfiles": [
 
