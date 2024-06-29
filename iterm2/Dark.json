@@ -15,6 +15,7 @@
     "Green Component": 0.67044717073440552
   },
   "Use Non-ASCII Font": true,
+  "Show Mark Indicators": false,
   "Draw Powerline Glyphs": true,
   "Bold Color": {
     "Red Component": 0.99999600648880005,
