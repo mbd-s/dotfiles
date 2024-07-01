@@ -23,6 +23,7 @@
   lf = log --name-only
   ll = log --oneline
   lp = log --patch
+  lpw = log --patch -w
 	nuke = !git for-each-ref --format \"%(refname:short)\" refs/heads | grep --invert-match \"staging\\|main\" | xargs git branch -D
   pf = push --force-with-lease
   rc = rebase --continue
