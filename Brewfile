@@ -123,6 +123,7 @@ cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'libreoffice' # Office suite
 cask 'logi-options-plus' # Software for Logitech devices
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
+cask 'rio' # Hardware-accelerated GPU terminal emulator powered by WebGPU
 cask 'slack' # Team communication and collaboration software
 cask 'vagrant' # Development environment
 cask 'via' # Keyboard configurator
