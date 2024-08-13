@@ -11,6 +11,7 @@
   aa = add --all
   br = branch
   ca = commit --amend
+  cf = commit --fixup
   ci = commit
   cm = commit --message
   co = checkout
