@@ -27,6 +27,7 @@
   lpw = log --patch -w
 	nuke = !git for-each-ref --format \"%(refname:short)\" refs/heads | grep --invert-match \"staging\\|main\" | xargs git branch -D
   pf = push --force-with-lease
+  ra = rebase --abort
   rc = rebase --continue
   rh = reset --hard @{upstream}
   ri = !sh -c 'git rebase --interactive $1~' -
