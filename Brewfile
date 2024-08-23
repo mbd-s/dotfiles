@@ -64,6 +64,7 @@ brew 'jq' # Lightweight and flexible command-line JSON processor
 brew 'jump' # Helps you navigate your file system faster by learning your habits
 brew 'k3d' # Little helper to run CNCF's k3s in Docker
 brew 'k9s' # Kubernetes CLI to manage your clusters in style!
+brew 'kafka' # Open-source distributed event streaming platform
 brew 'kreuzwerker/taps/m1-terraform-provider-helper' # CLI to support downloading and compiling Terraform providers for ARM-based Macs
 brew 'krew' # Package manager for kubectl plugins
 brew 'kubecolor/tap/kubecolor' # Colorize your kubectl output
