@@ -16,6 +16,10 @@ set fish_greeting
 # Disable Homebrew hints
 set --global --export HOMEBREW_NO_ENV_HINTS 1
 
+# Prevent Homebrew from using API JSON files instead of local taps
+# Temporary fix for https://github.com/Homebrew/brew/issues/14516
+set --global --export HOMEBREW_NO_INSTALL_FROM_API 1
+
 # Set default options for less
 set --global --export LESS -FR
 
