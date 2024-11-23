@@ -1,5 +1,4 @@
 function gm --description "Update various dependencies and reclaim disk space"
-    brew update
     brew upgrade --greedy
     brew autoremove
     brew cleanup --prune=all
