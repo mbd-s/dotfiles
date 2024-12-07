@@ -1,9 +1,9 @@
-.PHONY: asdf brew chip clean dracula fonts help link mac mac-reset omz setup
+.PHONY: brew chip clean dracula fonts help link mac mac-reset mise omz setup
 
 DOTFILES := $(shell pwd)
 
-ASDF_PLUGINS := \
-	golang \
+MISE_PLUGINS := \
+	go \
 	kubectl \
 	nodejs \
 	python \
@@ -12,7 +12,6 @@ ASDF_PLUGINS := \
 	terragrunt
 
 SYMLINK_DIRS := \
-	asdf \
 	bat \
 	fish \
 	git \
@@ -22,13 +21,6 @@ SYMLINK_DIRS := \
 	vim
 
 export __fish_config_dir := ${HOME}/.config/fish
-
-asdf: ## Installs asdf plugins. Usage: `make asdf`.
-	$(info Installing asdf plugins)
-	@for plugin in $(ASDF_PLUGINS); do \
-		asdf plugin add $$plugin || true; \
-		asdf install $$plugin latest; \
-	done
 
 brew: Brewfile ## Installs Homebrew packages. Usage: `make brew`.
 	$(info Installing Homebrew packages)
@@ -100,6 +92,12 @@ mac-reset: ## Resets macOS defaults. Usage: `make mac-reset`.
 	$(info Resetting macOS defaults)
 	@./scripts/reset-macos-defaults.sh
 
+mise: ## Installs mise plugins. Usage: `make mise`.
+	$(info Installing mise plugins)
+	@for plugin in $(MISE_PLUGINS); do \
+		mise install $$plugin@latest; \
+	done
+
 omz: ## Installs Oh My Zsh. Usage: `make omz`.
 	$(info Installing Oh My Zsh)
 	@if [ -d ~/.oh-my-zsh ]; then \
@@ -108,6 +106,6 @@ omz: ## Installs Oh My Zsh. Usage: `make omz`.
 		sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; \
 	fi
 
-setup: chip mac link brew asdf omz dracula fonts ## Symlinks config files and installs tools. Usage: `make setup`.
+setup: chip mac link brew mise omz dracula fonts ## Symlinks config files and installs tools. Usage: `make setup`.
 
 .DEFAULT_GOAL := help

@@ -12,7 +12,6 @@ tap 'qmk/qmk'
 # Formulas
 brew 'ansible' # Automate deployment, configuration, and upgrading
 brew 'argocd' # GitOps Continuous Delivery for Kubernetes
-brew 'asdf' # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew 'aws-iam-authenticator' # Use AWS IAM credentials to authenticate to Kubernetes
 brew 'aws-nuke' # Nuke a whole AWS account and delete all its resources
 brew 'awscli' # Official Amazon AWS command-line interface
@@ -76,6 +75,7 @@ brew 'mailpit' # Web and API based SMTP testing
 brew 'mariadb' # Drop-in replacement for MySQL
 brew 'mas' # Mac App Store command-line interface
 brew 'minikube' # Run a Kubernetes cluster locally
+brew 'mise' # Polyglot runtime manager (asdf rust clone)
 brew 'nmap' # Port scanning utility for large networks
 brew 'opa' # Open source, general-purpose policy engine
 brew 'opentofu' # Drop-in replacement for Terraform. Infrastructure as Code Tool

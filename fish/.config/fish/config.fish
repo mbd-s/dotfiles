@@ -30,20 +30,12 @@ set --global YELLOW (set_color f1fa8c)
 set --global BOLD (set_color --bold)
 set --global NORMAL (set_color normal)
 
-# Include go.mod/go.work in asdf Go version selection
-set --global --export ASDF_GOLANG_MOD_VERSION_ENABLED true
-
 # Configure krew
 fish_add_path $HOME/.krew/bin
 
 # Configure jump
 if command -v jump >/dev/null
     jump shell fish | source
-end
-
-# Configure asdf
-if command -v asdf >/dev/null
-    source (brew --prefix)/opt/asdf/libexec/asdf.fish
 end
 
 # Configure gcloud

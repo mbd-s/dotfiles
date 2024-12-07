@@ -33,7 +33,7 @@ cd ~/dotfiles
 
 The setup script bootstraps a fresh installation of macOS. It will set sane defaults, symlink config files, and install
 a bunch of tools (iTerm2, Visual Studio Code, Go, Terraform, Starship, etc.) via Homebrew and
-[asdf](https://github.com/asdf-vm/asdf):
+mise:
 
 ```shell
 make setup
