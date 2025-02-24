@@ -96,7 +96,7 @@ brew 'terraform-docs' # Tool to generate documentation from Terraform modules
 brew 'terraformer' # CLI tool to generate terraform files from existing infrastructure
 brew 'texinfo' # Official documentation format of the GNU project
 brew 'tig' # Text interface for Git repositories
-brew 'tldr' # Simplified and community-driven man pages
+brew 'tlrc' # Official tldr client written in Rust
 brew 'tmux' # Terminal multiplexer
 brew 'tree' # Display directories as trees (with optional color/HTML output)
 brew 'watch' # Executes a program periodically, showing output fullscreen
