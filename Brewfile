@@ -110,7 +110,6 @@ cask '1password-cli' # Command-line interface for 1Password
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
 cask 'amazon-q' # AI-powered productivity tool for the command-line
-cask 'arc' # Chromium based browser
 cask 'bruno' # Open-source IDE for exploring and testing APIs
 cask 'datadog-agent' # Monitoring and security across systems, apps, and services
 cask 'dbeaver-community' # Universal database tool and SQL client
