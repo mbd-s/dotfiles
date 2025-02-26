@@ -5,7 +5,6 @@ tap 'hashicorp/tap'
 tap 'homebrew/bundle'
 tap 'homebrew/services'
 tap 'kreuzwerker/taps'
-tap 'kubecolor/tap'
 tap 'oven-sh/bun'
 tap 'qmk/qmk'
 
@@ -66,7 +65,7 @@ brew 'k9s' # Kubernetes CLI to manage your clusters in style!
 brew 'kafka' # Open-source distributed event streaming platform
 brew 'kreuzwerker/taps/m1-terraform-provider-helper' # CLI to support downloading and compiling Terraform providers for ARM-based Macs
 brew 'krew' # Package manager for kubectl plugins
-brew 'kubecolor/tap/kubecolor' # Colorize your kubectl output
+brew 'kubecolor' # Colorize your kubectl output
 brew 'kubectx' # Tool that can switch between kubectl contexts easily and create aliases
 brew 'lf' # Terminal file manager
 brew 'libsodium' # NaCl networking and cryptography library
