@@ -2,8 +2,6 @@
 
 # Taps
 tap 'hashicorp/tap'
-tap 'homebrew/bundle'
-tap 'homebrew/services'
 tap 'kreuzwerker/taps'
 tap 'oven-sh/bun'
 tap 'qmk/qmk'
