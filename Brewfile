@@ -55,6 +55,7 @@ brew 'imagemagick' # Tools and libraries to manipulate images in many formats
 brew 'ipcalc' # Calculate various network masks, etc. from a given IP address
 brew 'istioctl' # Istio configuration command-line utility
 brew 'jc' # Serializes the output of command-line tools to structured JSON output
+brew 'jenkins' # Extendable open source continuous integration server
 brew 'jo' # JSON output from a shell
 brew 'jq' # Lightweight and flexible command-line JSON processor
 brew 'jump' # Helps you navigate your file system faster by learning your habits
@@ -129,7 +130,6 @@ cask 'yubico-yubikey-manager' # Application for configuring any YubiKey
 
 # Mac App Store-managed apps
 mas 'Bear', id: 1091189122 # Private Markdown Editor for iPhone, iPad and Mac
-mas 'Save to Pocket', id: 1477385213 # Your save button for the internet
 mas 'StuffIt Expander', id: 919269455 # Free tool to expand SITX, ZIP, ZIPX, SIT5, and RAR archives
 mas 'Telephone', id: 406825478 # SIP softphone
 
