@@ -25,9 +25,6 @@ force_display = true
 format = '([$symbol($profile )(\($region\))]($style))'
 style = "bold #ffb86c"
 
-[aws.region_aliases]
-eu-central-1 = ""
-
 [character]
 error_symbol = "[❯](bold #ff5555)"
 success_symbol = "[❯](bold #50fa7b)"
