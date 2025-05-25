@@ -20,5 +20,4 @@ function gm --description "Update various dependencies and reclaim disk space"
     mise upgrade
 
     mas upgrade 2>/dev/null
-    q doctor
 end
