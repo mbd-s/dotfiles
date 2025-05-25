@@ -36,9 +36,14 @@ endif
 
 clean: ## Removes symlinked config files. Usage: `make clean`.
 	$(info Unlinking symlinked config files)
-	@for dir in $(SYMLINK_DIRS); do \
-		stow --verbose --delete $$dir; \
-	done
+	@read -p "Are you sure you want to unlink symlinked config files? [y/N] " confirm; \
+	if [ "$$confirm" = "y" ] || [ "$$confirm" = "Y" ]; then \
+		for dir in $(SYMLINK_DIRS); do \
+			stow --verbose --delete $$dir; \
+		done; \
+	else \
+		echo "Aborted"; \
+	fi
 
 dracula: ## Installs Dracula theme. Usage: `make dracula`.
 	$(info Installing Dracula theme)
