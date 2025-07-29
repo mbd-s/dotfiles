@@ -124,7 +124,7 @@ cask 'slack' # Team communication and collaboration software
 cask 'vagrant' # Development environment
 cask 'via' # Keyboard configurator
 cask 'visual-studio-code' # Open-source code editor
-cask 'wireshark' # Network protocol analyzer
+cask 'wireshark-app' # Network protocol analyzer
 cask 'yubico-authenticator' # Application for generating TOTP and HOTP codes
 
 # Mac App Store-managed apps
