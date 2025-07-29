@@ -125,7 +125,7 @@ cask 'vagrant' # Development environment
 cask 'via' # Keyboard configurator
 cask 'visual-studio-code' # Open-source code editor
 cask 'wireshark' # Network protocol analyzer
-cask 'yubico-yubikey-manager' # Application for configuring any YubiKey
+cask 'yubico-authenticator' # Application for generating TOTP and HOTP codes
 
 # Mac App Store-managed apps
 mas 'Bear', id: 1091189122 # Private Markdown Editor for iPhone, iPad and Mac
