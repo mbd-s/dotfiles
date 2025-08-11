@@ -134,13 +134,17 @@ mas 'Telephone', id: 406825478 # SIP softphone
 
 # Home- and work-specific dependencies
 if File.exist?('.home')
+  brew 'libdvdcss' # Access DVDs as block devices without the decryption
+
   cask '1password' # Password manager that keeps all passwords secure behind one password
   cask 'backblaze', args: { require_sha: false } # Data backup and storage service
   cask 'discord' # Voice and text chat software
+  cask 'handbrake' # Open-source video transcoder
   cask 'signal' # Instant messaging application focusing on security
   cask 'telegram' # Messaging app with a focus on speed and security
   cask 'torguard' # VPN client
   cask 'viber' # Calling and messaging application focusing on security
+  cask 'vlc' # Multimedia player
   cask 'whatsapp' # Desktop client for WhatsApp
   cask 'zoom' # Video communication and virtual meeting platform
 
