@@ -34,7 +34,7 @@ set --global NORMAL (set_color normal)
 fish_add_path $HOME/.krew/bin
 
 # Configure jump
-if command -v jump >/dev/null
+if command --search jump >/dev/null
     jump shell fish | source
 end
 
@@ -44,12 +44,12 @@ if test -f (brew --prefix)/share/google-cloud-sdk/path.fish.inc
 end
 
 # Configure starship
-if command -v starship >/dev/null
+if command --search starship >/dev/null
     starship init fish | source
 end
 
 # Configure fzf
-if command -v fzf >/dev/null
+if command --search fzf >/dev/null
     fzf --fish | source
     bind --erase \cr
 end
