@@ -19,6 +19,7 @@ brew 'cfssl' # CloudFlare's PKI toolkit
 brew 'checkov' # Prevent cloud misconfigurations during build-time for IaC tools
 brew 'colima' # Container runtimes on MacOS (and Linux) with minimal setup
 brew 'coreutils' # GNU File, Shell, and Text utilities
+brew 'cri-tools' # CLI and validation tools for Kubelet Container Runtime Interface (CRI)
 brew 'diff-so-fancy' # Good-lookin' diffs with diff-highlight and more
 brew 'direnv' # Load/unload environment variables based on $PWD
 brew 'docker-compose' # Isolated development environments using Docker
