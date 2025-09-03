@@ -38,8 +38,8 @@ if command -v jump >/dev/null
     jump shell fish | source
 end
 
-# Configure gcloud
-if command -v gcloud >/dev/null
+# Update PATH for the Google Cloud SDK
+if test -f (brew --prefix)/share/google-cloud-sdk/path.fish.inc
     source (brew --prefix)/share/google-cloud-sdk/path.fish.inc
 end
 
