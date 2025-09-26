@@ -115,11 +115,11 @@ cask 'dbeaver-community' # Universal database tool and SQL client
 cask 'firefox' # Web browser
 cask 'font-hack-nerd-font' # A typeface designed for source code
 cask 'google-chrome', args: { require_sha: false } # Web browser
-cask 'google-cloud-sdk', args: { require_sha: false } # Set of tools to manage resources and applications hosted on Google Cloud
+cask 'gcloud-cli', args: { require_sha: false } # Set of tools to manage resources and applications hosted on Google Cloud
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'libreoffice' # Office suite
-cask 'logi-options-plus' # Software for Logitech devices
+cask 'logi-options+' # Software for Logitech devices
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
 cask 'vagrant' # Development environment
@@ -140,7 +140,7 @@ if File.exist?('.home')
   cask '1password' # Password manager that keeps all passwords secure behind one password
   cask 'backblaze', args: { require_sha: false } # Data backup and storage service
   cask 'discord' # Voice and text chat software
-  cask 'handbrake' # Open-source video transcoder
+  cask 'handbrake-app' # Open-source video transcoder
   cask 'signal' # Instant messaging application focusing on security
   cask 'telegram' # Messaging app with a focus on speed and security
   cask 'torguard' # VPN client
