@@ -133,7 +133,6 @@ cask 'yubico-authenticator' # Application for generating TOTP and HOTP codes
 # Mac App Store-managed apps
 mas 'Bear', id: 1091189122 # Private Markdown Editor for iPhone, iPad and Mac
 mas 'StuffIt Expander', id: 919269455 # Free tool to expand SITX, ZIP, ZIPX, SIT5, and RAR archives
-mas 'Telephone', id: 406825478 # SIP softphone
 
 # Home- and work-specific dependencies
 if File.exist?('.home')
@@ -151,6 +150,7 @@ if File.exist?('.home')
   cask 'zoom' # Video communication and virtual meeting platform
 
   mas 'Shazam', id: 897118787 # Identify the music playing around you
+  mas 'Telephone', id: 406825478 # SIP softphone
 
 elsif File.exist?('.work')
   cask 'notunes' # Simple application that will prevent iTunes or Apple Music from launching
