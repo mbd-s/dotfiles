@@ -88,7 +88,7 @@ files are ignored by `git`.) The common packages are installed in any case.
 2. Select `iTerm2 > Preferences`
 3. Select `Profiles`
 4. Select the `Other Actions...` dropdown menu and click `Import JSON profiles...`
-5. Choose the profile you want to use from the ones in `$DOTFILES/iterm/`
+5. Choose the profile you want to use from the ones in `$DOTFILES/iterm2/`
 
 ### Visual Studio Code
 
