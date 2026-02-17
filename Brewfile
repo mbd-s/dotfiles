@@ -106,6 +106,7 @@ brew 'yq' # Process YAML documents from the CLI
 
 # GUI apps
 cask_args require_sha: true
+cask '1password' # Password manager that keeps all passwords secure behind one password
 cask '1password-cli' # Command-line interface for 1Password
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
@@ -138,7 +139,6 @@ mas 'Telephone', id: 406825478 # SIP softphone
 if File.exist?('.home')
   brew 'libdvdcss' # Access DVDs as block devices without the decryption
 
-  cask '1password' # Password manager that keeps all passwords secure behind one password
   cask 'backblaze', args: { require_sha: false } # Data backup and storage service
   cask 'discord' # Voice and text chat software
   cask 'handbrake-app' # Open-source video transcoder
