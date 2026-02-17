@@ -120,7 +120,7 @@ cask 'gcloud-cli', args: { require_sha: false } # Set of tools to manage resourc
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'libreoffice' # Office suite
-cask 'logi-options+' # Software for Logitech devices
+cask 'logi-options+', args: { require_sha: false } # Software for Logitech devices
 cask 'multipass' # Orchestrates virtual Ubuntu instances
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
