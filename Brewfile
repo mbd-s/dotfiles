@@ -7,6 +7,7 @@ tap 'oven-sh/bun'
 tap 'qmk/qmk'
 
 # Formulas
+brew 'ansible-lint' # Checks ansible playbooks for practices and behaviour
 brew 'ansible' # Automate deployment, configuration, and upgrading
 brew 'argocd' # GitOps Continuous Delivery for Kubernetes
 brew 'aws-iam-authenticator' # Use AWS IAM credentials to authenticate to Kubernetes
