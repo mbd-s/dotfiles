@@ -8,6 +8,7 @@ tap 'qmk/qmk'
 
 # Formulas
 brew 'ansible' # Automate deployment, configuration, and upgrading
+brew 'ansible-lint' # Checks ansible playbooks for practices and behaviour
 brew 'argocd' # GitOps Continuous Delivery for Kubernetes
 brew 'aws-iam-authenticator' # Use AWS IAM credentials to authenticate to Kubernetes
 brew 'aws-nuke' # Nuke a whole AWS account and delete all its resources
