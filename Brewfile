@@ -113,6 +113,8 @@ cask '1password-cli' # Command-line interface for 1Password
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
 cask 'bruno' # Open-source IDE for exploring and testing APIs
+cask 'claude' # Anthropic's official Claude AI desktop app
+cask 'claude-code' # Terminal-based AI coding assistant
 cask 'datadog-agent' # Monitoring and security across systems, apps, and services
 cask 'dbeaver-community' # Universal database tool and SQL client
 cask 'firefox' # Web browser
