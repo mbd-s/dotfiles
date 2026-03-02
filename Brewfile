@@ -10,8 +10,10 @@ tap 'qmk/qmk'
 brew 'ansible-lint' # Checks ansible playbooks for practices and behaviour
 brew 'ansible' # Automate deployment, configuration, and upgrading
 brew 'argocd' # GitOps Continuous Delivery for Kubernetes
+brew 'aws-cdk' # AWS Cloud Development Kit - framework for defining AWS infra as code
 brew 'aws-iam-authenticator' # Use AWS IAM credentials to authenticate to Kubernetes
 brew 'aws-nuke' # Nuke a whole AWS account and delete all its resources
+brew 'aws-sam-cli' # CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
 brew 'awscli' # Official Amazon AWS command-line interface
 brew 'azure-cli' # Microsoft Azure CLI 2.0
 brew 'bash' # Bourne-Again SHell, a UNIX command interpreter
@@ -123,6 +125,7 @@ cask 'google-chrome', args: { require_sha: false } # Web browser
 cask 'gcloud-cli', args: { require_sha: false } # Set of tools to manage resources and applications hosted on Google Cloud
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
+cask 'kiro-cli' # AI-powered productivity tool for the command-line
 cask 'libreoffice' # Office suite
 cask 'logi-options+', args: { require_sha: false } # Software for Logitech devices
 cask 'multipass' # Orchestrates virtual Ubuntu instances
