@@ -122,7 +122,7 @@ cask 'dbeaver-community' # Universal database tool and SQL client
 cask 'firefox' # Web browser
 cask 'font-hack-nerd-font' # A typeface designed for source code
 cask 'google-chrome', args: { require_sha: false } # Web browser
-cask 'gcloud-cli', args: { require_sha: false } # Set of tools to manage resources and applications hosted on Google Cloud
+cask 'gcloud-cli' # Set of tools to manage resources and applications hosted on Google Cloud
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'kiro-cli' # AI-powered productivity tool for the command-line
