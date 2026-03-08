@@ -37,7 +37,7 @@ defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
 
 echo "• Set the screenshot location to ~/Documents/Screenshots"
 mkdir -p ~/Documents/Screenshots
-defaults write com.apple.screencapture location -string "~/Documents/Screenshots"
+defaults write com.apple.screencapture location -string "$HOME/Documents/Screenshots"
 
 echo "• Show full URLs (apart from the scheme) in Safari"
 sudo defaults write com.apple.safari ShowFullURLInSmartSearchField -bool true
