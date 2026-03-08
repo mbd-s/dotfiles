@@ -14,6 +14,7 @@ brew 'aws-cdk' # AWS Cloud Development Kit - framework for defining AWS infra as
 brew 'aws-iam-authenticator' # Use AWS IAM credentials to authenticate to Kubernetes
 brew 'aws-nuke' # Nuke a whole AWS account and delete all its resources
 brew 'aws-sam-cli' # CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
+brew 'aws-vault' # Securely store and access AWS credentials in development environments
 brew 'awscli' # Official Amazon AWS command-line interface
 brew 'azure-cli' # Microsoft Azure CLI 2.0
 brew 'bash' # Bourne-Again SHell, a UNIX command interpreter
