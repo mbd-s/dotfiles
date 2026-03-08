@@ -110,19 +110,19 @@ brew 'yq' # Process YAML documents from the CLI
 
 # GUI apps
 cask_args require_sha: true
-cask '1password' # Password manager that keeps all passwords secure behind one password
 cask '1password-cli' # Command-line interface for 1Password
+cask '1password' # Password manager that keeps all passwords secure behind one password
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
 cask 'bruno' # Open-source IDE for exploring and testing APIs
-cask 'claude' # Anthropic's official Claude AI desktop app
 cask 'claude-code' # Terminal-based AI coding assistant
+cask 'claude' # Anthropic's official Claude AI desktop app
 cask 'datadog-agent' # Monitoring and security across systems, apps, and services
 cask 'dbeaver-community' # Universal database tool and SQL client
 cask 'firefox' # Web browser
 cask 'font-hack-nerd-font' # A typeface designed for source code
-cask 'google-chrome', args: { require_sha: false } # Web browser
 cask 'gcloud-cli' # Set of tools to manage resources and applications hosted on Google Cloud
+cask 'google-chrome', args: { require_sha: false } # Web browser
 cask 'google-drive', args: { require_sha: false } # Client for the Google Drive storage service
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'kiro-cli' # AI-powered productivity tool for the command-line
