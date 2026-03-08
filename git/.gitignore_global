@@ -1,5 +1,10 @@
+.byebug_history
+.claude/
+.cursor/
 .DS_Store
 .idea/
-server.sh
 .vscode/
-.byebug_history
+*.swo
+*.swp
+*~
+server.sh
