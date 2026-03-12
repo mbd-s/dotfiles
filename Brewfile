@@ -46,6 +46,7 @@ brew 'git-lfs' # Git extension for versioning large files
 brew 'git' # Distributed revision control system
 brew 'gitui' # Blazing fast terminal-ui for git written in rust
 brew 'glab' # Open-source GitLab command-line tool
+brew 'glow' # Render markdown on the CLI
 brew 'gnupg' # GNU Pretty Good Privacy (PGP) package
 brew 'golangci-lint' # Fast linters runner for Go
 brew 'gomplate' # Command-line Golang template processor
