@@ -67,6 +67,7 @@ brew 'jenkins' # Extendable open source continuous integration server
 brew 'jo' # JSON output from a shell
 brew 'jq' # Lightweight and flexible command-line JSON processor
 brew 'jump' # Helps you navigate your file system faster by learning your habits
+brew 'jupyterlab' # Interactive environments for writing and running code
 brew 'k3d' # Little helper to run CNCF's k3s in Docker
 brew 'k9s' # Kubernetes CLI to manage your clusters in style!
 brew 'kafka' # Open-source distributed event streaming platform
