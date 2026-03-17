@@ -21,7 +21,6 @@ $helm
 """
 
 [aws]
-force_display = true
 format = '([$symbol($profile )($region)]($style))'
 style = "bold #ffb86c"
 
