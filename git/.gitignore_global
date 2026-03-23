@@ -1,5 +1,9 @@
 .byebug_history
-.claude/
+**/.claude/*
+!**/.claude/settings.json
+!**/.claude/skills/
+**/.claude/skills/*
+!**/.claude/skills/skills.conf
 .cursor/
 .DS_Store
 .idea/

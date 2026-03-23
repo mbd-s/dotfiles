@@ -1,6 +1,8 @@
-.PHONY: brew chip clean dracula fonts help link mac mac-reset mise omz setup
+.PHONY: brew chip clean dracula fonts help link mac mac-reset mise omz setup skills
 
 DOTFILES := $(shell pwd)
+
+SKILLS_FILE := $(HOME)/.claude/skills/skills.conf
 
 MISE_PLUGINS := \
 	go \
@@ -13,6 +15,7 @@ MISE_PLUGINS := \
 
 SYMLINK_DIRS := \
 	bat \
+	claude \
 	fish \
 	git \
 	lf \
@@ -111,6 +114,21 @@ omz: ## Installs Oh My Zsh. Usage: `make omz`.
 		sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; \
 	fi
 
-setup: chip mac link brew mise omz dracula fonts ## Symlinks config files and installs tools. Usage: `make setup`.
+setup: chip mac link brew mise omz dracula fonts skills ## Symlinks config files and installs tools. Usage: `make setup`.
+
+skills: ## Installs Claude Code skills. Usage: `make skills`.
+	$(info Installing Claude Code skills)
+	@if [ ! -f $(SKILLS_FILE) ]; then \
+		echo "Error: $(SKILLS_FILE) not found."; \
+		echo "Create it with one SKILL,REPO entry per line"; \
+		exit 0; \
+	fi
+	@while IFS=',' read -r skill repo <&3; do \
+		if [ -d "$(HOME)/.claude/skills/$$skill" ]; then \
+			echo "$$skill: already installed"; \
+		else \
+			npx skills add $$repo --skill $$skill; \
+		fi; \
+	done 3< $(SKILLS_FILE)
 
 .DEFAULT_GOAL := help

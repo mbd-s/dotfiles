@@ -76,6 +76,22 @@ To split home and work concerns, you could nest all work-related repositories in
         email = your-work-git-commit-email-address@example.com
 ```
 
+### Claude Code
+
+Global Claude Code settings (`~/.claude/settings.json`) are tracked in `claude/` and symlinked via `make link`. This includes tool permissions and other preferences.
+
+To install skills, first create `~/.claude/skills/skills.conf` with one `SKILL,REPO` entry per line:
+
+```
+example-claude-skill,https://github.com/example/example-claude-skill
+```
+
+Then run:
+
+```shell
+make skills
+```
+
 ### Homebrew
 
 I've split Homebrew packages similarly along home and work concerns. To install the home packages, create an empty
