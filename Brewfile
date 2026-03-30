@@ -89,6 +89,7 @@ brew 'opentofu' # Drop-in replacement for Terraform. Infrastructure as Code Tool
 brew 'oven-sh/bun/bun' # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew 'pkg-config' # Manage compile and link flags for libraries
 brew 'postgresql@15' # Object-relational database system
+brew 'prettier' # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew 'prometheus' # Service monitoring system and time series database
 brew 'qmk/qmk/qmk' # Quantum Mechanical Keyboard (QMK) Firmware
 brew 'redis' # Persistent key-value database, with built-in net interface
