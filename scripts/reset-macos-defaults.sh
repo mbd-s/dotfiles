@@ -2,9 +2,6 @@
 
 sudo -v
 
-echo "• Don't show hidden files in the Finder"
-defaults write com.apple.finder AppleShowAllFiles false
-
 echo "• Hide all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool false
 

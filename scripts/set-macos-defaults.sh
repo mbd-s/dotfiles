@@ -2,9 +2,6 @@
 
 sudo -v
 
-echo "• Show hidden files in the Finder"
-defaults write com.apple.finder AppleShowAllFiles true
-
 echo "• Show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
