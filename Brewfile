@@ -36,6 +36,7 @@ brew 'etcd' # Key value store for shared configuration and service discovery
 brew 'exercism' # Command-line tool to interact with exercism.io
 brew 'eza' # Modern, maintained replacement for ls
 brew 'fd' # Simple, fast and user-friendly alternative to find
+brew 'ffmpeg' # Play, record, convert, and stream select audio and video codecs
 brew 'figlet' # Banner-like program prints strings as ASCII art
 brew 'fish' # User-friendly command-line shell for UNIX-like operating systems
 brew 'fortune' # Infamous electronic fortune-cookie generator
