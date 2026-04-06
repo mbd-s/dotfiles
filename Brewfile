@@ -141,6 +141,7 @@ cask 'vagrant' # Development environment
 cask 'via' # Keyboard configurator
 cask 'visual-studio-code' # Open-source code editor
 cask 'wireshark-app' # Network protocol analyzer
+cask 'wispr-flow' # Voice-to-text dictation with AI-powered auto-editing
 cask 'yubico-authenticator' # Application for generating TOTP and HOTP codes
 
 # Mac App Store-managed apps
