@@ -135,6 +135,7 @@ cask 'kiro-cli' # AI-powered productivity tool for the command-line
 cask 'libreoffice' # Office suite
 cask 'logi-options+', args: { require_sha: false } # Software for Logitech devices
 cask 'multipass' # Orchestrates virtual Ubuntu instances
+cask 'obsidian' # Knowledge base that works on top of a local folder of plain text Markdown files
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
 cask 'vagrant' # Development environment
