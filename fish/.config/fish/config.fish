@@ -43,6 +43,9 @@ if test -f (brew --prefix)/share/google-cloud-sdk/path.fish.inc
     source (brew --prefix)/share/google-cloud-sdk/path.fish.inc
 end
 
+# Suppress deprecation warning by pointing gcloud at a 3.10+ python3, resolved dynamically to work across machines
+set --global --export CLOUDSDK_PYTHON (command -s python3)
+
 # Configure starship
 if command --search starship >/dev/null
     starship init fish | source
