@@ -122,7 +122,6 @@ cask 'alfred' # Application launcher and productivity software
 cask 'bruno' # Open-source IDE for exploring and testing APIs
 cask 'claude-code' # Terminal-based AI coding assistant
 cask 'claude' # Anthropic's official Claude AI desktop app
-cask 'cursor' # Write, edit, and chat about your code with AI
 cask 'datadog-agent' # Monitoring and security across systems, apps, and services
 cask 'dbeaver-community' # Universal database tool and SQL client
 cask 'firefox' # Web browser
