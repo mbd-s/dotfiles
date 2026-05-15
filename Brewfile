@@ -78,6 +78,7 @@ brew 'kubecolor' # Colorize your kubectl output
 brew 'kubectx' # Tool that can switch between kubectl contexts easily and create aliases
 brew 'lf' # Terminal file manager
 brew 'libsodium' # NaCl networking and cryptography library
+brew 'llm' # Access large language models from the command-line
 brew 'lolcat' # Rainbows and unicorns in your console!
 brew 'mailpit' # Web and API based SMTP testing
 brew 'mariadb' # Drop-in replacement for MySQL
@@ -107,6 +108,7 @@ brew 'tig' # Text interface for Git repositories
 brew 'tlrc' # Official tldr client written in Rust
 brew 'tmux' # Terminal multiplexer
 brew 'tree' # Display directories as trees (with optional color/HTML output)
+brew 'uv' # Extremely fast Python package installer and resolver, written in Rust
 brew 'watch' # Executes a program periodically, showing output fullscreen
 brew 'wget' # Internet file retriever
 brew 'yamllint' # Linter for YAML files
@@ -122,6 +124,7 @@ cask 'alfred' # Application launcher and productivity software
 cask 'bruno' # Open-source IDE for exploring and testing APIs
 cask 'claude-code' # Terminal-based AI coding assistant
 cask 'claude' # Anthropic's official Claude AI desktop app
+cask 'codex' # OpenAI's coding agent that runs in your terminal
 cask 'datadog-agent' # Monitoring and security across systems, apps, and services
 cask 'dbeaver-community' # Universal database tool and SQL client
 cask 'firefox' # Web browser
