@@ -82,6 +82,7 @@ brew 'llm' # Access large language models from the command-line
 brew 'lolcat' # Rainbows and unicorns in your console!
 brew 'mailpit' # Web and API based SMTP testing
 brew 'mariadb' # Drop-in replacement for MySQL
+brew 'marp-cli' # Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
 brew 'mas' # Mac App Store command-line interface
 brew 'minikube' # Run a Kubernetes cluster locally
 brew 'mise' # Polyglot runtime manager (asdf rust clone)
