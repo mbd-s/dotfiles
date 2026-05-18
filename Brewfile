@@ -149,7 +149,6 @@ cask 'wispr-flow' # Voice-to-text dictation with AI-powered auto-editing
 cask 'yubico-authenticator' # Application for generating TOTP and HOTP codes
 
 # Mac App Store-managed apps
-mas 'Bear', id: 1091189122 # Private Markdown Editor for iPhone, iPad and Mac
 mas 'StuffIt Expander', id: 919269455 # Free tool to expand SITX, ZIP, ZIPX, SIT5, and RAR archives
 
 # Home- and work-specific dependencies
