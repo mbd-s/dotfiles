@@ -1,11 +1,5 @@
 # frozen_string_literal: true
 
-# Taps
-tap 'hashicorp/tap'
-tap 'kreuzwerker/taps'
-tap 'oven-sh/bun'
-tap 'qmk/qmk'
-
 # Formulas
 brew 'ansible-lint' # Checks ansible playbooks for practices and behaviour
 brew 'ansible' # Automate deployment, configuration, and upgrading
