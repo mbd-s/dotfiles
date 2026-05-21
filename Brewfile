@@ -141,6 +141,7 @@ cask 'multipass' # Orchestrates virtual Ubuntu instances
 cask 'obsidian' # Knowledge base that works on top of a local folder of plain text Markdown files
 cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
 cask 'slack' # Team communication and collaboration software
+cask 'terraform-linters/tap/tflint' # Pluggable Terraform linter
 cask 'vagrant' # Development environment
 cask 'via' # Keyboard configurator
 cask 'visual-studio-code' # Open-source code editor
