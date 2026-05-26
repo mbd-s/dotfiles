@@ -153,9 +153,9 @@ if File.exist?('.home')
   cask 'backblaze', args: { require_sha: false } # Data backup and storage service
   cask 'discord' # Voice and text chat software
   cask 'handbrake-app' # Open-source video transcoder
+  cask 'nordvpn' # VPN client for secure internet access and private browsing
   cask 'signal' # Instant messaging application focusing on security
   cask 'telegram' # Messaging app with a focus on speed and security
-  cask 'torguard' # VPN client
   cask 'viber' # Calling and messaging application focusing on security
   cask 'vlc' # Multimedia player
   cask 'whatsapp' # Desktop client for WhatsApp
