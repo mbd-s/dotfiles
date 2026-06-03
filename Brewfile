@@ -88,7 +88,6 @@ brew 'pkg-config' # Manage compile and link flags for libraries
 brew 'postgresql@15' # Object-relational database system
 brew 'prettier' # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew 'prometheus' # Service monitoring system and time series database
-brew 'qmk/qmk/qmk' # Quantum Mechanical Keyboard (QMK) Firmware
 brew 'redis' # Persistent key-value database, with built-in net interface
 brew 'ripgrep' # Search tool like grep and The Silver Searcher
 brew 'shellcheck' # Static analysis and lint tool, for (ba)sh scripts
@@ -137,7 +136,6 @@ cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap area
 cask 'slack' # Team communication and collaboration software
 cask 'terraform-linters/tap/tflint' # Pluggable Terraform linter
 cask 'vagrant' # Development environment
-cask 'via' # Keyboard configurator
 cask 'visual-studio-code' # Open-source code editor
 cask 'wireshark-app' # Network protocol analyzer
 cask 'wispr-flow' # Voice-to-text dictation with AI-powered auto-editing
