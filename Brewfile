@@ -96,7 +96,6 @@ brew 'starship' # Cross-shell prompt for astronauts
 brew 'stow' # Organize software neatly under a single directory tree (e.g., /usr/local)
 brew 'telnet' # User interface to the TELNET protocol
 brew 'terraform-docs' # Tool to generate documentation from Terraform modules
-brew 'terraformer' # CLI tool to generate terraform files from existing infrastructure
 brew 'texinfo' # Official documentation format of the GNU project
 brew 'tig' # Text interface for Git repositories
 brew 'tlrc' # Official tldr client written in Rust
