@@ -115,7 +115,7 @@ cask '1password' # Password manager that keeps all passwords secure behind one p
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
 cask 'bruno' # Open-source IDE for exploring and testing APIs
-cask 'claude-code' # Terminal-based AI coding assistant
+cask 'claude-code@latest' # Terminal-based AI coding assistant
 cask 'claude' # Anthropic's official Claude AI desktop app
 cask 'codex' # OpenAI's coding agent that runs in your terminal
 cask 'datadog-agent' # Monitoring and security across systems, apps, and services
