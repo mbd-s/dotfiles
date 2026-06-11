@@ -16,6 +16,9 @@ set fish_greeting
 # Disable Homebrew hints
 set --global --export HOMEBREW_NO_ENV_HINTS 1
 
+# Disable Homebrew ask mode
+set --global --export HOMEBREW_NO_ASK 1
+
 # Set default options for less
 set --global --export LESS -FR
 
