@@ -37,8 +37,11 @@ set --global NORMAL (set_color normal)
 fish_add_path $HOME/.krew/bin
 
 # Configure jump
+# jump's `j` uses `builtin cd`, which bypasses fish's cd function and so never
+# appends to $dirprev. That leaves `cd -` popping a stale entry, or failing
+# outright when nothing was ever recorded. Rewrite it to the cd function.
 if command --search jump >/dev/null
-    jump shell fish | source
+    jump shell fish | string replace --all 'builtin cd' cd | source
 end
 
 # Update PATH for the Google Cloud SDK
