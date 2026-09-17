@@ -9,7 +9,7 @@ function gm --description "Update various dependencies"
     mise upgrade
 
     echo $BOLD"Updating skills"$NORMAL
-    npx skills update
+    npx skills update --global --project
 
     mas upgrade 2>/dev/null
 end
