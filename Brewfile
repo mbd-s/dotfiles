@@ -10,7 +10,6 @@ brew 'aws-nuke' # Nuke a whole AWS account and delete all its resources
 brew 'aws-sam-cli' # CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
 brew 'aws-vault' # Securely store and access AWS credentials in development environments
 brew 'awscli' # Official Amazon AWS command-line interface
-brew 'azure-cli' # Microsoft Azure CLI 2.0
 brew 'bash' # Bourne-Again SHell, a UNIX command interpreter
 brew 'bat' # Clone of cat(1) with syntax highlighting and Git integration
 brew 'cfssl' # CloudFlare's PKI toolkit
@@ -114,6 +113,7 @@ cask '1password-cli' # Command-line interface for 1Password
 cask '1password' # Password manager that keeps all passwords secure behind one password
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'alfred' # Application launcher and productivity software
+cask 'azure-cli' # Microsoft Azure CLI 2.0
 cask 'bruno' # Open-source IDE for exploring and testing APIs
 cask 'claude-code@latest' # Terminal-based AI coding assistant
 cask 'claude' # Anthropic's official Claude AI desktop app
