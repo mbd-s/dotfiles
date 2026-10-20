@@ -85,6 +85,14 @@ To split home and work concerns, you could nest all work-related repositories in
 
 Objects merge, arrays concatenate without duplicates, and a later layer's value wins. Keys that no layer defines, such as `model`, are kept from the existing `settings.json`. The target shows a diff and asks before writing, and keeps the previous file as a timestamped `settings.json.bak-*`.
 
+To merge the layers, run:
+
+```shell
+make claude-settings
+```
+
+The target runs `make link` first, so the symlinked `00-base.json` is in place before the merge.
+
 Hooks referenced from `00-base.json` live in `claude/.claude/hooks/`.
 
 To install skills, first create `~/.claude/skills/skills.conf` with one `SKILL,REPO` entry per line:

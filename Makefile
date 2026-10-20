@@ -40,13 +40,13 @@ else
 	@echo "No extra dependencies needed for this architecture"
 endif
 
-claude-settings: ## Merges Claude Code settings layers into settings.json. Usage: `make claude-settings`.
+claude-settings: link ## Merges Claude Code settings layers into settings.json. Runs `make link` first. Usage: `make claude-settings`.
 	$(info Merging Claude Code settings layers)
 	@# Layers own every key they define, so a value that Claude Code, iTerm2 or git-ai
 	@# wrote into one of those keys since the last run shows up in the diff as removed.
 	@# Move it into a layer before confirming.
 	@if ! ls $(CLAUDE_SETTINGS_D)/*.json > /dev/null 2>&1; then \
-		echo "Error: no layers in $(CLAUDE_SETTINGS_D). Run make link first."; \
+		echo "Error: no layers in $(CLAUDE_SETTINGS_D). Check the make link output above."; \
 		exit 1; \
 	fi
 	@[ -f $(CLAUDE_SETTINGS) ] || echo '{}' > $(CLAUDE_SETTINGS)
