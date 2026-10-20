@@ -55,6 +55,8 @@ set -x CDPATH . ~ path/to/directory/you/want/in/CDPATH
 alias secret "Something secret!"
 ```
 
+To version these files without making them public, keep them in a private overlay repo instead: a stow package that links them into `$__fish_config_dir/private/` with `--no-folding`, so they sit next to anything linked from this repo.
+
 ### git
 
 Create a file at `$DOTFILES/git/.gitlocal` with your own `git` user details and any aliases or options you don't want to
@@ -67,6 +69,8 @@ check into version control. Example:
 [alias]
         mine = log --author='Your Name'
 ```
+
+`.gitconfig` includes `~/.gitlocal`, so the file can also come from a private overlay repo that links it there.
 
 To split home and work concerns, you could nest all work-related repositories inside a `work/` directory and configure a
 `git` user for your work projects at `$DOTFILES/git/work/.gitlocal`. Example:
