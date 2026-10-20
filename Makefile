@@ -1,8 +1,11 @@
-.PHONY: brew chip clean dracula fonts help link mac mac-reset mise omz setup skills
+.PHONY: brew chip claude-settings clean dracula fonts help link mac mac-reset mise omz setup skills
 
 DOTFILES := $(shell pwd)
 
 SKILLS_FILE := $(HOME)/.claude/skills/skills.conf
+
+CLAUDE_SETTINGS := $(HOME)/.claude/settings.json
+CLAUDE_SETTINGS_D := $(HOME)/.claude/settings.d
 
 MISE_PLUGINS := \
 	go \
@@ -36,6 +39,34 @@ ifeq ($(shell arch),arm64)
 else
 	@echo "No extra dependencies needed for this architecture"
 endif
+
+claude-settings: ## Merges Claude Code settings layers into settings.json. Usage: `make claude-settings`.
+	$(info Merging Claude Code settings layers)
+	@# Layers own every key they define, so a value that Claude Code, iTerm2 or git-ai
+	@# wrote into one of those keys since the last run shows up in the diff as removed.
+	@# Move it into a layer before confirming.
+	@if ! ls $(CLAUDE_SETTINGS_D)/*.json > /dev/null 2>&1; then \
+		echo "Error: no layers in $(CLAUDE_SETTINGS_D). Run make link first."; \
+		exit 1; \
+	fi
+	@[ -f $(CLAUDE_SETTINGS) ] || echo '{}' > $(CLAUDE_SETTINGS)
+	@tmp=$$(mktemp -d); \
+	jq -S -s --slurpfile current $(CLAUDE_SETTINGS) -f $(DOTFILES)/scripts/merge-claude-settings.jq $(CLAUDE_SETTINGS_D)/*.json > $$tmp/new.json || exit 1; \
+	jq -S . $(CLAUDE_SETTINGS) > $$tmp/old.json; \
+	if diff -u $$tmp/old.json $$tmp/new.json; then \
+		echo "Already up to date"; \
+	else \
+		read -p "Write these changes to $(CLAUDE_SETTINGS)? [y/N] " confirm; \
+		if [ "$$confirm" = "y" ] || [ "$$confirm" = "Y" ]; then \
+			bak=$(CLAUDE_SETTINGS).bak-$$(date +%Y%m%d-%H%M%S); \
+			cp $(CLAUDE_SETTINGS) $$bak; \
+			cp $$tmp/new.json $(CLAUDE_SETTINGS); \
+			echo "Wrote $(CLAUDE_SETTINGS) (previous version in $$bak)"; \
+		else \
+			echo "Aborted"; \
+		fi; \
+	fi; \
+	rm -rf $$tmp
 
 clean: ## Removes symlinked config files. Usage: `make clean`.
 	$(info Unlinking symlinked config files)
@@ -114,7 +145,7 @@ omz: ## Installs Oh My Zsh. Usage: `make omz`.
 		sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; \
 	fi
 
-setup: chip mac link brew mise omz dracula fonts skills ## Symlinks config files and installs tools. Usage: `make setup`.
+setup: chip mac link brew mise omz dracula fonts skills claude-settings ## Symlinks config files and installs tools. Usage: `make setup`.
 
 skills: ## Installs Claude Code skills. Usage: `make skills`.
 	$(info Installing Claude Code skills)

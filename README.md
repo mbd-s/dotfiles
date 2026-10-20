@@ -78,7 +78,14 @@ To split home and work concerns, you could nest all work-related repositories in
 
 ### Claude Code
 
-Global Claude Code settings (`~/.claude/settings.json`) are tracked in `claude/` and symlinked via `make link`. This includes tool permissions and other preferences.
+`~/.claude/settings.json` isn't symlinked, because Claude Code writes to it (`/config` values, the model). Instead, settings come in layers in `~/.claude/settings.d/`, and `make claude-settings` merges them into `settings.json` in lexical order:
+
+- `00-base.json`, tracked in `claude/` and symlinked via `make link`, holds preferences, tool permissions and hooks.
+- Other layers can come from another stow repo or be plain files, such as `90-local.json` for hooks that tools on this machine install with absolute paths.
+
+Objects merge, arrays concatenate without duplicates, and a later layer's value wins. Keys that no layer defines, such as `model`, are kept from the existing `settings.json`. The target shows a diff and asks before writing, and keeps the previous file as a timestamped `settings.json.bak-*`.
+
+Hooks referenced from `00-base.json` live in `claude/.claude/hooks/`.
 
 To install skills, first create `~/.claude/skills/skills.conf` with one `SKILL,REPO` entry per line:
 

@@ -4,3 +4,7 @@ git/.gitlocal
 .home
 .work
 claude/.claude/skills/skills.conf
+
+# Shared Claude Code hooks and settings layers (the global ignore excludes .claude/*)
+!claude/.claude/hooks/
+!claude/.claude/settings.d/

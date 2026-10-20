@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "autoCompactEnabled": false,
+  "awaySummaryEnabled": false,
+  "effortLevel": "high",
+  "feedbackDrafts": "off",
+  "includeCoAuthoredBy": false,
+  "promptSuggestionEnabled": false,
+  "skipAutoPermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
+  "statusLine": {
+    "command": "i=$(cat); c=$(echo \"$i\" | jq -r '.context_window.used_percentage // empty'); f=$(echo \"$i\" | jq -r '.rate_limits.five_hour.used_percentage // empty'); w=$(echo \"$i\" | jq -r '.rate_limits.seven_day.used_percentage // empty'); r=$(echo \"$i\" | jq -r '.rate_limits.five_hour.resets_at // empty | floor'); rw=$(echo \"$i\" | jq -r '.rate_limits.seven_day.resets_at // empty | floor'); col() { if [ $1 -ge 80 ]; then printf '\\033[31m'; elif [ $1 -ge 50 ]; then printf '\\033[33m'; else printf '\\033[32m'; fi; }; s=; if [ -n \"$c\" ]; then p=$(printf '%.0f' \"$c\"); n=$((p/10)); b=; for k in 1 2 3 4 5 6 7 8 9 10; do if [ $k -le $n ]; then b=\"${b}█\"; else b=\"${b}░\"; fi; done; printf '%scontext ' \"$s\"; s=' | '; col $p; printf '%s %d%%\\033[0m' \"$b\" $p; fi; if [ -n \"$f\" ]; then p=$(printf '%.0f' \"$f\"); printf '%scurrent session' \"$s\"; if [ -n \"$r\" ]; then l=$(( (r - $(date +%s)) / 60 )); [ $l -lt 0 ] && l=0; printf ' (%d:%02d left)' $((l/60)) $((l%60)); fi; printf ' '; s=' | '; col $p; printf '%d%%\\033[0m' $p; fi; if [ -n \"$w\" ]; then p=$(printf '%.0f' \"$w\"); printf '%sweekly limit' \"$s\"; if [ -n \"$rw\" ]; then l=$(( (rw - $(date +%s)) / 3600 )); [ $l -lt 0 ] && l=0; printf ' (%dd %dh left)' $((l/24)) $((l%24)); fi; printf ' '; s=' | '; col $p; printf '%d%%\\033[0m' $p; fi; echo",
+    "refreshInterval": 60,
+    "type": "command"
+  },
+  "theme": "dark-ansi",
+  "tui": "fullscreen",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(nl:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(egrep:*)",
+      "Bash(fgrep:*)",
+      "Bash(rg:*)",
+      "Bash(zgrep:*)",
+      "Bash(zcat:*)",
+      "Bash(gzcat:*)",
+      "Bash(sed -n:*)",
+      "Bash(awk:*)",
+      "Bash(cut:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(comm:*)",
+      "Bash(join:*)",
+      "Bash(paste:*)",
+      "Bash(tr:*)",
+      "Bash(rev:*)",
+      "Bash(column:*)",
+      "Bash(diff:*)",
+      "Bash(cmp:*)",
+      "Bash(jq:*)",
+      "Bash(yq:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(stat:*)",
+      "Bash(file:*)",
+      "Bash(du:*)",
+      "Bash(df:*)",
+      "Bash(basename:*)",
+      "Bash(dirname:*)",
+      "Bash(realpath:*)",
+      "Bash(readlink:*)",
+      "Bash(pwd)",
+      "Bash(tar -tf:*)",
+      "Bash(tar -tzf:*)",
+      "Bash(unzip -l:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git blame:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote:*)",
+      "Bash(git ls-files:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(git worktree list:*)",
+      "Bash(git stash list:*)",
+      "Bash(git config --get:*)"
+    ],
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(git push --force:*)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(rm -fr:*)",
+      "Bash(find * -delete*)",
+      "Bash(find * -exec*)",
+      "Bash(find * -execdir*)",
+      "Bash(find * -ok*)",
+      "Bash(find * -fprint*)",
+      "Bash(git push -f:*)",
+      "Bash(terraform destroy*)"
+    ],
+    "additionalDirectories": [
+      "~/dotfiles",
+      "/tmp"
+    ],
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "file=$(jq -r '.tool_input.file_path // empty'); if [[ \"$file\" == *.tf ]]; then dir=$(dirname \"$file\"); terraform fmt \"$dir\" && (cd \"$dir\" && terraform validate); fi",
+            "type": "command"
+          },
+          {
+            "command": "file=$(jq -r '.tool_input.file_path // empty'); [[ \"$file\" == *.md ]] || exit 0; d=$(dirname \"$file\"); while [[ \"$d\" != \"/\" && -n \"$d\" ]]; do if compgen -G \"$d/.prettierrc*\" >/dev/null 2>&1 || [[ -f \"$d/prettier.config.js\" || -f \"$d/prettier.config.mjs\" ]] || { [[ -f \"$d/package.json\" ]] && jq -e '.prettier' \"$d/package.json\" >/dev/null 2>&1; }; then prettier --write \"$file\"; exit 0; fi; [[ -e \"$d/.git\" ]] && exit 0; d=$(dirname \"$d\"); done; exit 0",
+            "type": "command"
+          }
+        ],
+        "matcher": "Write|Edit"
+      },
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.claude/hooks/strip-claude-coauthor.sh\" ] && \"$HOME/.claude/hooks/strip-claude-coauthor.sh\" || true",
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      },
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "command": "echo '{\"continue\": false, \"stopReason\": \"Auto-compaction blocked. Run /compact manually if you want to proceed.\"}'",
+            "statusMessage": "Checking compaction...",
+            "type": "command"
+          }
+        ],
+        "matcher": "auto"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "[ -x \"$HOME/.config/iterm2/cc-status\" ] && \"$HOME/.config/iterm2/cc-status\" || true",
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  }
+}
