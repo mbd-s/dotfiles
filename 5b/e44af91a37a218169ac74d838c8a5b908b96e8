@@ -1,0 +1,16 @@
+README.md
+  h_3c0786aa83d42b 83-91
+claude/policy/work.json
+  h_3c0786aa83d42b 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5be44af91a37a218169ac74d838c8a5b908b96e8",
+  "prompts": {},
+  "humans": {
+    "h_3c0786aa83d42b": {
+      "author": "Michael Silverberg <13588399+mbd-s@users.noreply.github.com>"
+    }
+  }
+}
