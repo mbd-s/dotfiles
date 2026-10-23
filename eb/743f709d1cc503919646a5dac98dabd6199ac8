@@ -1,0 +1,14 @@
+fish/.config/fish/config.fish
+  h_3c0786aa83d42b 45-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eb743f709d1cc503919646a5dac98dabd6199ac8",
+  "prompts": {},
+  "humans": {
+    "h_3c0786aa83d42b": {
+      "author": "Michael Silverberg <13588399+mbd-s@users.noreply.github.com>"
+    }
+  }
+}
