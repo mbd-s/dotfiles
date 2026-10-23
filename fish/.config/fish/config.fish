@@ -42,6 +42,22 @@ fish_add_path $HOME/.krew/bin
 # outright when nothing was ever recorded. Rewrite it to the cd function.
 if command --search jump >/dev/null
     jump shell fish | string replace --all 'builtin cd' cd | source
+
+    # jump's completion offers cd's matches ahead of its own database. cd
+    # completes across $CDPATH and fuzzy-matches, so `j inc` finds a
+    # subsequence match such as ~/dotfiles-work-review-dependencies and never
+    # asks jump. Keep only the cd matches that start with the typed term.
+    function __jump_hint
+        set -l term (commandline --cut-at-cursor --current-token)
+        set -l prefix '^'(string escape --style=regex -- $term)
+        set -l local_dirs (complete --do-complete "cd $term" | string match --regex -- '.*/$' | string match --regex --ignore-case --entire -- $prefix)
+
+        if test (count $local_dirs) -gt 0
+            printf '%s\n' $local_dirs
+        else if not string match -q '*/*' -- $term
+            jump hint "$term" | head -1
+        end
+    end
 end
 
 # Update PATH for the Google Cloud SDK
