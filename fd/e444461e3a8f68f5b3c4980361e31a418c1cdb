@@ -1,0 +1,19 @@
+claude/.claude/settings.d/00-base.json
+  s_ee858537e749a5::t_60f145a617ea80 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fde444461e3a8f68f5b3c4980361e31a418c1cdb",
+  "prompts": {},
+  "sessions": {
+    "s_ee858537e749a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c29075f4-d3cf-4756-81c4-22cb7d00c166",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Michael Silverberg <13588399+mbd-s@users.noreply.github.com>"
+    }
+  }
+}
