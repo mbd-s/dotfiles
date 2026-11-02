@@ -1,0 +1,19 @@
+Makefile
+  s_2f07dcb967ec49::t_4e689e1a38437f 1,146
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6d0c67ef4817fe58f60ad7e07e414a2ef042d910",
+  "prompts": {},
+  "sessions": {
+    "s_2f07dcb967ec49": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3e1e3d28-6aab-4531-a196-85854d6a8d08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Michael Silverberg <13588399+mbd-s@users.noreply.github.com>"
+    }
+  }
+}
