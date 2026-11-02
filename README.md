@@ -99,18 +99,6 @@ The target runs `make link` first, so the symlinked `00-base.json` is in place b
 
 Hooks referenced from `00-base.json` live in `claude/.claude/hooks/`.
 
-To install skills, first create `~/.claude/skills/skills.conf` with one `SKILL,REPO` entry per line:
-
-```
-example-claude-skill,https://github.com/example/example-claude-skill
-```
-
-Then run:
-
-```shell
-make skills
-```
-
 ### Homebrew
 
 I've split Homebrew packages similarly along home and work concerns. To install the home packages, create an empty
