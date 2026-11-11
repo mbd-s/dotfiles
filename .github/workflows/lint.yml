@@ -10,7 +10,7 @@ name: Lint files
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout Repository
@@ -36,9 +36,16 @@ jobs:
       - name: Lint shell scripts
         run: shellcheck scripts/*.sh lf/.config/lf/pv.sh
 
+      # Uses Ubuntu's own fish package (4.2+ on 26.04) instead of the
+      # fish-shell PPA, so the job doesn't depend on Launchpad being reachable.
       - name: Check fish syntax
+        timeout-minutes: 5
         run: |
-          sudo apt-add-repository -y ppa:fish-shell/release-4
           sudo apt-get -qq update
           sudo apt-get -qq install -y fish
-          find fish -name '*.fish' -exec fish --no-execute {} \;
+          fish_version=$(dpkg-query -W -f='${Version}' fish)
+          echo "fish $fish_version"
+          dpkg --compare-versions "$fish_version" ge 4.2 ||
+            { echo "::error::fish $fish_version is older than 4.2"; exit 1; }
+          # xargs fails if any file fails; find -exec ... \; would not.
+          find fish -name '*.fish' -print0 | xargs -0 -n1 fish --no-execute
