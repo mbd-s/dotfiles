@@ -5,6 +5,8 @@ function aws_switch --argument-names profile --description "Switch AWS profile"
         functions --erase __handle_aws_credentials_error
     end
 
+    # Session keys in the environment take precedence over AWS_PROFILE in the AWS CLI.
+    set --erase AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWSUME_PROFILE
     set --global --export AWS_PROFILE $profile
     aws sts get-caller-identity --no-cli-pager
 
