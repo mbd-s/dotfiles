@@ -9,3 +9,5 @@
 *.swp
 *~
 server.sh
+
+**/.claude/settings.local.json
