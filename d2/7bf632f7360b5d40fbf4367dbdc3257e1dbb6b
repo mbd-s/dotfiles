@@ -1,0 +1,14 @@
+git/.gitignore_global
+  h_3c0786aa83d42b 12-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d27bf632f7360b5d40fbf4367dbdc3257e1dbb6b",
+  "prompts": {},
+  "humans": {
+    "h_3c0786aa83d42b": {
+      "author": "Michael Silverberg <13588399+mbd-s@users.noreply.github.com>"
+    }
+  }
+}
