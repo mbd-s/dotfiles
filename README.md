@@ -80,6 +80,9 @@ To split home and work concerns, you could nest all work-related repositories in
         email = your-work-git-commit-email-address@example.com
 ```
 
+`.gitconfig` includes `~/work/.gitlocal` for repositories under `~/work/`, so this file can also come from a private overlay
+repo that links it there.
+
 ### Claude Code
 
 `~/.claude/settings.json` isn't symlinked, because Claude Code writes to it (`/config` values, the model). Instead, settings come in layers in `~/.claude/settings.d/`, and `make claude-settings` merges them into `settings.json` in lexical order:
