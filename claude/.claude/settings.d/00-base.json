@@ -1,10 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "autoCompactEnabled": false,
   "awaySummaryEnabled": false,
   "effortLevel": "high",
   "feedbackDrafts": "off",
-  "includeCoAuthoredBy": false,
   "promptSuggestionEnabled": false,
   "skipAutoPermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
@@ -132,15 +135,6 @@
           }
         ],
         "matcher": "Write|Edit"
-      },
-      {
-        "hooks": [
-          {
-            "command": "[ -x \"$HOME/.claude/hooks/strip-claude-coauthor.sh\" ] && \"$HOME/.claude/hooks/strip-claude-coauthor.sh\" || true",
-            "type": "command"
-          }
-        ],
-        "matcher": "Bash"
       },
       {
         "hooks": [
